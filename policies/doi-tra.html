@@ -3,160 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#FFFAF4">
 <title>Đổi trả & bảo hành — Infinite Maker Space</title>
 <meta name="description" content="Khi nào bạn được làm lại miễn phí, khi nào được hoàn tiền, và những trường hợp nằm ngoài phạm vi.">
-<meta property="og:title" content="Đổi trả & bảo hành — Infinite Maker Space">
-<meta property="og:description" content="Khi nào bạn được làm lại miễn phí, khi nào được hoàn tiền, và những trường hợp nằm ngoài phạm vi.">
-<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Nunito:wght@600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><rect width='48' height='48' rx='14' fill='%23FFD9E3'/><path d='M10 25 24 13l14 12' stroke='%232E2622' stroke-width='3.2' fill='none' stroke-linecap='round'/><path d='M13.5 24v11h21V24' stroke='%232E2622' stroke-width='3.2' fill='none' stroke-linecap='round'/></svg>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="/assets/ib.css">
 </head>
 <body>
-
 <header>
-  <div class="hd">
-    <a class="logo" href="../index.html">
-      <svg class="logo-m" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="14" fill="#FFD9E3"/><path d="M10 25 24 13l14 12" stroke="#2E2622" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 24v11h21V24" stroke="#2E2622" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="30" r="2.6" fill="#FF7A6B"/><circle cx="28" cy="30" r="2.6" fill="#93DEC0"/></svg>
-      <span class="logo-t"><b>Infinite Maker Space</b><span>by Infinite Studio</span></span>
+  <div class="wrap hd">
+    <a class="logo" href="/">
+      <span class="mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="#2A2340" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.8V20h14V9.8"/><path d="M10 20v-5h4v5"/></svg></span>
+      <span class="ltxt"><b>Infinite Maker Space</b><span>by Infinite Studio</span></span>
     </a>
-    <nav class="mainnav"><a href="../index.html">Home</a><a href="../services.html">Services</a><a href="../about.html">About</a><a href="../location.html">Location</a><a href="../news.html">News</a><a href="../contact.html">Contact</a></nav>
-    <div class="hd-cta">
+    <nav class="mainnav"><a href="/">Home</a><a href="/services">Services</a><a href="/about">About</a><a href="/location">Location</a><a href="/news">News</a><a href="/contact">Contact</a></nav>
+    <div class="hd-r">
       <span class="tagpill">Where ideas become reality</span>
-      <a class="btn btn-fill btn-sm" href="../contact.html">Join</a>
-      <button class="burger" aria-label="Mở menu"><i></i><i></i><i></i></button>
+      <a class="btn btn-sm" href="/contact">Join</a>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
     </div>
   </div>
 </header>
-<div class="mobmenu">
-  <a href="../index.html">Home</a><a href="../services.html">Services</a><a href="../about.html">About</a><a href="../location.html">Location</a><a href="../news.html">News</a><a href="../contact.html">Contact</a>
-  <div class="mobsub"><a href="../makerspace/3d-printing.html">3D Print</a><a href="../makerspace/laser-cutting.html">Laser Cut</a><a href="../makerspace/paper-craft.html">Cricut</a><a href="../services.html#pricing">Bảng giá</a><a href="../services.html#workshops">Workshop</a></div>
-</div>
-
-<main>
-
-<section class="sec-sm edge" style="padding-top:clamp(104px,13vw,150px)"><div class="wrap">
-  <p style="font-size:12.5px;color:var(--ink-3);margin-bottom:16px"><a href="../index.html">Home</a> <span>·</span> <span>Chính sách</span> <span>·</span> <span>Đổi trả & bảo hành</span></p>
-  <h1 class="d1 rv" style="max-width:16ch">Đổi trả &amp; <span class='serif'>bảo hành</span></h1>
-  <p class="lead rv mt-m">Khi nào bạn được làm lại miễn phí, khi nào được hoàn tiền, và những trường hợp nằm ngoài phạm vi.</p>
-  
-</div></section>
-
-<section class="sec edge"><div class="wrap">
-  <div class="doc rv">
-    <p class="upd">Cập nhật lần cuối: tháng 8/2026 · Nội dung mẫu, hãy rà soát lại theo thực tế vận hành và quy định pháp luật hiện hành trước khi công bố.</p>
+<div class="mobmenu" id="mobmenu"><div class="mobmenu__in"><a href="/">Home</a><a href="/services">Services</a><a href="/about">About</a><a href="/location">Location</a><a href="/news">News</a><a href="/contact">Contact</a><a href="/makerspace/3d-printing">3D Print</a><a href="/makerspace/laser-cutting">Laser Cut</a><a href="/makerspace/paper-craft">Cricut</a><a href="/services#pricing">Bảng giá</a><a href="/services#workshops">Workshop</a></div></div>
+<div class="wrap crumb"><a href="/">Home</a><span>·</span><b>Chính sách</b><span>·</span><b>Đổi trả & bảo hành</b></div><section class="phero ">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="wrap"><div class="phero__in">
+    <span class="lab">Chính sách</span><h1 class="d1">Đổi trả &amp; bảo hành</h1><p class="lead">Khi nào bạn được làm lại miễn phí, khi nào được hoàn tiền, và những trường hợp nằm ngoài phạm vi.</p>
+  </div></div>
+</section>
+<section class="sec sec-t0"><div class="wrap">
+  <div class="prose rv">
+    <div class="updated">Cập nhật lần cuối: tháng 8/2026 · Nội dung mẫu, hãy rà soát lại theo thực tế vận hành và quy định pháp luật hiện hành trước khi công bố.</div>
     
-<h2>Chúng tôi làm lại miễn phí khi</h2>
-<ul>
-  <li>Sản phẩm sai kích thước hoặc sai chi tiết so với file bạn đã duyệt</li>
-  <li>Lỗi gia công thấy rõ: cháy xém quá mức, lệch lớp, nứt vỡ, thiếu chi tiết</li>
-  <li>Giao thiếu số lượng so với đơn đặt</li>
-  <li>Sản phẩm hư hỏng trong quá trình vận chuyển do chúng tôi đóng gói</li>
-</ul>
-<p>Báo trong vòng <b>7 ngày</b> kể từ khi nhận hàng, kèm ảnh chụp. Chúng tôi làm lại và không tính thêm phí.</p>
-
-<h2>Trường hợp hoàn tiền</h2>
-<ul>
-  <li>Không thể làm lại đúng yêu cầu sau hai lần sửa: hoàn 100% phần lỗi</li>
-  <li>Đơn bị huỷ trước khi bắt đầu gia công: hoàn toàn bộ tiền cọc</li>
-  <li>Đơn bị huỷ khi đã gia công một phần: hoàn phần chưa thực hiện</li>
-</ul>
-
-<h2>Không thuộc phạm vi đổi trả</h2>
-<ul>
-  <li>File thiết kế do bạn cung cấp có lỗi mà chúng tôi đã cảnh báo trước khi gia công</li>
-  <li>Sai lệch màu sắc nhỏ giữa các lô vật liệu — đây là đặc tính tự nhiên của nhựa và gỗ</li>
-  <li>Vân gỗ, mắt gỗ và độ đậm nhạt khi khắc không đồng đều giữa các tấm</li>
-  <li>Hư hỏng do sử dụng sai mục đích, va đập, để ngoài trời hoặc gần nguồn nhiệt</li>
-  <li>Sản phẩm cá nhân hoá theo tên hoặc yêu cầu riêng, trừ khi lỗi do chúng tôi</li>
-</ul>
-
-<h2>Sản phẩm bán lẻ</h2>
-<p>Với sản phẩm mua sẵn tại xưởng hoặc trên Shopee, áp dụng chính sách đổi trả trong 7 ngày với điều kiện sản phẩm còn nguyên vẹn và đủ phụ kiện.</p>
-
-<h2>Bảo hành sản phẩm có điện</h2>
-<p>Đèn bàn và các sản phẩm có mạch điện được bảo hành 6 tháng cho phần điện tử, không bao gồm hư hỏng do nước, va đập hoặc tự ý tháo mở.</p>
-
-<h2>Cách yêu cầu</h2>
-<p>Nhắn Zalo kèm ảnh sản phẩm và mã đơn hàng, hoặc gửi email tới {{EMAIL}}. Chúng tôi phản hồi trong vòng 24 giờ làm việc.</p>
-
+    <h2>Chúng tôi làm lại miễn phí khi</h2><ul><li>Sản phẩm sai kích thước hoặc sai chi tiết so với file bạn đã duyệt</li><li>Lỗi gia công thấy rõ: cháy xém quá mức, lệch lớp, nứt vỡ, thiếu chi tiết</li><li>Giao thiếu số lượng so với đơn đặt</li><li>Sản phẩm hư hỏng trong quá trình vận chuyển do chúng tôi đóng gói</li></ul><p>Báo trong vòng <strong>7 ngày</strong> kể từ khi nhận hàng, kèm ảnh chụp. Chúng tôi làm lại và không tính thêm phí.</p><h2>Trường hợp hoàn tiền</h2><ul><li>Không thể làm lại đúng yêu cầu sau hai lần sửa: hoàn 100% phần lỗi</li><li>Đơn bị huỷ trước khi bắt đầu gia công: hoàn toàn bộ tiền cọc</li><li>Đơn bị huỷ khi đã gia công một phần: hoàn phần chưa thực hiện</li></ul><h2>Không thuộc phạm vi đổi trả</h2><ul><li>File thiết kế do bạn cung cấp có lỗi mà chúng tôi đã cảnh báo trước khi gia công</li><li>Sai lệch màu sắc nhỏ giữa các lô vật liệu — đây là đặc tính tự nhiên của nhựa và gỗ</li><li>Vân gỗ, mắt gỗ và độ đậm nhạt khi khắc không đồng đều giữa các tấm</li><li>Hư hỏng do sử dụng sai mục đích, va đập, để ngoài trời hoặc gần nguồn nhiệt</li><li>Sản phẩm cá nhân hoá theo tên hoặc yêu cầu riêng, trừ khi lỗi do chúng tôi</li></ul><h2>Sản phẩm bán lẻ</h2><p>Với sản phẩm mua sẵn tại xưởng hoặc trên Shopee, áp dụng chính sách đổi trả trong 7 ngày với điều kiện sản phẩm còn nguyên vẹn và đủ phụ kiện.</p><h2>Bảo hành sản phẩm có điện</h2><p>Đèn bàn và các sản phẩm có mạch điện được bảo hành 6 tháng cho phần điện tử, không bao gồm hư hỏng do nước, va đập hoặc tự ý tháo mở.</p><h2>Cách yêu cầu</h2><p>Nhắn Zalo kèm ảnh sản phẩm và mã đơn hàng, hoặc gửi email tới {{EMAIL}}. Chúng tôi phản hồi trong vòng 24 giờ làm việc.</p>
   </div>
-  <div class="wrap" style="max-width:760px">
-    <div class="lab mt-l">Các trang khác</div>
-    <div class="doclist"><a href="an-toan.html" style="--dc:var(--peach)">Nội quy an toàn →</a><a href="thanh-vien.html" style="--dc:var(--sky)">Chính sách thành viên →</a><a href="bao-mat.html" style="--dc:var(--mint)">Chính sách bảo mật →</a><a href="dieu-khoan.html" style="--dc:var(--lilac)">Điều khoản sử dụng →</a><a href="faq.html" style="--dc:var(--butter)">Câu hỏi thường gặp →</a></div>
-  </div>
+  <div style="margin-top:56px"><span class="lab">Các trang khác</span><div style="margin-top:14px"><div class="chips rv"><a class="tagpill" href="/policies/an-toan">Nội quy an toàn →</a><a class="tagpill" href="/policies/thanh-vien">Chính sách thành viên →</a><a class="tagpill" href="/policies/bao-mat">Chính sách bảo mật →</a><a class="tagpill" href="/policies/dieu-khoan">Điều khoản sử dụng →</a><a class="tagpill" href="/policies/faq">Câu hỏi thường gặp →</a></div></div></div>
 </div></section>
-<section class="sec edge"><div class="wrap"><div class="bigcta rv" style="--btc:var(--blush)"><h2 class="d2">Còn thắc mắc gì <span class="serif">khác</span>?</h2><p class="lead">Nhắn Zalo là nhanh nhất — thường có người trả lời trong vài phút vào giờ hành chính.</p><div class="row"><a class="btn btn-fill" href="https://zalo.me/{{ZALO}}" target="_blank" rel="noopener">Nhắn Zalo <span class="arrow">→</span></a><a class="btn btn-line" href="mailto:{{EMAIL}}">Gửi email <span class="arrow">→</span></a></div></div></div></section>
-</main>
-
+<section class="cta">
+  <div class="wrap">
+    <h2 class="d2 rv">Còn thắc mắc <span class='accent'>gì khác</span>?</h2><p class="lead rv">Nhắn Zalo là nhanh nhất — thường có người trả lời trong vài phút vào giờ hành chính.</p>
+    <div class="actions rv"><a class="btn " href="https://zalo.me/{{ZALO}}">Nhắn Zalo <span class="arrow">→</span></a><a class="btn btn-line" href="mailto:{{EMAIL}}">Gửi email <span class="arrow">→</span></a></div>
+  </div>
+</section>
 <footer>
-  <div class="fgrid">
-    <div class="fbrand">
-      <a class="logo" href="../index.html">
-        <svg class="logo-m" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="14" fill="#FFD9E3"/><path d="M10 25 24 13l14 12" stroke="#2E2622" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 24v11h21V24" stroke="#2E2622" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="30" r="2.6" fill="#FF7A6B"/><circle cx="28" cy="30" r="2.6" fill="#93DEC0"/></svg>
-        <span class="logo-t"><b>Infinite Maker Space</b><span>by Infinite Studio</span></span>
-      </a>
-      <p>Không gian sáng tạo dành cho maker và creators.</p>
-      <p>{{DIACHI}}</p>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a class="logo" href="/">
+      <span class="mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="#2A2340" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.8V20h14V9.8"/><path d="M10 20v-5h4v5"/></svg></span>
+      <span class="ltxt"><b>Infinite Maker Space</b><span>by Infinite Studio</span></span>
+    </a>
+        <p>Không gian sáng tạo dành cho maker và creators.</p>
+        <p class="addr">{{DIACHI}}</p>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul><li><a href="/">Home</a></li><li><a href="/services">Services</a></li>
+        <li><a href="/about">About</a></li><li><a href="/location">Location</a></li>
+        <li><a href="/news">News</a></li><li><a href="/contact">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Maker Space</h4>
+        <ul><li><a href="/makerspace/3d-printing">3D Print</a></li>
+        <li><a href="/makerspace/laser-cutting">Laser Cut</a></li>
+        <li><a href="/makerspace/paper-craft">Cricut &amp; Thủ công giấy</a></li>
+        <li><a href="/services#workshops">Workshop</a></li>
+        <li><a href="/services#business">Sản xuất số lượng lớn</a></li>
+        <li><a href="/services#pricing">Bảng giá</a></li></ul>
+      </div>
+      <div>
+        <h4>Chính sách</h4>
+        <ul><li><a href="/policies/an-toan">Nội quy an toàn</a></li>
+        <li><a href="/policies/thanh-vien">Chính sách thành viên</a></li>
+        <li><a href="/policies/doi-tra">Đổi trả &amp; bảo hành</a></li>
+        <li><a href="/policies/bao-mat">Chính sách bảo mật</a></li>
+        <li><a href="/policies/dieu-khoan">Điều khoản sử dụng</a></li>
+        <li><a href="/policies/faq">Câu hỏi thường gặp</a></li></ul>
+      </div>
+      <div>
+        <div class="fblock"><h4>Liên hệ &amp; theo dõi</h4>
+          <ul><li><a href="https://zalo.me/{{ZALO}}">Zalo</a></li>
+          <li><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></li>
+          <li><a href="{{FACEBOOK}}">Facebook</a></li>
+          <li><a href="{{SHOPEE}}">Shopee</a></li>
+          <li><a href="{{TIKTOK}}">TikTok</a></li></ul></div>
+        <div class="fblock"><h4>Giờ mở cửa</h4><p>{{GIOMOCUA}}</p></div>
+        <div class="fblock"><h4>Địa chỉ</h4><p>{{DIACHI}}</p></div>
+        <div class="fblock"><h4>Hotline / Zalo</h4><p>{{ZALO}}</p></div>
+        <div class="fblock"><h4>Email</h4><p>{{EMAIL}}</p></div>
+      </div>
     </div>
-    <div class="fcol">
-      <h4>Menu</h4>
-      <a href="../index.html">Home</a>
-      <a href="../services.html">Services</a>
-      <a href="../about.html">About</a>
-      <a href="../location.html">Location</a>
-      <a href="../news.html">News</a>
-      <a href="../contact.html">Contact</a>
+    <div class="fmark">Infinite Maker Space</div>
+    <div class="fbot">
+      <span>© Infinite Studio · Infinite Maker Space <span class="js-year">2026</span></span>
+      <span>Không gian sáng tạo dành cho maker và creators</span>
     </div>
-    <div class="fcol">
-      <h4>Maker Space</h4>
-      <a href="../makerspace/3d-printing.html">3D Print</a>
-      <a href="../makerspace/laser-cutting.html">Laser Cut</a>
-      <a href="../makerspace/paper-craft.html">Cricut &amp; Thủ công giấy</a>
-      <a href="../services.html#workshops">Workshop</a>
-      <a href="../services.html#business">Sản xuất số lượng lớn</a>
-      <a href="../services.html#pricing">Bảng giá</a>
-    </div>
-    <div class="fcol">
-      <h4>Chính sách</h4>
-      <a href="../policies/an-toan.html">Nội quy an toàn</a>
-      <a href="../policies/thanh-vien.html">Chính sách thành viên</a>
-      <a href="../policies/doi-tra.html">Đổi trả &amp; bảo hành</a>
-      <a href="../policies/bao-mat.html">Chính sách bảo mật</a>
-      <a href="../policies/dieu-khoan.html">Điều khoản sử dụng</a>
-      <a href="../policies/faq.html">Câu hỏi thường gặp</a>
-    </div>
-    <div class="fcol">
-      <h4>Liên hệ &amp; theo dõi</h4>
-      <a href="https://zalo.me/{{ZALO}}" target="_blank" rel="noopener">Zalo</a>
-      <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
-      <a href="{{FACEBOOK}}" target="_blank" rel="noopener">Facebook</a>
-      <a href="{{SHOPEE}}" target="_blank" rel="noopener">Shopee</a>
-      <a href="{{TIKTOK}}" target="_blank" rel="noopener">TikTok</a>
-    </div>
-  </div>
-
-  <div class="fhours">
-    <div><h4>Giờ mở cửa</h4><p>{{GIOMOCUA}}</p></div>
-    <div><h4>Địa chỉ</h4><p>{{DIACHI}}</p></div>
-    <div><h4>Hotline / Zalo</h4><p>{{ZALO}}</p></div>
-    <div><h4>Email</h4><p>{{EMAIL}}</p></div>
-  </div>
-
-  <div class="fmark">Infinite Maker Space</div>
-  <div class="fbot">
-    <span>© <span class="js-year">2026</span> Infinite Studio · Infinite Maker Space</span>
-    <span>Không gian sáng tạo dành cho maker và creators</span>
   </div>
 </footer>
 <div class="mbar">
-  <a href="https://zalo.me/{{ZALO}}" target="_blank" rel="noopener">Chat Zalo</a>
-  <a href="../contact.html">Join Infinite</a>
+  <a class="btn btn-soft btn-sm" href="https://zalo.me/{{ZALO}}">Chat Zalo</a>
+  <a class="btn btn-sm" href="/contact">Join Infinite</a>
 </div>
-
-<script src="../assets/app.js" defer></script>
+<script src="/assets/ib.js" defer></script>
 </body>
 </html>
