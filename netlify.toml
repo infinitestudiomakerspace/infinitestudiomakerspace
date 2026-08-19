@@ -1,0 +1,18 @@
+# Infinite Maker Space — cấu hình Netlify
+# Site tĩnh, không cần build. Pretty URLs bật sẵn theo mặc định nên
+# /services tự động phục vụ file /services.html — giống hệt website mẫu.
+
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

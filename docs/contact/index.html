@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Infinite Maker Space</title>
+<meta name="description" content="Liên hệ Infinite Maker Space qua Zalo, email hoặc form. Đăng ký thành viên, đặt gia công, đăng ký workshop.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/ib.css">
+</head>
+<body>
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="../">
+      <span class="mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="#2A2340" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.8V20h14V9.8"/><path d="M10 20v-5h4v5"/></svg></span>
+      <span class="ltxt"><b>Infinite Maker Space</b><span>by Infinite Studio</span></span>
+    </a>
+    <nav class="mainnav"><a href="../">Home</a><a href="../services/">Services</a><a href="../about/">About</a><a href="../location/">Location</a><a href="../news/">News</a><a class="on" href="../contact/">Contact</a></nav>
+    <div class="hd-r">
+      <span class="tagpill">Where ideas become reality</span>
+      <a class="btn btn-sm" href="../contact/">Join</a>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+<div class="mobmenu" id="mobmenu"><div class="mobmenu__in"><a href="../">Home</a><a href="../services/">Services</a><a href="../about/">About</a><a href="../location/">Location</a><a href="../news/">News</a><a class="on" href="../contact/">Contact</a><a href="../makerspace/3d-printing/">3D Print</a><a href="../makerspace/laser-cutting/">Laser Cut</a><a href="../makerspace/paper-craft/">Cricut</a><a href="../services/#pricing">Bảng giá</a><a href="../services/#workshops">Workshop</a></div></div>
+<div class="wrap crumb"><a href="../">Home</a><span>·</span><b>Contact</b></div><section class="phero ">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="wrap"><div class="phero__in">
+    <span class="lab">Contact</span><h1 class="d1">Cùng làm <span class='accent'>thứ gì đó</span>.</h1><p class="lead">Có một ý tưởng, một dự án, hay chỉ muốn ghé xem không gian? Nhắn cho Infinite.</p>
+  </div></div>
+</section>
+<section class="sec sec-t0"><div class="wrap">
+  <div class="grid g2">
+    <div class="tile t-mint rv"><div class="tile__orb"></div><h3>Zalo</h3>
+      <p>Cách nhanh nhất để hỏi về máy móc, giá vật liệu, lịch workshop hoặc đặt lịch tham quan.
+      Thường phản hồi trong vài phút giờ hành chính.</p>
+      <div style="margin-top:20px"><a class="btn btn-line" href="https://zalo.me/{{ZALO}}">Nhắn tin Zalo <span class="arrow">→</span></a></div></div>
+    <div class="tile t-sky rv"><div class="tile__orb"></div><h3>Email</h3>
+      <p>Có brief dự án hoặc file thiết kế? Gửi kèm số lượng và thời hạn mong muốn, chúng tôi báo giá trong vòng 24 giờ.</p>
+      <div style="margin-top:20px"><a class="btn btn-line" href="mailto:{{EMAIL}}">Gửi email <span class="arrow">→</span></a></div></div>
+  </div>
+</div></section>
+
+<section class="sec sec-t0"><div class="wrap">
+  <div class="sechead rv"><h2 class="d2">Kể cho chúng tôi thứ bạn <span class="accent">muốn làm</span>.</h2></div>
+  <form class="form rv" id="contactForm" style="max-width:760px">
+    <div class="f2">
+      <div class="field"><label for="ten">Họ và tên</label><input id="ten" name="ten" required></div>
+      <div class="field"><label for="sdt">Số điện thoại</label><input id="sdt" name="sdt" type="tel" required></div>
+    </div>
+    <div class="field"><label for="qt">Bạn quan tâm đến</label>
+      <select id="qt" name="qt"><option>Gói cơ bản — 450K/tháng</option><option>Gói Premium — 750K/tháng</option><option>Gói 3 tháng</option><option>Dự án in 3D</option><option>Dự án cắt laser</option><option>Dự án thủ công giấy</option><option>Sản xuất số lượng lớn cho doanh nghiệp</option><option>Đăng ký workshop</option><option>Tham quan không gian</option></select></div>
+    <div class="field"><label for="mota">Mô tả dự án</label>
+      <textarea id="mota" name="mota" placeholder="Bạn muốn làm gì? Kích thước, số lượng, thời hạn mong muốn…"></textarea></div>
+    <div><button class="btn" type="submit">Gửi yêu cầu <span class="arrow">→</span></button></div>
+    <p class="okmsg" id="formOk">Đã nhận yêu cầu — Infinite sẽ liên hệ lại trong vòng 24 giờ. Cảm ơn bạn!</p>
+    <p class="formnote">Form demo — khi deploy hãy nối vào Netlify Forms, Formspree hoặc backend của bạn.</p>
+  </form>
+</div></section>
+<section class="cta">
+  <div class="wrap">
+    <h2 class="d2 rv">Chưa biết bắt đầu <span class='accent'>từ đâu</span>?</h2><p class="lead rv">Nhắn một dòng mô tả ý tưởng. Team sẽ nói cho bạn biết nên dùng công nghệ nào, mất bao lâu và tốn khoảng bao nhiêu.</p>
+    <div class="actions rv"><a class="btn " href="https://zalo.me/{{ZALO}}">Nhắn Zalo <span class="arrow">→</span></a><a class="btn btn-line" href="../services/#pricing">Xem bảng giá <span class="arrow">→</span></a></div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a class="logo" href="../">
+      <span class="mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="#2A2340" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.8V20h14V9.8"/><path d="M10 20v-5h4v5"/></svg></span>
+      <span class="ltxt"><b>Infinite Maker Space</b><span>by Infinite Studio</span></span>
+    </a>
+        <p>Không gian sáng tạo dành cho maker và creators.</p>
+        <p class="addr">{{DIACHI}}</p>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul><li><a href="../">Home</a></li><li><a href="../services/">Services</a></li>
+        <li><a href="../about/">About</a></li><li><a href="../location/">Location</a></li>
+        <li><a href="../news/">News</a></li><li><a href="../contact/">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Maker Space</h4>
+        <ul><li><a href="../makerspace/3d-printing/">3D Print</a></li>
+        <li><a href="../makerspace/laser-cutting/">Laser Cut</a></li>
+        <li><a href="../makerspace/paper-craft/">Cricut &amp; Thủ công giấy</a></li>
+        <li><a href="../services/#workshops">Workshop</a></li>
+        <li><a href="../services/#business">Sản xuất số lượng lớn</a></li>
+        <li><a href="../services/#pricing">Bảng giá</a></li></ul>
+      </div>
+      <div>
+        <h4>Chính sách</h4>
+        <ul><li><a href="../policies/an-toan/">Nội quy an toàn</a></li>
+        <li><a href="../policies/thanh-vien/">Chính sách thành viên</a></li>
+        <li><a href="../policies/doi-tra/">Đổi trả &amp; bảo hành</a></li>
+        <li><a href="../policies/bao-mat/">Chính sách bảo mật</a></li>
+        <li><a href="../policies/dieu-khoan/">Điều khoản sử dụng</a></li>
+        <li><a href="../policies/faq/">Câu hỏi thường gặp</a></li></ul>
+      </div>
+      <div>
+        <div class="fblock"><h4>Liên hệ &amp; theo dõi</h4>
+          <ul><li><a href="https://zalo.me/{{ZALO}}">Zalo</a></li>
+          <li><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></li>
+          <li><a href="{{FACEBOOK}}">Facebook</a></li>
+          <li><a href="{{SHOPEE}}">Shopee</a></li>
+          <li><a href="{{TIKTOK}}">TikTok</a></li></ul></div>
+        <div class="fblock"><h4>Giờ mở cửa</h4><p>{{GIOMOCUA}}</p></div>
+        <div class="fblock"><h4>Địa chỉ</h4><p>{{DIACHI}}</p></div>
+        <div class="fblock"><h4>Hotline / Zalo</h4><p>{{ZALO}}</p></div>
+        <div class="fblock"><h4>Email</h4><p>{{EMAIL}}</p></div>
+      </div>
+    </div>
+    <div class="fmark">Infinite Maker Space</div>
+    <div class="fbot">
+      <span>© Infinite Studio · Infinite Maker Space <span class="js-year">2026</span></span>
+      <span>Không gian sáng tạo dành cho maker và creators</span>
+    </div>
+  </div>
+</footer>
+<div class="mbar">
+  <a class="btn btn-soft btn-sm" href="https://zalo.me/{{ZALO}}">Chat Zalo</a>
+  <a class="btn btn-sm" href="../contact/">Join Infinite</a>
+</div>
+<script src="../assets/ib.js" defer></script>
+</body>
+</html>

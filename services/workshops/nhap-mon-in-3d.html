@@ -3,179 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#FFFAF4">
 <title>Nhập môn in 3D — Workshop tại Infinite Maker Space</title>
 <meta name="description" content="Hiểu máy in 3D hoạt động thế nào và in xong vật thể đầu tiên ngay trong buổi học.">
-<meta property="og:title" content="Nhập môn in 3D — Workshop tại Infinite Maker Space">
-<meta property="og:description" content="Hiểu máy in 3D hoạt động thế nào và in xong vật thể đầu tiên ngay trong buổi học.">
-<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Nunito:wght@600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><rect width='48' height='48' rx='14' fill='%23FFD9E3'/><path d='M10 25 24 13l14 12' stroke='%232E2622' stroke-width='3.2' fill='none' stroke-linecap='round'/><path d='M13.5 24v11h21V24' stroke='%232E2622' stroke-width='3.2' fill='none' stroke-linecap='round'/></svg>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="/assets/ib.css">
 </head>
 <body>
-
 <header>
-  <div class="hd">
-    <a class="logo" href="../../index.html">
-      <svg class="logo-m" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="14" fill="#FFD9E3"/><path d="M10 25 24 13l14 12" stroke="#2E2622" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 24v11h21V24" stroke="#2E2622" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="30" r="2.6" fill="#FF7A6B"/><circle cx="28" cy="30" r="2.6" fill="#93DEC0"/></svg>
-      <span class="logo-t"><b>Infinite Maker Space</b><span>by Infinite Studio</span></span>
+  <div class="wrap hd">
+    <a class="logo" href="/">
+      <span class="mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="#2A2340" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.8V20h14V9.8"/><path d="M10 20v-5h4v5"/></svg></span>
+      <span class="ltxt"><b>Infinite Maker Space</b><span>by Infinite Studio</span></span>
     </a>
-    <nav class="mainnav"><a href="../../index.html">Home</a><a href="../../services.html" class="on">Services</a><a href="../../about.html">About</a><a href="../../location.html">Location</a><a href="../../news.html">News</a><a href="../../contact.html">Contact</a></nav>
-    <div class="hd-cta">
+    <nav class="mainnav"><a href="/">Home</a><a class="on" href="/services">Services</a><a href="/about">About</a><a href="/location">Location</a><a href="/news">News</a><a href="/contact">Contact</a></nav>
+    <div class="hd-r">
       <span class="tagpill">Where ideas become reality</span>
-      <a class="btn btn-fill btn-sm" href="../../contact.html">Join</a>
-      <button class="burger" aria-label="Mở menu"><i></i><i></i><i></i></button>
+      <a class="btn btn-sm" href="/contact">Join</a>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
     </div>
   </div>
 </header>
-<div class="mobmenu">
-  <a href="../../index.html">Home</a><a href="../../services.html">Services</a><a href="../../about.html">About</a><a href="../../location.html">Location</a><a href="../../news.html">News</a><a href="../../contact.html">Contact</a>
-  <div class="mobsub"><a href="../../makerspace/3d-printing.html">3D Print</a><a href="../../makerspace/laser-cutting.html">Laser Cut</a><a href="../../makerspace/paper-craft.html">Cricut</a><a href="../../services.html#pricing">Bảng giá</a><a href="../../services.html#workshops">Workshop</a></div>
-</div>
-
-<main>
-
-<section class="sec-sm edge" style="padding-top:clamp(104px,13vw,150px)"><div class="wrap">
-  <p style="font-size:12.5px;color:var(--ink-3);margin-bottom:16px"><a href="../../index.html">Home</a> <span>·</span> <a href="../../services.html">Services</a> <span>·</span> <a href="../../services.html#workshops">Workshops</a> <span>·</span> <span>Nhập môn in 3D</span></p>
-  <h1 class="d1 rv" style="max-width:16ch">Nhập môn in 3D</h1>
-  <p class="lead rv mt-m">Hiểu máy in 3D hoạt động thế nào và in xong vật thể đầu tiên ngay trong buổi học.</p>
-  <div class="mt-l rv"><div class="ph ratio-219 " style="--c1:#C9F0DE;--c2:#C9F0DE"><em>Ảnh: học viên đứng cạnh máy in 3D đang chạy</em></div></div>
-</div></section>
-
-<section class="sec edge"><div class="wrap">
-  <div class="grid2" style="align-items:start">
-
+<div class="mobmenu" id="mobmenu"><div class="mobmenu__in"><a href="/">Home</a><a class="on" href="/services">Services</a><a href="/about">About</a><a href="/location">Location</a><a href="/news">News</a><a href="/contact">Contact</a><a href="/makerspace/3d-printing">3D Print</a><a href="/makerspace/laser-cutting">Laser Cut</a><a href="/makerspace/paper-craft">Cricut</a><a href="/services#pricing">Bảng giá</a><a href="/services#workshops">Workshop</a></div></div>
+<div class="wrap crumb"><a href="/">Home</a><span>·</span><a href="/services">Services</a><span>·</span><a href="/services#workshops">Workshops</a><span>·</span><b>Nhập môn in 3D</b></div><section class="phero ">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="wrap"><div class="phero__in">
+    <span class="lab">Workshop</span><h1 class="d1">Nhập môn in 3D</h1><p class="lead">Hiểu máy in 3D hoạt động thế nào và in xong vật thể đầu tiên ngay trong buổi học.</p><div class="actions"><span class="tagpill">In 3D</span><span class="tagpill">Người mới</span><span class="tagpill">3 giờ</span><span class="tagpill">Tối đa 8 người</span></div>
+  </div></div>
+</section>
+<section class="sec sec-t0"><div class="wrap"><div class="ph ph-mint layerlines wide rv"><em>Ảnh: học viên đứng cạnh máy in 3D đang chạy</em></div></div></section>
+<section class="sec sec-t0"><div class="wrap">
+  <div class="grid g2" style="align-items:start">
     <div class="rv">
-      <div class="lab">Buổi học này</div>
-      <h2 class="d3 mb-m">Bạn sẽ làm ra<br><span class="serif">Một móc khoá hoặc chậu cây mini do bạn chọn mẫu</span></h2>
-      <h3 class="d3 mb-s" style="font-size:19px">Bạn sẽ học được</h3>
-      <ul style="list-style:none;display:grid;gap:11px;margin-bottom:28px"><li>Cấu tạo và nguyên lý máy in FDM</li><li>An toàn khi vận hành, những thứ tuyệt đối không chạm vào</li><li>Nạp nhựa, cân bàn, khởi động bản in đầu tiên</li><li>Đọc hiểu một file .3mf và các thông số cơ bản</li></ul>
-      <div class="mb-m"><a class="btn btn-fill" href="../../contact.html">Đăng ký workshop <span class="arrow">→</span></a></div>
-      <p style="font-size:12.5px;color:var(--ink-3)">Học phí đã bao gồm toàn bộ vật liệu và sản phẩm bạn mang về.</p>
+      <span class="lab">Buổi học này</span>
+      <h2 class="d2 mb-s">Bạn sẽ <span class="accent">làm ra</span>.</h2>
+      <div class="tile t-mint" style="margin-top:20px;padding:26px 28px"><h3>Một móc khoá hoặc chậu cây mini do bạn chọn mẫu</h3></div>
+      <h3 style="margin-top:32px">Bạn sẽ học được</h3>
+      <div class="prose" style="margin-top:14px"><ul><li>Cấu tạo và nguyên lý máy in FDM</li><li>An toàn khi vận hành, những thứ tuyệt đối không chạm vào</li><li>Nạp nhựa, cân bàn, khởi động bản in đầu tiên</li><li>Đọc hiểu một file .3mf và các thông số cơ bản</li></ul></div>
+      <div class="actions" style="margin-top:26px"><a class="btn " href="/contact">Đăng ký workshop <span class="arrow">→</span></a></div>
+      <p class="formnote" style="margin-top:14px">Học phí đã bao gồm toàn bộ vật liệu và sản phẩm bạn mang về.</p>
     </div>
-
-    <div class="card-soft rv" style="background:#C9F0DE">
-      <div class="lab">Thông tin lớp</div>
-      <table class="spec">
-        <tr><th>Chủ đề</th><td>In 3D</td></tr>
-        <tr><th>Trình độ</th><td>Người mới</td></tr>
-        <tr><th>Lịch học</th><td>Thứ 7 hàng tuần · 9:00 — 12:00</td></tr>
-        <tr><th>Thời lượng</th><td>3 giờ</td></tr>
-        <tr><th>Số người</th><td>Tối đa 8 người</td></tr>
-        <tr><th>Học phí</th><td><b style="font-family:var(--disp);font-size:19px">350.000đ</b></td></tr>
-        <tr><th>Địa điểm</th><td>{{DIACHI}}</td></tr>
-        <tr><th>Người hướng dẫn</th><td>Tên người hướng dẫn</td></tr>
-        <tr><th>Cần mang theo</th><td>Không cần gì cả — dụng cụ và vật liệu có sẵn tại xưởng.</td></tr>
-      </table>
-    </div>
-
+    <div class="rv"><span class="lab">Thông tin lớp</span>
+      <div class="info" style="margin-top:20px"><div><span class="k">Chủ đề</span><span class="v">In 3D</span></div><div><span class="k">Trình độ</span><span class="v">Người mới</span></div><div><span class="k">Lịch học</span><span class="v">Thứ 7 hàng tuần · 9:00 — 12:00</span></div><div><span class="k">Thời lượng</span><span class="v">3 giờ</span></div><div><span class="k">Số người</span><span class="v">Tối đa 8 người</span></div><div><span class="k">Học phí</span><span class="v"><b>350.000đ</b></span></div><div><span class="k">Địa điểm</span><span class="v">{{DIACHI}}</span></div><div><span class="k">Người hướng dẫn</span><span class="v">Tên người hướng dẫn</span></div><div><span class="k">Cần mang theo</span><span class="v">Không cần gì cả — dụng cụ và vật liệu có sẵn tại xưởng.</span></div></div></div>
   </div>
 </div></section>
-
-<div class="tint edge" style="--tc:var(--cream-2)"><div class="wrap">
-  <div class="lab">Hình ảnh lớp học</div>
-  <h2 class="d3 rv mb-l">Không khí buổi học</h2>
-  <div class="gal"><div class="rv"><div class="ph ratio-1 " style="--c1:#C9F0DE;--c2:#93DEC0"><em>Ảnh: học viên đang thao tác trên máy</em></div></div><div class="rv"><div class="ph ratio-1 " style="--c1:#FFEFB8;--c2:#FFDD7A"><em>Ảnh: sản phẩm học viên vừa làm xong</em></div></div><div class="rv"><div class="ph ratio-1 " style="--c1:#D3E8FF;--c2:#A5CEFA"><em>Ảnh: người hướng dẫn đang giải thích</em></div></div><div class="rv"><div class="ph ratio-1 " style="--c1:#E6DBFF;--c2:#C6B0F5"><em>Ảnh: cả lớp chụp chung cuối buổi</em></div></div></div>
-</div></div>
-
-<section class="sec edge"><div class="wrap">
-  <div class="lab">Workshop khác</div>
-  <h2 class="d3 rv mb-l">Có thể bạn cũng thích</h2>
-  <div class="wgrid">
-<a class="wcard rv" href="ban-in-dau-tien.html" style="--wc:#C9F0DE">
-  <div class="wcat">In 3D</div>
-  <h3>Bản in đầu tiên của bạn</h3>
-  <p>Từ file có sẵn đến bản in hoàn chỉnh: slicing, chọn vật liệu, xử lý lỗi thường gặp.</p>
-  <div class="wmeta"><b>Người mới</b><b>3 giờ</b></div>
-  <div class="wprice">350.000đ <span>Chi tiết →</span></div>
-</a>
-<a class="wcard rv" href="dung-hinh-3d-cho-nguoi-moi.html" style="--wc:#D3E8FF">
-  <div class="wcat">Thiết kế 3D</div>
-  <h3>Dựng hình 3D cho người mới</h3>
-  <p>Làm quen phần mềm dựng hình và tự tạo mẫu 3D đầu tiên của riêng bạn.</p>
-  <div class="wmeta"><b>Người mới</b><b>4 giờ</b></div>
-  <div class="wprice">450.000đ <span>Chi tiết →</span></div>
-</a>
-<a class="wcard rv" href="nhap-mon-thiet-ke-san-pham.html" style="--wc:#D3E8FF">
-  <div class="wcat">Thiết kế 3D</div>
-  <h3>Nhập môn thiết kế sản phẩm</h3>
-  <p>Tư duy thiết kế sản phẩm: từ phác thảo, dựng hình đến chuẩn bị file cho sản xuất.</p>
-  <div class="wmeta"><b>Trung cấp</b><b>4 giờ</b></div>
-  <div class="wprice">550.000đ <span>Chi tiết →</span></div>
-</a></div>
-  <div class="mt-l"><a class="btn btn-line" href="../../services.html#workshops">Xem tất cả workshop <span class="arrow">→</span></a></div>
+<section class="sec sec-t0"><div class="wrap">
+  <div class="sechead rv"><span class="lab">Hình ảnh lớp học</span>
+    <h2 class="d2 mb-s">Không khí <span class="accent">buổi học</span>.</h2></div>
+  <div class="gal"><div class="ph ph-bubble layerlines rv"><em>Ảnh: học viên đang thao tác trên máy</em></div><div class="ph ph-butter layerlines rv"><em>Ảnh: sản phẩm học viên vừa làm xong</em></div><div class="ph ph-sky layerlines rv"><em>Ảnh: người hướng dẫn đang giải thích</em></div><div class="ph ph-lilac layerlines rv"><em>Ảnh: cả lớp chụp chung cuối buổi</em></div></div>
 </div></section>
-<section class="sec edge"><div class="wrap"><div class="bigcta rv" style="--btc:#C9F0DE"><h2 class="d2">Muốn mở lớp riêng cho <span class="serif">nhóm</span>?</h2><p class="lead">Infinite nhận tổ chức workshop riêng cho lớp học, công ty hoặc nhóm bạn từ 6 người trở lên — nội dung điều chỉnh theo nhu cầu.</p><div class="row"><a class="btn btn-fill" href="https://zalo.me/{{ZALO}}" target="_blank" rel="noopener">Nhắn Zalo <span class="arrow">→</span></a><a class="btn btn-line" href="mailto:{{EMAIL}}">Gửi email <span class="arrow">→</span></a></div></div></div></section>
-</main>
-
+<section class="sec sec-t0"><div class="wrap">
+  <div class="sechead rv"><span class="lab">Workshop khác</span>
+    <h2 class="d2 mb-s">Có thể bạn <span class="accent">cũng thích</span>.</h2></div>
+  <div class="grid g3"><a class="wcard rv" href="/services/workshops/ban-in-dau-tien">
+  <div class="wcat">In 3D</div><h3>Bản in đầu tiên của bạn</h3><p>Từ file có sẵn đến bản in hoàn chỉnh: slicing, chọn vật liệu, xử lý lỗi thường gặp.</p>
+  <div class="chips"><span class="chipsm">Người mới</span><span class="chipsm">3 giờ</span><span class="chipsm">8 người</span></div>
+  <div class="wprice">350.000đ <span>Chi tiết →</span></div></a><a class="wcard rv" href="/services/workshops/dung-hinh-3d-cho-nguoi-moi">
+  <div class="wcat">Thiết kế 3D</div><h3>Dựng hình 3D cho người mới</h3><p>Làm quen phần mềm dựng hình và tự tạo mẫu 3D đầu tiên của riêng bạn.</p>
+  <div class="chips"><span class="chipsm">Người mới</span><span class="chipsm">4 giờ</span><span class="chipsm">10 người</span></div>
+  <div class="wprice">450.000đ <span>Chi tiết →</span></div></a><a class="wcard rv" href="/services/workshops/nhap-mon-thiet-ke-san-pham">
+  <div class="wcat">Thiết kế 3D</div><h3>Nhập môn thiết kế sản phẩm</h3><p>Tư duy thiết kế sản phẩm: từ phác thảo, dựng hình đến chuẩn bị file cho sản xuất.</p>
+  <div class="chips"><span class="chipsm">Trung cấp</span><span class="chipsm">4 giờ</span><span class="chipsm">10 người</span></div>
+  <div class="wprice">550.000đ <span>Chi tiết →</span></div></a></div>
+  <div style="text-align:center;margin-top:36px"><a class="btn btn-line" href="/services#workshops">Xem tất cả workshop <span class="arrow">→</span></a></div>
+</div></section>
+<section class="cta">
+  <div class="wrap">
+    <h2 class="d2 rv">Muốn mở lớp riêng <span class='accent'>cho nhóm</span>?</h2><p class="lead rv">Infinite nhận tổ chức workshop riêng cho lớp học, công ty hoặc nhóm bạn từ 6 người trở lên — nội dung điều chỉnh theo nhu cầu.</p>
+    <div class="actions rv"><a class="btn " href="https://zalo.me/{{ZALO}}">Nhắn Zalo <span class="arrow">→</span></a><a class="btn btn-line" href="mailto:{{EMAIL}}">Gửi email <span class="arrow">→</span></a></div>
+  </div>
+</section>
 <footer>
-  <div class="fgrid">
-    <div class="fbrand">
-      <a class="logo" href="../../index.html">
-        <svg class="logo-m" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="14" fill="#FFD9E3"/><path d="M10 25 24 13l14 12" stroke="#2E2622" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 24v11h21V24" stroke="#2E2622" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="30" r="2.6" fill="#FF7A6B"/><circle cx="28" cy="30" r="2.6" fill="#93DEC0"/></svg>
-        <span class="logo-t"><b>Infinite Maker Space</b><span>by Infinite Studio</span></span>
-      </a>
-      <p>Không gian sáng tạo dành cho maker và creators.</p>
-      <p>{{DIACHI}}</p>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a class="logo" href="/">
+      <span class="mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="#2A2340" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.8V20h14V9.8"/><path d="M10 20v-5h4v5"/></svg></span>
+      <span class="ltxt"><b>Infinite Maker Space</b><span>by Infinite Studio</span></span>
+    </a>
+        <p>Không gian sáng tạo dành cho maker và creators.</p>
+        <p class="addr">{{DIACHI}}</p>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul><li><a href="/">Home</a></li><li><a href="/services">Services</a></li>
+        <li><a href="/about">About</a></li><li><a href="/location">Location</a></li>
+        <li><a href="/news">News</a></li><li><a href="/contact">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Maker Space</h4>
+        <ul><li><a href="/makerspace/3d-printing">3D Print</a></li>
+        <li><a href="/makerspace/laser-cutting">Laser Cut</a></li>
+        <li><a href="/makerspace/paper-craft">Cricut &amp; Thủ công giấy</a></li>
+        <li><a href="/services#workshops">Workshop</a></li>
+        <li><a href="/services#business">Sản xuất số lượng lớn</a></li>
+        <li><a href="/services#pricing">Bảng giá</a></li></ul>
+      </div>
+      <div>
+        <h4>Chính sách</h4>
+        <ul><li><a href="/policies/an-toan">Nội quy an toàn</a></li>
+        <li><a href="/policies/thanh-vien">Chính sách thành viên</a></li>
+        <li><a href="/policies/doi-tra">Đổi trả &amp; bảo hành</a></li>
+        <li><a href="/policies/bao-mat">Chính sách bảo mật</a></li>
+        <li><a href="/policies/dieu-khoan">Điều khoản sử dụng</a></li>
+        <li><a href="/policies/faq">Câu hỏi thường gặp</a></li></ul>
+      </div>
+      <div>
+        <div class="fblock"><h4>Liên hệ &amp; theo dõi</h4>
+          <ul><li><a href="https://zalo.me/{{ZALO}}">Zalo</a></li>
+          <li><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></li>
+          <li><a href="{{FACEBOOK}}">Facebook</a></li>
+          <li><a href="{{SHOPEE}}">Shopee</a></li>
+          <li><a href="{{TIKTOK}}">TikTok</a></li></ul></div>
+        <div class="fblock"><h4>Giờ mở cửa</h4><p>{{GIOMOCUA}}</p></div>
+        <div class="fblock"><h4>Địa chỉ</h4><p>{{DIACHI}}</p></div>
+        <div class="fblock"><h4>Hotline / Zalo</h4><p>{{ZALO}}</p></div>
+        <div class="fblock"><h4>Email</h4><p>{{EMAIL}}</p></div>
+      </div>
     </div>
-    <div class="fcol">
-      <h4>Menu</h4>
-      <a href="../../index.html">Home</a>
-      <a href="../../services.html">Services</a>
-      <a href="../../about.html">About</a>
-      <a href="../../location.html">Location</a>
-      <a href="../../news.html">News</a>
-      <a href="../../contact.html">Contact</a>
+    <div class="fmark">Infinite Maker Space</div>
+    <div class="fbot">
+      <span>© Infinite Studio · Infinite Maker Space <span class="js-year">2026</span></span>
+      <span>Không gian sáng tạo dành cho maker và creators</span>
     </div>
-    <div class="fcol">
-      <h4>Maker Space</h4>
-      <a href="../../makerspace/3d-printing.html">3D Print</a>
-      <a href="../../makerspace/laser-cutting.html">Laser Cut</a>
-      <a href="../../makerspace/paper-craft.html">Cricut &amp; Thủ công giấy</a>
-      <a href="../../services.html#workshops">Workshop</a>
-      <a href="../../services.html#business">Sản xuất số lượng lớn</a>
-      <a href="../../services.html#pricing">Bảng giá</a>
-    </div>
-    <div class="fcol">
-      <h4>Chính sách</h4>
-      <a href="../../policies/an-toan.html">Nội quy an toàn</a>
-      <a href="../../policies/thanh-vien.html">Chính sách thành viên</a>
-      <a href="../../policies/doi-tra.html">Đổi trả &amp; bảo hành</a>
-      <a href="../../policies/bao-mat.html">Chính sách bảo mật</a>
-      <a href="../../policies/dieu-khoan.html">Điều khoản sử dụng</a>
-      <a href="../../policies/faq.html">Câu hỏi thường gặp</a>
-    </div>
-    <div class="fcol">
-      <h4>Liên hệ &amp; theo dõi</h4>
-      <a href="https://zalo.me/{{ZALO}}" target="_blank" rel="noopener">Zalo</a>
-      <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
-      <a href="{{FACEBOOK}}" target="_blank" rel="noopener">Facebook</a>
-      <a href="{{SHOPEE}}" target="_blank" rel="noopener">Shopee</a>
-      <a href="{{TIKTOK}}" target="_blank" rel="noopener">TikTok</a>
-    </div>
-  </div>
-
-  <div class="fhours">
-    <div><h4>Giờ mở cửa</h4><p>{{GIOMOCUA}}</p></div>
-    <div><h4>Địa chỉ</h4><p>{{DIACHI}}</p></div>
-    <div><h4>Hotline / Zalo</h4><p>{{ZALO}}</p></div>
-    <div><h4>Email</h4><p>{{EMAIL}}</p></div>
-  </div>
-
-  <div class="fmark">Infinite Maker Space</div>
-  <div class="fbot">
-    <span>© <span class="js-year">2026</span> Infinite Studio · Infinite Maker Space</span>
-    <span>Không gian sáng tạo dành cho maker và creators</span>
   </div>
 </footer>
 <div class="mbar">
-  <a href="https://zalo.me/{{ZALO}}" target="_blank" rel="noopener">Chat Zalo</a>
-  <a href="../../contact.html">Join Infinite</a>
+  <a class="btn btn-soft btn-sm" href="https://zalo.me/{{ZALO}}">Chat Zalo</a>
+  <a class="btn btn-sm" href="/contact">Join Infinite</a>
 </div>
-
-<script src="../../assets/app.js" defer></script>
+<script src="/assets/ib.js" defer></script>
 </body>
 </html>
