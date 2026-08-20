@@ -348,11 +348,11 @@ loc_body = crumb([("Home","{P}index.html"),("Location",None)]) + phero(
 """ % (ph("Ảnh full-width: mặt tiền hoặc toàn cảnh không gian, chụp ngang", 1, "wide rv"),
  "".join(ph(c, i, "rv") for i, c in enumerate(SPOTS)),
  "".join('<div><span class="k">%s</span><span class="v">%s</span></div>' % kv for kv in INFO),
- btn("Chỉ đường","https://maps.google.com"),
- ph("Google Maps — dán mã iframe của Google Maps vào đây", 4, "rv").replace('class="ph','style="aspect-ratio:4/3;border-radius:var(--r-xl);box-shadow:var(--shadow-lift)" class="ph')
+ btn("Chỉ đường","{{MAPS}}"),
+ ph("Bản đồ — dán mã nhúng iframe của Google Maps vào đây", 4, "rv").replace('class="ph','style="aspect-ratio:4/3;border-radius:var(--r-xl);box-shadow:var(--shadow-lift)" class="ph')
 ) + cta("Đến làm <span class='accent'>thứ gì đó</span>.",
  "Ghé xem không gian, thử một máy, hỏi bất cứ điều gì. Cửa mở cả tuần.",
- btn("Mở Google Maps","https://maps.google.com") + btn("Tham gia Maker Space","{P}contact.html","btn-line"))
+ btn("Mở Google Maps","{{MAPS}}") + btn("Tham gia Maker Space","{P}contact.html","btn-line"))
 
 write("location.html","Location — Infinite Maker Space TP. Hồ Chí Minh",
  "Địa chỉ, giờ mở cửa, chỗ để xe và cách đi tới Infinite Maker Space.", loc_body, "location.html")

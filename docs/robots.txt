@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://TEN-MIEN-CUA-BAN/sitemap.xml
+Sitemap: https://infinitestudiomakerspace.netlify.app/sitemap.xml

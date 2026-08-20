@@ -7,6 +7,17 @@ OUT = "/home/claude/site"
 PAL = ["mint", "bubble", "butter", "sky", "lilac", "peach"]
 
 
+# ---------------------------------------------------------------- thông tin thật
+SITE = {
+    "DIACHI":   "25/11 Đường số 6, Khu phố 6, Hiệp Bình, TP. Hồ Chí Minh",
+    "GIOMOCUA": "9:00 — 17:00, Thứ 2 — Thứ 6",
+    "ZALO":     "0816193459",
+    "EMAIL":    "infinitebuildshop@gmail.com",
+    "FACEBOOK": "https://www.facebook.com/profile.php?id=61590361168112",
+    "SHOPEE":   "https://shopee.vn/infinitebuilds?entryPoint=ShopBySearch&amp;searchKeyword=infinite%20build",
+    "MAPS":     "https://share.google/0KVPB5H3gwupVOjRF",
+}
+
 def ph(cap, i=0, extra=""):
     """Ô ảnh placeholder pastel (site mẫu không dùng file ảnh, chỉ có caption)."""
     return ('<div class="ph ph-%s layerlines %s"><em>%s</em></div>' % (PAL[i % 6], extra, cap))
@@ -81,8 +92,7 @@ FOOTER = """<footer>
           <ul><li><a href="https://zalo.me/{{ZALO}}">Zalo</a></li>
           <li><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></li>
           <li><a href="{{FACEBOOK}}">Facebook</a></li>
-          <li><a href="{{SHOPEE}}">Shopee</a></li>
-          <li><a href="{{TIKTOK}}">TikTok</a></li></ul></div>
+          <li><a href="{{SHOPEE}}">Shopee</a></li></ul></div>
         <div class="fblock"><h4>Giờ mở cửa</h4><p>{{GIOMOCUA}}</p></div>
         <div class="fblock"><h4>Địa chỉ</h4><p>{{DIACHI}}</p></div>
         <div class="fblock"><h4>Hotline / Zalo</h4><p>{{ZALO}}</p></div>
@@ -132,6 +142,8 @@ def write(path, title, desc, body, active=""):
     doc = doc.replace("{P}", "/")
     doc = re.sub(r'href="/index\.html', 'href="/', doc)
     doc = re.sub(r'href="(/[^"#]*?)\.html', r'href="\1', doc)
+    for k, v in SITE.items():
+        doc = doc.replace("{{%s}}" % k, v)
     full = os.path.join(OUT, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     open(full, "w", encoding="utf-8").write(doc)
