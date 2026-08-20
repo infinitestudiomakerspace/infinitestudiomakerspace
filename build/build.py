@@ -130,13 +130,13 @@ SHELL = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="{P}assets/ib.v2.css">
+<link rel="stylesheet" href="{P}assets/ib.v3.css">
 </head>
 <body>
 %(header)s
 %(body)s
 %(footer)s
-<script src="{P}assets/ib.v2.js" defer></script>
+<script src="{P}assets/ib.v3.js" defer></script>
 </body>
 </html>
 """
@@ -223,35 +223,22 @@ def pcard(p, i=0):
 PLANS = """<div class="plans">
   <article class="plan plan-a rv"><div class="plan__orb"></div>
     <div class="pname">Basic</div>
-    <div class="price">350<small>K / tháng</small><em class="pnote">Chỉ áp dụng tháng đầu tiên</em></div>
+    <div class="price">350<small>K / tháng</small><span class="pnote">Chỉ áp dụng tháng đầu tiên</span></div>
     <ul><li>Chọn 1 trong 3 khu: Laser Cut, In 3D hoặc Thủ công giấy</li>
     <li>Training an toàn và vận hành máy trong quá trình sử dụng máy</li>
-    <li>Đặt lịch máy qua hệ thống booking</li>
-    <li>Chỗ ngồi làm việc trong giờ mở cửa</li></ul>
+    <li>Đặt lịch máy qua hệ thống booking</li></ul>
     <div class="deals"><div class="deal"><b>500K</b><span>Mỗi tháng</span></div>
-    <div class="deal"><b>1.050K</b><span>Gói 3 tháng</span><i>Tiết kiệm 450K so với trả từng tháng</i></div></div>
+    <div class="deal"><b>1.050K</b><span class="hl">Gói 3 tháng</span><i>Tiết kiệm 450K so với trả từng tháng</i></div></div>
     <a class="btn btn-line" href="{P}contact.html">Chọn gói Basic <span class="arrow">→</span></a>
   </article>
   <article class="plan plan-b rv"><div class="ribbon">Phổ biến</div><div class="plan__orb"></div>
     <div class="pname">Premium</div>
-    <div class="price">500<small>K / tháng</small><em class="pnote">Chỉ áp dụng tháng đầu tiên</em></div>
+    <div class="price">500<small>K / tháng</small><span class="pnote">Chỉ áp dụng tháng đầu tiên</span></div>
     <ul><li>Toàn quyền dùng cả 3 khu: Laser Cut, In 3D và Thủ công giấy</li>
     <li>Training đầy đủ cho mọi máy trong xưởng</li>
     <li>Ưu tiên đặt lịch máy vào giờ cao điểm</li></ul>
     <div class="deals"><div class="deal"><b>800K</b><span>Mỗi tháng</span></div>
-    <div class="deal"><b>1.500K</b><span>Gói 3 tháng</span><i>Tiết kiệm 900K so với trả từng tháng</i></div></div>
+    <div class="deal"><b>1.500K</b><span class="hl">Gói 3 tháng</span><i>Tiết kiệm 900K so với trả từng tháng</i></div></div>
     <a class="btn" href="{P}contact.html">Chọn gói Premium <span class="arrow">→</span></a>
   </article>
-</div>
-<div class="rules rv">
-  <h3>Hạn mức sử dụng mỗi tuần</h3>
-  <table class="rtab">
-    <thead><tr><th>Khu vực</th><th>Hạn mức</th></tr></thead>
-    <tbody>
-      <tr><td>Máy Laser</td><td>Tối đa 4 giờ/tuần <i>Thời gian cắt mỗi sản phẩm thường khá ngắn nên hạn mức này phù hợp cho nhiều dự án.</i></td></tr>
-      <tr><td>Máy in 3D</td><td>Tối đa 20 giờ/tuần</td></tr>
-      <tr><td>Khu Thủ công giấy</td><td>Không giới hạn thời gian</td></tr>
-    </tbody>
-  </table>
-  <p class="rnote"><b>Lưu ý:</b> Phí thành viên chỉ bao gồm quyền sử dụng không gian và máy móc, chưa bao gồm vật liệu như filament in 3D, gỗ/mica cắt laser, giấy và các vật tư tiêu hao khác.</p>
 </div>"""
