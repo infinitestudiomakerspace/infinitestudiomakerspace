@@ -19,7 +19,7 @@ HOUSE = """<div class="house">
   </svg>
   <div class="hbody">
     <a class="hroom" href="{P}makerspace/3d-printing.html"><div class="hpic"><img src="{P}assets/room-3d-print.jpg" alt="Máy in 3D Bambu Lab tại xưởng" loading="eager" width="640" height="480"></div><b>3D Print</b></a>
-    <a class="hroom" href="{P}makerspace/paper-craft.html"><div class="hpic"><img src="{P}assets/room-paper-crafts.jpg" alt="Máy cắt Cricut và bộ thảm cắt" loading="eager" width="640" height="480"></div><b>Paper Crafts</b></a>
+    <a class="hroom" href="{P}makerspace/paper-craft.html"><div class="hpic"><img src="{P}assets/room-paper-crafts.jpg" alt="Máy cắt Cricut và bộ thảm cắt" loading="eager" width="640" height="480"></div><b>Paper Craft</b></a>
     <a class="hroom" href="{P}makerspace/laser-cutting.html"><div class="hpic"><img src="{P}assets/room-laser-cut.jpg" alt="Máy cắt laser khổ lớn" loading="eager" width="640" height="480"></div><b>Laser Cut</b></a>
     <a class="hroom" href="{P}services.html#workshops"><div class="hpic"><img src="{P}assets/room-workshop.jpg" alt="Một buổi workshop tại Infinite Studio Makerspace" loading="eager" width="640" height="480"></div><b>Workshop</b></a>
   </div>
@@ -28,12 +28,12 @@ HOUSE = """<div class="house">
 
 ZONES = [
     ("3d-printing", "3D Print", ["Bambu Lab A1", "Bambu Lab A2L"],
-     "Hai máy in FDM luôn sẵn sàng cho prototype, miniature, chi tiết sản phẩm và sản xuất lô nhỏ.",
+     "8 máy in FDM luôn sẵn sàng cho prototype, miniature, chi tiết sản phẩm và sản xuất lô nhỏ.",
      "Xem máy &amp; sản phẩm in 3D →", "Ảnh: máy in 3D đang chạy, cận cảnh lớp nhựa đang hình thành"),
     ("laser-cutting", "Laser Cut", ["Máy cắt laser khổ lớn"],
      "Một máy cắt laser khổ lớn, cắt và khắc gỗ, mica và nhiều vật liệu tấm khác.",
      "Xem máy &amp; sản phẩm cắt laser →", "Ảnh: tia laser đang cắt tấm gỗ, khói mỏng bay lên"),
-    ("paper-craft", "Cricut", ["Máy in màu", "Máy cắt Cricut"],
+    ("paper-craft", "Paper Craft", ["Máy in màu", "Máy cắt Cricut"],
      "Khu thủ công giấy: một máy in màu, một máy cắt Cricut và đầy đủ dụng cụ làm tay.",
      "Xem khu thủ công giấy →", "Ảnh: bàn tay đang bóc sticker vừa cắt bằng Cricut"),
 ]
@@ -59,86 +59,52 @@ home = """<section class="hero">
     </div>
     %s
   </div>
-  <div class="wrap"><div class="swatches layerlines">
-    <div style="background:var(--mint)"></div><div style="background:var(--sky)"></div>
-    <div style="background:var(--lilac)"></div><div style="background:var(--bubble)"></div>
-    <div style="background:var(--peach)"></div><div style="background:var(--butter)"></div>
-  </div></div>
 </section>
 %s
 <section class="sec" id="space">
   <div class="wrap">
-    <div class="split-head">
-      <div class="rv"><span class="lab">01 — Makerspace</span>
-        <h2 class="d2 mb-s">Ba khu vực,<br>một <span class="accent">xưởng</span>.</h2></div>
-      <p class="lead rv">Bấm vào từng khu để xem hình máy móc, sản phẩm đã làm và những gì bạn có thể tạo ra ở đó.</p>
-    </div>
+    <div class="rv"><h2 class="d2 mb-l">Makerspace</h2></div>
     <div class="grid g3">%s</div>
   </div>
 </section>
 <section class="sec-sm">
   <div class="wrap">
-    <div class="rv"><span class="lab">02 — Infinite Studio Makerspace in Numbers</span>
-      <h2 class="d2 mb-l">Con số tới <span class="accent">hôm nay</span>.</h2></div>
     <div class="grid g4">
       <div class="tile t-mint stat rv"><div class="tile__orb"></div><b><span class="num" data-count="3000">0</span>+</b><span>Sản phẩm hoàn thành</span></div>
       <div class="tile t-butter stat rv"><div class="tile__orb"></div><b>24H</b><span>Thời gian phản hồi</span></div>
-      <div class="tile t-lilac stat rv"><div class="tile__orb"></div><b><span class="num" data-count="9">0</span>+</b><span>Máy móc chuyên dụng</span></div>
+      <div class="tile t-lilac stat rv"><div class="tile__orb"></div><b><span class="num" data-count="11">0</span>+</b><span>Máy móc chuyên dụng</span></div>
       <div class="tile t-bubble stat rv"><div class="tile__orb"></div><b><span class="num" data-count="20">0</span>+</b><span>Workshop sắp tổ chức</span></div>
     </div>
   </div>
 </section>
 <section class="sec" id="pricing">
   <div class="wrap">
-    <div class="sechead rv"><span class="lab">Pricing</span>
-      <h2 class="d2 mb-s">Chọn cách bạn<br>muốn <span class="accent">làm</span>.</h2>
-      <p class="lead">Hai gói, ba khu vực, không phí ẩn. Tháng đầu tiên luôn rẻ hơn để bạn thử trước khi quyết định gắn bó.</p></div>
     %s
   </div>
 </section>
 <section class="sec" id="made">
   <div class="wrap">
-    <div class="split-head">
-      <div class="rv"><span class="lab">03 — What We Make</span>
-        <h2 class="d2 mb-s">Thiết kế ở đây.<br>Làm ra ở <span class="accent">đây</span>.</h2></div>
-      <p class="lead rv">Bảy dòng sản phẩm đang được đội ngũ Infinite Studio sản xuất và xuất khẩu sang thị trường Mỹ
-      cùng nhiều nước châu Âu. Bấm vào từng sản phẩm để xem câu chuyện đằng sau nó.</p>
-    </div>
-    %s
-    <div class="filters rv" data-filterset="madeGrid" style="margin-top:34px">
-      <button class="pf on" data-f="all">Tất cả</button><button class="pf" data-f="3d">In 3D</button>
-      <button class="pf" data-f="laser">Cắt laser</button><button class="pf" data-f="dien-tu">Điện tử</button>
-      <button class="pf" data-f="giao-duc">Giáo dục</button>
-    </div>
+    <div class="rv"><h2 class="d2 mb-l">What We Make</h2></div>
     <div class="grid g4" id="madeGrid">%s</div>
   </div>
 </section>
 %s
 <div class="tint layerlines">
   <div class="wrap tint__in">
-    <div class="rv"><span class="lab">04 — Workshops</span>
-      <h2 class="d2 mb-s">Học bằng cách <span class="accent">tự làm</span>.</h2>
-      <p class="lead">Bốn lớp được đăng ký nhiều nhất. Xem đủ tám workshop và giá từng lớp trong mục Services.</p></div>
+    <div class="rv"><h2 class="d2 mb-s">Workshops</h2>
+      <p class="lead">Tham khảo những buổi Workshops thú vị của các Maker tại Infinite Studio Makerspace</p></div>
     <div class="rv">%s</div>
   </div>
 </div>
-<section class="sec" id="workshops">
-  <div class="wrap">
-    <div class="grid g4">%s</div>
-    <p class="wnote rv">Bấm vào từng lớp để xem chi tiết. Lịch cụ thể cập nhật hàng tháng — nhắn Zalo để biết lớp gần nhất còn chỗ.</p>
-  </div>
-</section>
 %s""" % (
     btn("Khám phá không gian", "#space"), btn("Xem bảng giá", "{P}services.html#pricing", "btn-soft"),
     HOUSE,
     marquee(["Maker", "Creator", "3D Print", "3D Design", "Laser Cut", "Paper Craft", "DIY", "Prototype", "Community"], "butter"),
     zones_html, PLANS,
-    flow(["Ý tưởng", "Thiết kế", "Prototype", "Sản xuất", "Đóng gói", "Xuất khẩu"]),
     "".join(pcard(p, i) for i, p in enumerate(PROJECTS)),
     marquee(GUIDES[:3], "mint"),
     btn("Xem tất cả workshop", "{P}services.html#workshops", "btn-line"),
-    "".join(wcard(w) for w in WORKSHOPS[:4]),
-    cta("Ý tưởng của bạn có thể là <span class='accent'>cái tiếp theo</span>.",
+    cta("Make Your Ideas <span class='accent'>Real</span>.",
         "Dù bạn đang dựng bản prototype đầu tiên, học một kỹ năng mới hay muốn biến ý tưởng thành sản phẩm bán được — Infinite là nơi để bắt đầu.",
         btn("Tham gia Infinite", "{P}contact.html") + btn("Xem dịch vụ", "{P}services.html", "btn-line")))
 
@@ -480,7 +446,7 @@ MK = [
   can=["Miniatures","Prototype","Product parts","Displays","Decor","Functional products","Custom projects"],
   flowh="Từ file đến sản phẩm <span class='accent'>cầm được trên tay</span>.",
   steps=["Ý tưởng","Dựng 3D","Slicing","In","Hoàn thiện","Thành phẩm"],
-  projs=["miniatures","keycaps","desktop-lights","stem-kits","spider-enclosures"],
+  projs=["miniatures","desktop-lights","stem-kits","spider-enclosures"],
   ctah="Bắt đầu dự án in 3D <span class='accent'>của bạn</span>.",
   ctal="Mang theo file, hoặc chỉ mang theo ý tưởng. Team sẽ giúp bạn chọn vật liệu, thông số và cách in tiết kiệm nhất.",
   ctab="Bắt đầu dự án in 3D", hero="Ảnh: máy in 3D đang chạy, cận cảnh lớp nhựa đang hình thành"),

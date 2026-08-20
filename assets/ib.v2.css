@@ -394,7 +394,7 @@ header.stuck{background:rgba(255,251,244,.84);backdrop-filter:blur(14px);box-sha
    FOOTER
    ========================================================================== */
 footer{padding:76px 0 130px;border-top:1px solid var(--line);margin-top:76px}
-.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1.15fr 1.2fr 1.1fr;gap:34px}
+.fgrid{display:grid;grid-template-columns:1.6fr 1.2fr 1.2fr .9fr;gap:34px}
 .fgrid h4{font-family:var(--font-b);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
   color:var(--ink-40);margin-bottom:15px;font-weight:600}
 .fgrid ul{display:flex;flex-direction:column;gap:9px}
@@ -466,4 +466,69 @@ footer{padding:76px 0 130px;border-top:1px solid var(--line);margin-top:76px}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}
+}
+
+/* ==========================================================================
+   BỔ SUNG 2026-08-20 — theo feedback sheet "Sửa website"
+   ========================================================================== */
+
+/* ghi chú nhỏ cạnh giá lớn trong thẻ gói */
+.price .pnote{display:block;margin-top:6px;font-family:var(--font-b);font-style:normal;
+  font-size:.78rem;font-weight:500;letter-spacing:0;line-height:1.35;color:var(--ink-40)}
+/* dòng "tiết kiệm ..." trong ô deal */
+.deal i{display:block;margin-top:5px;font-style:normal;font-size:.74rem;
+  font-weight:600;color:var(--mint-deep);max-width:22ch}
+
+/* bảng quy định hạn mức sử dụng */
+.rules{margin-top:22px;background:#fff;border:1px solid var(--line);
+  border-radius:var(--r-lg);padding:28px 30px}
+.rules h3{font-family:var(--font-d);font-size:1.25rem;letter-spacing:-.02em;margin-bottom:18px}
+.rtab{width:100%;border-collapse:collapse}
+.rtab th,.rtab td{text-align:left;padding:13px 16px;vertical-align:top}
+.rtab thead th{font-family:var(--font-b);font-size:.7rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-40);font-weight:700;padding-bottom:9px}
+.rtab tbody tr{background:var(--cream-2)}
+.rtab tbody tr+tr{border-top:6px solid #fff}
+.rtab tbody tr td:first-child{font-weight:700;white-space:nowrap;border-radius:var(--r-sm) 0 0 var(--r-sm)}
+.rtab tbody tr td:last-child{border-radius:0 var(--r-sm) var(--r-sm) 0}
+.rtab td i{display:block;margin-top:5px;font-style:normal;font-size:.84rem;color:var(--ink-40)}
+.rnote{margin-top:18px;font-size:.9rem;line-height:1.6;color:var(--ink-60)}
+.rnote b{color:var(--ink)}
+
+/* cột Contact ở chân trang: biểu tượng có link */
+.fsocial{display:flex;flex-wrap:wrap;gap:10px}
+.fsocial a{display:grid;place-items:center;width:40px;height:40px;border-radius:999px;
+  background:var(--cream-2);border:1px solid var(--line);color:var(--ink-60);
+  transition:transform .2s ease,background .2s ease,color .2s ease}
+.fsocial a:hover{transform:translateY(-2px);background:var(--ink);color:var(--cream);border-color:var(--ink)}
+
+/* ô chat nổi góc phải dưới */
+.chatdock{position:fixed;right:18px;bottom:18px;z-index:90;
+  display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.cbtn{display:flex;align-items:center;gap:0;height:52px;padding:0 14px;border-radius:999px;
+  color:#fff;box-shadow:0 8px 20px rgba(42,35,64,.24);
+  transition:gap .22s cubic-bezier(.22,1,.36,1),transform .22s cubic-bezier(.22,1,.36,1)}
+.cbtn .cico{display:grid;place-items:center;width:24px;height:24px;flex:none}
+.cbtn .ctxt{font-size:.88rem;font-weight:600;white-space:nowrap;max-width:0;overflow:hidden;
+  opacity:0;transition:max-width .22s cubic-bezier(.22,1,.36,1),opacity .18s}
+.cbtn:hover,.cbtn:focus-visible{gap:9px;transform:translateY(-2px)}
+.cbtn:hover .ctxt,.cbtn:focus-visible .ctxt{max-width:130px;opacity:1}
+.cbtn-mess{background:linear-gradient(135deg,#9E86E8,#5AA9E6)}
+.cbtn-zalo{background:linear-gradient(135deg,#5AA9E6,#5CC8A0)}
+
+@media (max-width:860px){
+  .rtab thead{display:none}
+  .rtab,.rtab tbody,.rtab tr,.rtab td{display:block;width:100%}
+  .rtab tbody tr{border-radius:var(--r-sm);padding:6px 0;margin-bottom:8px}
+  .rtab tbody tr+tr{border-top:0}
+  .rtab tbody tr td:first-child{border-radius:0;padding-bottom:2px}
+  .rtab tbody tr td:last-child{border-radius:0;padding-top:0}
+  .rules{padding:22px}
+}
+@media (max-width:640px){
+  .chatdock{right:12px;bottom:78px}
+  .cbtn{height:48px;padding:0 12px}
+}
+@media (prefers-reduced-motion:reduce){
+  .cbtn,.cbtn .ctxt,.fsocial a{transition:none!important}
 }

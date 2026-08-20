@@ -13,7 +13,9 @@ SITE = {
     "GIOMOCUA": "9:00 — 17:00, Thứ 2 — Thứ 6",
     "ZALO":     "0816193459",
     "EMAIL":    "infinitebuildshop@gmail.com",
-    "FACEBOOK": "https://www.facebook.com/profile.php?id=61590361168112",
+    "FACEBOOK": "https://www.facebook.com/share/1HADr55sNW/?mibextid=wwXIfr",
+    "INSTAGRAM": "https://www.instagram.com/infinite.stu/",
+    "MESSENGER": "https://m.me/61590361168112",
     "SHOPEE":   "https://shopee.vn/infinitebuilds?entryPoint=ShopBySearch&amp;searchKeyword=infinite%20build",
     "MAPS":     "https://share.google/0KVPB5H3gwupVOjRF",
 }
@@ -37,8 +39,8 @@ def header(active):
                   for h, t in NAVITEMS)
     mob = nav + ''.join('<a href="{P}%s">%s</a>' % (h, t) for h, t in [
         ("makerspace/3d-printing.html", "3D Print"), ("makerspace/laser-cutting.html", "Laser Cut"),
-        ("makerspace/paper-craft.html", "Cricut"), ("services.html#pricing", "Bảng giá"),
-        ("services.html#workshops", "Workshop")])
+        ("makerspace/paper-craft.html", "Paper Craft"), ("services.html#pricing", "Pricing"),
+        ("services.html#workshops", "Workshops")])
     return """<header>
   <div class="wrap hd">
     %s
@@ -52,28 +54,32 @@ def header(active):
 <div class="mobmenu" id="mobmenu"><div class="mobmenu__in">%s</div></div>""" % (LOGO, nav, mob)
 
 
+ICONS = {
+ "zalo": '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3.4c-5 0-8.8 3.3-8.8 7.4 0 2.3 1.2 4.4 3.2 5.7-.2 1-.6 2-1.3 2.8 1.5-.2 3-.9 4-1.6.9.3 1.9.4 2.9.4 5 0 8.8-3.3 8.8-7.3S17 3.4 12 3.4Z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M9.3 8.2h5.4l-5.4 5h5.4"/></svg>',
+ "fb": '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>',
+ "ig": '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.8-.1Zm0 3.1A6.7 6.7 0 1 0 18.7 12 6.7 6.7 0 0 0 12 5.3Zm0 11A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3Zm6.9-11.2a1.6 1.6 0 1 1-1.6-1.6 1.6 1.6 0 0 1 1.6 1.6Z"/></svg>',
+ "shopee": '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M4.6 8h14.8l-1 12.1H5.6L4.6 8Z"/><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M8.4 8V6.6a3.6 3.6 0 0 1 7.2 0V8"/></svg>',
+ "mail": '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M3 5.5h18c.6 0 1 .4 1 1v11c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1v-11c0-.6.4-1 1-1Zm1.7 1.8L12 12.4l7.3-5.1H4.7Z"/></svg>',
+ "mess": '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.3 2 2 6.2 2 11.8c0 3 1.3 5.7 3.5 7.5v3.2l3.2-1.8c1 .3 2.1.4 3.3.4 5.7 0 10-4.2 10-9.8S17.7 2 12 2Zm1 12.4-2.6-2.7-4.9 2.7 5.4-5.7 2.6 2.7 4.8-2.7-5.3 5.7Z"/></svg>',
+}
+
 FOOTER = """<footer>
   <div class="wrap">
     <div class="fgrid">
       <div class="fbrand">
-        %s
+        %(logo)s
         <p>Không gian sáng tạo dành cho maker và creators.</p>
         <p class="addr">{{DIACHI}}</p>
-      </div>
-      <div>
-        <h4>Menu</h4>
-        <ul><li><a href="{P}index.html">Home</a></li><li><a href="{P}services.html">Services</a></li>
-        <li><a href="{P}about.html">About</a></li><li><a href="{P}location.html">Location</a></li>
-        <li><a href="{P}news.html">News</a></li><li><a href="{P}contact.html">Contact</a></li></ul>
+        <p class="addr">{{GIOMOCUA}}</p>
       </div>
       <div>
         <h4>Makerspace</h4>
-        <ul><li><a href="{P}makerspace/3d-printing.html">3D Print</a></li>
+        <ul><li><a href="{P}services.html#business">Small-Batch &amp; Mass Production</a></li>
+        <li><a href="{P}makerspace/3d-printing.html">3D Print</a></li>
         <li><a href="{P}makerspace/laser-cutting.html">Laser Cut</a></li>
-        <li><a href="{P}makerspace/paper-craft.html">Cricut &amp; Thủ công giấy</a></li>
-        <li><a href="{P}services.html#workshops">Workshop</a></li>
-        <li><a href="{P}services.html#business">Sản xuất số lượng lớn</a></li>
-        <li><a href="{P}services.html#pricing">Bảng giá</a></li></ul>
+        <li><a href="{P}makerspace/paper-craft.html">Paper Craft</a></li>
+        <li><a href="{P}services.html#workshops">Workshops</a></li>
+        <li><a href="{P}services.html#pricing">Pricing</a></li></ul>
       </div>
       <div>
         <h4>Chính sách</h4>
@@ -85,15 +91,14 @@ FOOTER = """<footer>
         <li><a href="{P}policies/faq.html">Câu hỏi thường gặp</a></li></ul>
       </div>
       <div>
-        <div class="fblock"><h4>Liên hệ &amp; theo dõi</h4>
-          <ul><li><a href="https://zalo.me/{{ZALO}}">Zalo</a></li>
-          <li><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></li>
-          <li><a href="{{FACEBOOK}}">Facebook</a></li>
-          <li><a href="{{SHOPEE}}">Shopee</a></li></ul></div>
-        <div class="fblock"><h4>Giờ mở cửa</h4><p>{{GIOMOCUA}}</p></div>
-        <div class="fblock"><h4>Địa chỉ</h4><p>{{DIACHI}}</p></div>
-        <div class="fblock"><h4>Hotline / Zalo</h4><p>{{ZALO}}</p></div>
-        <div class="fblock"><h4>Email</h4><p>{{EMAIL}}</p></div>
+        <h4>Contact</h4>
+        <div class="fsocial">
+          <a href="https://zalo.me/{{ZALO}}" aria-label="Zalo" title="Zalo" target="_blank" rel="noopener">%(zalo)s</a>
+          <a href="{{FACEBOOK}}" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener">%(fb)s</a>
+          <a href="{{INSTAGRAM}}" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener">%(ig)s</a>
+          <a href="{{SHOPEE}}" aria-label="Shopee" title="Shopee" target="_blank" rel="noopener">%(shopee)s</a>
+          <a href="mailto:{{EMAIL}}" aria-label="Email" title="Email">%(mail)s</a>
+        </div>
       </div>
     </div>
     <div class="fmark">Infinite Studio Makerspace</div>
@@ -106,7 +111,13 @@ FOOTER = """<footer>
 <div class="mbar">
   <a class="btn btn-soft btn-sm" href="https://zalo.me/{{ZALO}}">Chat Zalo</a>
   <a class="btn btn-sm" href="{P}contact.html">Join Infinite</a>
-</div>""" % LOGO
+</div>
+<div class="chatdock">
+  <a class="cbtn cbtn-mess" href="{{MESSENGER}}" target="_blank" rel="noopener"
+     aria-label="Chat Messenger"><span class="cico">%(mess)s</span><span class="ctxt">Messenger</span></a>
+  <a class="cbtn cbtn-zalo" href="https://zalo.me/{{ZALO}}" target="_blank" rel="noopener"
+     aria-label="Chat Zalo"><span class="cico">%(zalo)s</span><span class="ctxt">Zalo</span></a>
+</div>""" % dict(ICONS, logo=LOGO)
 
 SHELL = """<!DOCTYPE html>
 <html lang="vi">
@@ -211,33 +222,36 @@ def pcard(p, i=0):
 
 PLANS = """<div class="plans">
   <article class="plan plan-a rv"><div class="plan__orb"></div>
-    <div class="pname">Basic · Gói cơ bản</div>
-    <div class="price">450<small>K / tháng</small></div>
-    <p class="sub">Một khu vực do bạn chọn</p>
+    <div class="pname">Basic</div>
+    <div class="price">350<small>K / tháng</small><em class="pnote">Chỉ áp dụng tháng đầu tiên</em></div>
     <ul><li>Chọn 1 trong 3 khu: Laser Cut, In 3D hoặc Thủ công giấy</li>
-    <li>Training an toàn và vận hành máy buổi đầu</li>
+    <li>Training an toàn và vận hành máy trong quá trình sử dụng máy</li>
     <li>Đặt lịch máy qua hệ thống booking</li>
     <li>Chỗ ngồi làm việc trong giờ mở cửa</li></ul>
-    <div class="deals"><div class="deal"><b>350K</b><span>Tháng đầu tiên</span></div>
-    <div class="deal"><b>1.050K</b><span>Gói 3 tháng</span></div></div>
+    <div class="deals"><div class="deal"><b>500K</b><span>Mỗi tháng</span></div>
+    <div class="deal"><b>1.050K</b><span>Gói 3 tháng</span><i>Tiết kiệm 450K so với trả từng tháng</i></div></div>
     <a class="btn btn-line" href="{P}contact.html">Chọn gói Basic <span class="arrow">→</span></a>
   </article>
   <article class="plan plan-b rv"><div class="ribbon">Phổ biến</div><div class="plan__orb"></div>
     <div class="pname">Premium</div>
-    <div class="price">750<small>K / tháng</small></div>
-    <p class="sub">Trọn cả ba khu vực</p>
+    <div class="price">500<small>K / tháng</small><em class="pnote">Chỉ áp dụng tháng đầu tiên</em></div>
     <ul><li>Toàn quyền dùng cả 3 khu: Laser Cut, In 3D và Thủ công giấy</li>
     <li>Training đầy đủ cho mọi máy trong xưởng</li>
-    <li>Ưu tiên đặt lịch máy vào giờ cao điểm</li>
-    <li>Ưu đãi khi đăng ký workshop</li>
-    <li>Kho để đồ cá nhân trong xưởng</li></ul>
-    <div class="deals"><div class="deal"><b>500K</b><span>Tháng đầu tiên</span></div>
-    <div class="deal"><b>1.500K</b><span>Gói 3 tháng</span></div></div>
+    <li>Ưu tiên đặt lịch máy vào giờ cao điểm</li></ul>
+    <div class="deals"><div class="deal"><b>800K</b><span>Mỗi tháng</span></div>
+    <div class="deal"><b>1.500K</b><span>Gói 3 tháng</span><i>Tiết kiệm 900K so với trả từng tháng</i></div></div>
     <a class="btn" href="{P}contact.html">Chọn gói Premium <span class="arrow">→</span></a>
   </article>
 </div>
-<div class="packs rv"><div class="pack-h">3-Month Packages · Gói 3 tháng</div>
-  <div class="packrow">
-    <div class="pack"><b>1.050K</b><span>Basic · 3 tháng</span><i>Tiết kiệm 300K so với trả từng tháng</i></div>
-    <div class="pack"><b>1.500K</b><span>Premium · 3 tháng</span><i>Tiết kiệm 750K so với trả từng tháng</i></div>
-  </div></div>"""
+<div class="rules rv">
+  <h3>Hạn mức sử dụng mỗi tuần</h3>
+  <table class="rtab">
+    <thead><tr><th>Khu vực</th><th>Hạn mức</th></tr></thead>
+    <tbody>
+      <tr><td>Máy Laser</td><td>Tối đa 4 giờ/tuần <i>Thời gian cắt mỗi sản phẩm thường khá ngắn nên hạn mức này phù hợp cho nhiều dự án.</i></td></tr>
+      <tr><td>Máy in 3D</td><td>Tối đa 20 giờ/tuần</td></tr>
+      <tr><td>Khu Thủ công giấy</td><td>Không giới hạn thời gian</td></tr>
+    </tbody>
+  </table>
+  <p class="rnote"><b>Lưu ý:</b> Phí thành viên chỉ bao gồm quyền sử dụng không gian và máy móc, chưa bao gồm vật liệu như filament in 3D, gỗ/mica cắt laser, giấy và các vật tư tiêu hao khác.</p>
+</div>"""
