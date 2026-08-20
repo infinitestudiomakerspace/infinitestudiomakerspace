@@ -2,7 +2,7 @@
 """
 Server xem thử tại máy — bắt chước Pretty URLs của Netlify.
 
-Website này dùng đường dẫn không đuôi (/services, /policies/faq) đúng như bản mẫu,
+Bản Netlify (thư mục public/) dùng đường dẫn không đuôi (/services, /policies/faq) đúng như bản mẫu,
 nên mở thẳng file index.html bằng trình duyệt sẽ không click sang trang khác được.
 Chạy file này thì mọi thứ hoạt động y như khi đã deploy.
 

@@ -303,7 +303,7 @@ POLICIES = [
    lead="Những điều khoản áp dụng khi bạn dùng website, dịch vụ gia công và không gian của Infinite.",
    callout=None,
    secs=[
-    ("Phạm vi áp dụng", [("p", "Các điều khoản này áp dụng cho mọi người truy cập website, khách sử dụng dịch vụ gia công và thành viên của Infinite Maker Space.")]),
+    ("Phạm vi áp dụng", [("p", "Các điều khoản này áp dụng cho mọi người truy cập website, khách sử dụng dịch vụ gia công và thành viên của Infinite Studio Makerspace.")]),
     ("Nội dung website", [("p", "Hình ảnh, văn bản và thiết kế trên website thuộc về Infinite Studio. Bạn được chia sẻ và trích dẫn kèm ghi nguồn, nhưng không sao chép toàn bộ cho mục đích thương mại khi chưa có sự đồng ý.")]),
     ("Quyền sở hữu thiết kế", [("ul", [
       "Thiết kế bạn mang tới vẫn thuộc về bạn",
@@ -345,13 +345,13 @@ FAQ = [
 ]
 
 NEWS = [
- ("Maker Space là gì?", "maker", "Maker Space",
+ ("Makerspace là gì?", "maker", "Makerspace",
   "Vì sao mô hình xưởng mở đang lan rộng trong trường học và cộng đồng sáng tạo trên thế giới."),
- ("Vì sao sinh viên nên có một maker space", "maker", "Maker Space",
+ ("Vì sao sinh viên nên có một makerspace", "maker", "Makerspace",
   "Học bằng cách tự tay làm thay đổi cách sinh viên tiếp cận kiến thức kỹ thuật."),
- ("Hướng dẫn in 3D cho người mới", "maker", "Maker Space",
+ ("Hướng dẫn in 3D cho người mới", "maker", "Makerspace",
   "Mọi thứ cần biết trước lần in đầu tiên: máy, vật liệu, phần mềm và lỗi thường gặp."),
- ("Nhập môn cắt laser", "maker", "Maker Space",
+ ("Nhập môn cắt laser", "maker", "Makerspace",
   "Nguyên lý cắt laser, vật liệu dùng được và những giới hạn cần lưu ý."),
  ("Lịch workshop tháng này", "workshop", "Workshop",
   "Danh sách các buổi học sắp mở, lớp nào còn chỗ và cách đăng ký."),

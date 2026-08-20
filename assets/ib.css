@@ -93,8 +93,8 @@ header{position:sticky;top:0;z-index:70;padding:14px 0;transition:.3s ease}
 header.stuck{background:rgba(255,251,244,.84);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
 .hd{display:flex;align-items:center;justify-content:space-between;gap:18px}
 .logo{display:flex;align-items:center;gap:11px}
-.logo .mark{width:44px;height:44px;border-radius:14px;flex:none;display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--bubble),var(--lilac));box-shadow:var(--shadow-soft)}
+.logo .mark{width:46px;height:46px;border-radius:50%;flex:none;object-fit:contain;
+  box-shadow:var(--shadow-soft);background:#0b0b0b}
 .logo .ltxt b{display:block;font-family:var(--font-d);font-weight:800;font-size:1rem;
   letter-spacing:-.03em;line-height:1.15;text-transform:none}
 .logo .ltxt span{display:block;font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;
@@ -138,18 +138,25 @@ header.stuck{background:rgba(255,251,244,.84);backdrop-filter:blur(14px);box-sha
 .hero{padding:52px 0 74px;position:relative;overflow:hidden}
 .hero__grid{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .98fr;
   gap:48px;align-items:center}
-.hero .d1{margin:20px 0 0}
+.hero .d1{margin:20px 0 0;font-family:var(--font-b);font-weight:800;letter-spacing:-.035em;line-height:1.08}
 .hero .lead{max-width:44ch}
 .hero__actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:13px}
-.house{position:relative}
-.house svg{width:100%;height:auto;filter:drop-shadow(0 30px 50px rgba(42,35,64,.16))}
-.hfloat{position:absolute;background:#fff;border-radius:999px;padding:10px 17px;box-shadow:var(--shadow-lift);
-  font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:8px;white-space:nowrap;z-index:3}
-.hfloat i{width:10px;height:10px;border-radius:50%;display:block;flex:none}
-.hf-1{top:6%;left:-3%;animation:float 6.5s ease-in-out infinite}
-.hf-2{top:46%;right:-4%;animation:float 8s ease-in-out infinite reverse}
-.hf-3{bottom:4%;left:8%;animation:float 7.2s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+.house{position:relative;filter:drop-shadow(0 30px 50px rgba(42,35,64,.16))}
+.house .roof{display:block;width:100%;height:auto;position:relative;z-index:2}
+.hbody{width:92.4%;margin:-6px auto 0;background:var(--cream);border:4px solid var(--ink);border-radius:22px;
+  padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:14px;position:relative;z-index:1}
+.hroom{display:block;border-radius:14px;overflow:hidden;background:#fff;
+  border:2px solid rgba(42,35,64,.14);transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s}
+.hroom:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft);border-color:var(--ink)}
+.hpic{aspect-ratio:4/3;display:grid;place-items:center;padding:10px;text-align:center;
+  position:relative;overflow:hidden}
+.hpic em{font-style:normal;font-size:.66rem;line-height:1.4;color:rgba(42,35,64,.5);max-width:18ch}
+.hpic img{width:100%;height:100%;object-fit:cover}
+.hroom b{display:block;padding:9px 10px;font-size:.84rem;font-weight:700;text-align:center;
+  letter-spacing:-.01em;border-top:2px solid rgba(42,35,64,.10)}
+.hstep{width:34%;height:13px;margin:0 auto;border:4px solid var(--ink);border-top:0;
+  border-radius:0 0 9px 9px;background:var(--butter)}
+@keyframes ib-none{}
 .swatches{display:flex;border-radius:999px;overflow:hidden;box-shadow:var(--shadow-soft);
   margin-top:52px;position:relative;z-index:2}
 .swatches div{height:15px;flex:1}
@@ -397,7 +404,7 @@ footer{padding:76px 0 130px;border-top:1px solid var(--line);margin-top:76px}
 .fbrand .addr{margin-top:10px;font-size:.9rem;color:var(--ink-40)}
 .fblock{margin-top:22px}
 .fblock p{font-size:.94rem;color:var(--ink-60)}
-.fmark{font-family:var(--font-d);font-weight:800;font-size:clamp(1.3rem,5.9vw,5.9rem);
+.fmark{font-family:var(--font-d);font-weight:800;font-size:clamp(.85rem,4vw,4rem);
   letter-spacing:-.05em;text-align:center;line-height:.95;margin:58px 0 0;color:transparent;
   white-space:nowrap;max-width:100%;overflow:hidden;
   background:linear-gradient(100deg,var(--mint),var(--sky) 34%,var(--lilac) 64%,var(--bubble));
@@ -445,10 +452,12 @@ footer{padding:76px 0 130px;border-top:1px solid var(--line);margin-top:76px}
   .fgrid{grid-template-columns:1fr;gap:28px}
   .fbot{flex-direction:column;gap:6px}
   .mbar{display:flex}
-  .hfloat{font-size:.72rem;padding:8px 13px}
+  .hbody{padding:12px;gap:10px}
+  .hpic em{font-size:.6rem}
+  .hroom b{font-size:.76rem;padding:7px 8px}
   .cta{padding:64px 0 24px}
   footer{padding-bottom:96px}
-  .logo .mark{width:38px;height:38px;border-radius:12px}
+  .logo .mark{width:38px;height:38px}
   .logo .ltxt b{font-size:.86rem}
   .logo .ltxt span{font-size:.56rem}
   .hd{gap:10px}

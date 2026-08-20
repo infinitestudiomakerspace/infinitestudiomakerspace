@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Sinh toàn bộ 31 trang tĩnh của Infinite Maker Space (bản Pastel Filament)."""
+"""Sinh toàn bộ 31 trang tĩnh của Infinite Studio Makerspace (bản Pastel Filament)."""
 import os, re, html
 from data import *
 
@@ -24,10 +24,8 @@ def ph(cap, i=0, extra=""):
 
 
 LOGO = """<a class="logo" href="{P}index.html">
-      <span class="mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-        stroke="#2A2340" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.8V20h14V9.8"/><path d="M10 20v-5h4v5"/></svg></span>
-      <span class="ltxt"><b>Infinite Maker Space</b><span>by Infinite Studio</span></span>
+      <img class="mark" src="{P}assets/logo.png" alt="Infinite Builds" width="256" height="256">
+      <span class="ltxt"><b>Infinite Studio Makerspace</b></span>
     </a>"""
 
 NAVITEMS = [("index.html", "Home"), ("services.html", "Services"), ("about.html", "About"),
@@ -46,7 +44,6 @@ def header(active):
     %s
     <nav class="mainnav">%s</nav>
     <div class="hd-r">
-      <span class="tagpill">Where ideas become reality</span>
       <a class="btn btn-sm" href="{P}contact.html">Join</a>
       <button class="burger" id="burger" aria-label="Menu">☰</button>
     </div>
@@ -70,7 +67,7 @@ FOOTER = """<footer>
         <li><a href="{P}news.html">News</a></li><li><a href="{P}contact.html">Contact</a></li></ul>
       </div>
       <div>
-        <h4>Maker Space</h4>
+        <h4>Makerspace</h4>
         <ul><li><a href="{P}makerspace/3d-printing.html">3D Print</a></li>
         <li><a href="{P}makerspace/laser-cutting.html">Laser Cut</a></li>
         <li><a href="{P}makerspace/paper-craft.html">Cricut &amp; Thủ công giấy</a></li>
@@ -99,9 +96,9 @@ FOOTER = """<footer>
         <div class="fblock"><h4>Email</h4><p>{{EMAIL}}</p></div>
       </div>
     </div>
-    <div class="fmark">Infinite Maker Space</div>
+    <div class="fmark">Infinite Studio Makerspace</div>
     <div class="fbot">
-      <span>© Infinite Studio · Infinite Maker Space <span class="js-year">2026</span></span>
+      <span>© <span class="js-year">2026</span> Infinite Studio Makerspace</span>
       <span>Không gian sáng tạo dành cho maker và creators</span>
     </div>
   </div>
@@ -118,10 +115,10 @@ SHELL = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>%(title)s</title>
 <meta name="description" content="%(desc)s">
-<link rel="icon" href="{P}favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{P}assets/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="{P}assets/ib.css">
 </head>
 <body>
