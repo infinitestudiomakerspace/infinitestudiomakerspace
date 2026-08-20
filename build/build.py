@@ -119,13 +119,13 @@ SHELL = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="{P}assets/ib.css">
+<link rel="stylesheet" href="{P}assets/ib.v2.css">
 </head>
 <body>
 %(header)s
 %(body)s
 %(footer)s
-<script src="{P}assets/ib.js" defer></script>
+<script src="{P}assets/ib.v2.js" defer></script>
 </body>
 </html>
 """
