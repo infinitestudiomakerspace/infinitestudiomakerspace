@@ -214,10 +214,13 @@ def wcard(w, P="{P}"):
 
 
 def pcard(p, i=0):
+    has_img = bool(p.get("img"))
+    media = ('<img src="{P}%s" alt="%s" loading="lazy" width="640" height="640">' % (p["img"], html.escape(p["nav"], quote=True))
+              if has_img else "<em>%s</em>" % p["hero"])
     return """<a class="card rv" href="{P}projects/%s.html" data-cat="%s">
-  <div class="ph ph-%s layerlines sq"><span class="ctag">%s</span><em>%s</em></div>
+  <div class="ph ph-%s%s sq"><span class="ctag">%s</span>%s</div>
   <div class="cbody"><h3>%s</h3><p>%s</p><span class="cgo">Xem sản phẩm →</span></div></a>""" % (
-        p["slug"], p["cat"], PAL[i % 6], p["tag"], p["hero"], p["nav"], p["blurb"])
+        p["slug"], p["cat"], PAL[i % 6], "" if has_img else " layerlines", p["tag"], media, p["nav"], p["blurb"])
 
 
 PLANS = """<div class="plans">
