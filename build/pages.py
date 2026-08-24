@@ -29,22 +29,36 @@ HOUSE = """<div class="house">
 ZONES = [
     ("3d-printing", "3D Print", ["Bambu Lab A1", "Bambu Lab A2L"],
      "8 máy in FDM luôn sẵn sàng cho prototype, miniature, chi tiết sản phẩm và sản xuất lô nhỏ.",
-     "Xem máy &amp; sản phẩm in 3D →", "Ảnh: máy in 3D đang chạy, cận cảnh lớp nhựa đang hình thành"),
+     "Xem máy &amp; sản phẩm in 3D →", "Ảnh: máy in 3D đang chạy, cận cảnh lớp nhựa đang hình thành",
+     "assets/zone-3d-printing.jpg", 65),
     ("laser-cutting", "Laser Cut", ["Máy cắt laser khổ lớn"],
      "Một máy cắt laser khổ lớn, cắt và khắc gỗ, mica và nhiều vật liệu tấm khác.",
-     "Xem máy &amp; sản phẩm cắt laser →", "Ảnh: tia laser đang cắt tấm gỗ, khói mỏng bay lên"),
+     "Xem máy &amp; sản phẩm cắt laser →", "Ảnh: tia laser đang cắt tấm gỗ, khói mỏng bay lên",
+     "assets/zone-laser-cutting.jpg", 20),
     ("paper-craft", "Paper Craft", ["Máy in màu", "Máy cắt Cricut"],
      "Khu thủ công giấy: một máy in màu, một máy cắt Cricut và đầy đủ dụng cụ làm tay.",
-     "Xem khu thủ công giấy →", "Ảnh: bàn tay đang bóc sticker vừa cắt bằng Cricut"),
+     "Xem khu thủ công giấy →", "Ảnh: bàn tay đang bóc sticker vừa cắt bằng Cricut",
+     "assets/zone-paper-craft.jpg", 75),
 ]
 
-zones_html = "".join("""<a class="card rv" href="{P}makerspace/%s.html">
-  <div class="ph ph-%s layerlines"><em>%s</em></div>
+def _zonecard(z, i):
+    img, pos = (z[6], z[7]) if len(z) > 6 and z[6] else (None, 50)
+    if img:
+        media = '<img src="{P}%s" alt="%s" loading="lazy" width="640" height="480" style="object-position:50%% %s%%">' % (
+            img, html.escape(z[1], quote=True), pos)
+        ph_class = "ph ph-%s" % PAL[i * 2 % 6]
+    else:
+        media = "<em>%s</em>" % z[5]
+        ph_class = "ph ph-%s layerlines" % PAL[i * 2 % 6]
+    return """<a class="card rv" href="{P}makerspace/%s.html">
+  <div class="%s">%s</div>
   <div class="cbody"><h3>%s</h3><div class="chips">%s</div><p>%s</p>
   <span class="cgo">%s</span></div></a>""" % (
-    z[0], PAL[i * 2 % 6], z[5], z[1],
-    "".join('<span class="chipsm">%s</span>' % t for t in z[2]), z[3], z[4])
-    for i, z in enumerate(ZONES))
+        z[0], ph_class, media, z[1],
+        "".join('<span class="chipsm">%s</span>' % t for t in z[2]), z[3], z[4])
+
+
+zones_html = "".join(_zonecard(z, i) for i, z in enumerate(ZONES))
 
 home = """<section class="hero">
   <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
