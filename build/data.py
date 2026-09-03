@@ -372,9 +372,9 @@ VALUES = [
 ]
 
 GUIDES = [
- "Không gian sáng tạo dành cho maker và creators",
- "Từ “tôi có một ý tưởng” đến “tôi đã làm ra nó”",
- "Học bằng cách tự tay làm",
- "Máy móc chỉ là khởi đầu — cộng đồng mới là thứ giữ bạn ở lại",
- "Ý tưởng của bạn xứng đáng có một chỗ để bắt đầu",
+ "Có ý tưởng, có chỗ để bắt đầu.",
+ "Tự do là tự tay làm điều mình thích.",
+ "Học bằng cách tự tay làm.",
+ "Công cụ mở đường, bạn mới là người tạo ra.",
+ "Cứ bắt đầu, rồi mọi thứ sẽ thành hình.",
 ]

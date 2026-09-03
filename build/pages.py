@@ -234,7 +234,7 @@ about_body = crumb([("Home","{P}index.html"),("About",None)]) + phero(
   <div class="tint layerlines" style="border-radius:var(--r-xl);padding:56px 44px">
     <div class="rv" style="max-width:760px;position:relative;z-index:2">
       <span class="lab">Sứ mệnh của chúng tôi</span>
-      <h2 class="d2 mb-s">Tạo không gian để thế hệ maker trẻ Việt Nam được học hỏi, sáng tạo, toả sáng và biến ý tưởng thành hiện thực.</h2>
+      <h2 class="d2 mb-s" style="font-weight:400;font-size:clamp(1.4rem,2.9vw,2.05rem);line-height:1.42;letter-spacing:-.01em">Tạo không gian để thế hệ maker trẻ Việt Nam được học hỏi, sáng tạo, toả sáng và biến ý tưởng thành hiện thực.</h2>
     </div>
   </div>
 </div></section>
@@ -269,9 +269,12 @@ about_body = crumb([("Home","{P}index.html"),("About",None)]) + phero(
     <h2 class="d2 mb-s">Những người đứng sau <span class="accent">Infinite</span>.</h2></div>
   <div class="grid g4">%s</div>
 </div></section>
-""" % (ph("Ảnh toàn cảnh xưởng: nhiều người đang làm việc ở các khu vực khác nhau", 0, "wide rv"),
+""" % (ph("Ảnh toàn cảnh xưởng: nhiều người đang làm việc ở các khu vực khác nhau", 0, "wide rv",
+          img="assets/about-space.jpg", alt="Toàn cảnh xưởng Infinite Studio Makerspace"),
        guides,
-       ph("Ảnh chân dung founder Hoàng Nhật Minh trong xưởng", 3, "rv") .replace('class="ph', 'style="aspect-ratio:4/5;border-radius:var(--r-xl);box-shadow:var(--shadow-lift)" class="ph'),
+       ph("Ảnh chân dung founder Hoàng Nhật Minh", 3, "rv",
+          img="assets/founder.jpg", alt="Hoàng Nhật Minh — Founder Infinite Studio",
+          w=1000, h=1512, pos=0) .replace('class="ph', 'style="aspect-ratio:4/5;border-radius:var(--r-xl);box-shadow:var(--shadow-lift)" class="ph'),
        vals, team
 ) + cta("Đến làm <span class='accent'>cùng chúng tôi</span>.",
  "Ghé xưởng một buổi, xem máy chạy, nói chuyện với team. Không cần đặt lịch trước, nhưng nhắn Zalo thì chúng tôi sẽ chuẩn bị sẵn sàng hơn.",
@@ -292,9 +295,15 @@ INFO = [("Địa chỉ","{{DIACHI}}"),("Giờ mở cửa","{{GIOMOCUA}}"),
  ("Email",'<a href="mailto:{{EMAIL}}"><b>{{EMAIL}}</b></a>'),
  ("Đi lại","Có chỗ để xe máy trước cửa. Nếu đi ô tô, gửi xe ở bãi gần đó rồi đi bộ sang.")]
 
+MAPQ = ("https://www.google.com/maps?q=Infinite+Studio%2C+25%2F11+%C4%90%C6%B0%E1%BB%9Dng+s%E1%BB%91+6"
+        "%2C+Khu+ph%E1%BB%91+6%2C+Hi%E1%BB%87p+B%C3%ACnh%2C+H%E1%BB%93+Ch%C3%AD+Minh&hl=vi&z=17&output=embed")
+MAPFRAME = ('<div style="aspect-ratio:4/3;border-radius:var(--r-xl);box-shadow:var(--shadow-lift);overflow:hidden">'
+            '<iframe src="' + MAPQ.replace("&", "&amp;") + '" width="100%" height="100%" loading="lazy"'
+            ' style="border:0;display:block" allowfullscreen referrerpolicy="no-referrer-when-downgrade"'
+            ' title="Bản đồ Infinite Studio Makerspace"></iframe></div>')
+
 loc_body = crumb([("Home","{P}index.html"),("Location",None)]) + phero(
- "Location","Infinite Studio Makerspace <span class='accent'>TP. Hồ Chí Minh</span>",
- "Một nơi để dựng, để thử, để làm chung và để tạo ra thứ gì đó có thật."
+ "Location","Infinite Studio Makerspace <span class='accent'>TP. Hồ Chí Minh</span>", ""
 ) + """
 <section class="sec sec-t0"><div class="wrap">%s</div></section>
 <section class="sec sec-t0"><div class="wrap">
@@ -310,11 +319,13 @@ loc_body = crumb([("Home","{P}index.html"),("Location",None)]) + phero(
     <div class="rv">%s</div>
   </div>
 </div></section>
-""" % (ph("Ảnh full-width: mặt tiền hoặc toàn cảnh không gian, chụp ngang", 1, "wide rv"),
+""" % (ph("Ảnh bản đồ Google Maps của Infinite Studio", 1, "wide rv",
+        img="assets/location-map.jpg", alt="Vị trí Infinite Studio trên Google Maps",
+        w=1900, h=644),
  "".join(ph(c, i, "rv") for i, c in enumerate(SPOTS)),
  "".join('<div><span class="k">%s</span><span class="v">%s</span></div>' % kv for kv in INFO),
  btn("Chỉ đường","{{MAPS}}"),
- ph("Bản đồ — dán mã nhúng iframe của Google Maps vào đây", 4, "rv").replace('class="ph','style="aspect-ratio:4/3;border-radius:var(--r-xl);box-shadow:var(--shadow-lift)" class="ph')
+ MAPFRAME
 ) + cta("Đến làm <span class='accent'>thứ gì đó</span>.",
  "Ghé xem không gian, thử một máy, hỏi bất cứ điều gì. Cửa mở cả tuần.",
  btn("Mở Google Maps","{{MAPS}}") + btn("Tham gia Makerspace","{P}contact.html","btn-line"))

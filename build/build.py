@@ -15,13 +15,19 @@ SITE = {
     "EMAIL":    "infinitebuildshop@gmail.com",
     "FACEBOOK": "https://www.facebook.com/share/1HADr55sNW/?mibextid=wwXIfr",
     "INSTAGRAM": "https://www.instagram.com/infinite.stu/",
-    "MESSENGER": "https://m.me/61590361168112",
+    "MESSENGER": "https://www.facebook.com/profile.php?id=61591628252586",
     "SHOPEE":   "https://shopee.vn/infinitebuilds?entryPoint=ShopBySearch&amp;searchKeyword=infinite%20build",
     "MAPS":     "https://share.google/0KVPB5H3gwupVOjRF",
 }
 
-def ph(cap, i=0, extra=""):
-    """Ô ảnh placeholder pastel (site mẫu không dùng file ảnh, chỉ có caption)."""
+def ph(cap, i=0, extra="", img=None, alt="", w=1600, h=1200, pos=50):
+    """Ô ảnh pastel. Có img -> render ảnh thật (bỏ layerlines); không có -> placeholder caption."""
+    if img:
+        # inset:22px = đúng padding của .ph; absolute để object-fit:cover ăn theo khung
+        # (height:100% không ăn khi .ph lấy chiều cao từ aspect-ratio)
+        return ('<div class="ph ph-%s %s"><img src="{P}%s" alt="%s" loading="lazy" width="%d" height="%d"'
+                ' style="position:absolute;top:22px;left:22px;width:calc(100%% - 44px);height:calc(100%% - 44px);object-position:50%% %d%%"></div>'
+                % (PAL[i % 6], extra, img, html.escape(alt or cap, quote=True), w, h, pos))
     return ('<div class="ph ph-%s layerlines %s"><em>%s</em></div>' % (PAL[i % 6], extra, cap))
 
 
@@ -171,9 +177,10 @@ def phero(lab, h1, lead, actions="", cls=""):
     return """<section class="phero %s">
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="wrap"><div class="phero__in">
-    %s<h1 class="d1">%s</h1><p class="lead">%s</p>%s
+    %s<h1 class="d1">%s</h1>%s%s
   </div></div>
-</section>""" % (cls, '<span class="lab">%s</span>' % lab if lab else "", h1, lead,
+</section>""" % (cls, '<span class="lab">%s</span>' % lab if lab else "", h1,
+                 '<p class="lead">%s</p>' % lead if lead else "",
                  '<div class="actions">%s</div>' % actions if actions else "")
 
 
