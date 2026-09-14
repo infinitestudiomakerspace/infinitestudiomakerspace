@@ -30,15 +30,15 @@ ZONES = [
     ("3d-printing", "3D Print", ["Bambu Lab A1", "Bambu Lab A2L"],
      "8 máy in FDM luôn sẵn sàng cho prototype, miniature, chi tiết sản phẩm và sản xuất lô nhỏ.",
      "Xem máy &amp; sản phẩm in 3D →", "Ảnh: máy in 3D đang chạy, cận cảnh lớp nhựa đang hình thành",
-     "assets/zone-3d-printing.jpg", 65),
+     "assets/zone-3d-printing.jpg", 50),
     ("laser-cutting", "Laser Cut", ["Máy cắt laser khổ lớn"],
      "Một máy cắt laser khổ lớn, cắt và khắc gỗ, mica và nhiều vật liệu tấm khác.",
      "Xem máy &amp; sản phẩm cắt laser →", "Ảnh: tia laser đang cắt tấm gỗ, khói mỏng bay lên",
-     "assets/zone-laser-cutting.jpg", 20),
+     "assets/zone-laser-cutting.jpg", 50),
     ("paper-craft", "Paper Craft", ["Máy in màu", "Máy cắt Cricut"],
      "Khu thủ công giấy: một máy in màu, một máy cắt Cricut và đầy đủ dụng cụ làm tay.",
      "Xem khu thủ công giấy →", "Ảnh: bàn tay đang bóc sticker vừa cắt bằng Cricut",
-     "assets/zone-paper-craft.jpg", 75),
+     "assets/zone-paper-craft.jpg", 50),
 ]
 
 def _zonecard(z, i):
@@ -334,7 +334,7 @@ write("location.html","Location — Infinite Studio Makerspace TP. Hồ Chí Min
  "Địa chỉ, giờ mở cửa, chỗ để xe và cách đi tới Infinite Studio Makerspace.", loc_body, "location.html")
 
 # =============================================================== CONTACT
-OPTS = ["Gói cơ bản — 450K/tháng","Gói Premium — 750K/tháng","Gói 3 tháng","Dự án in 3D",
+OPTS = ["Gói Basic — 500K/tháng","Gói Premium — 800K/tháng","Gói 3 tháng","Dự án in 3D",
  "Dự án cắt laser","Dự án thủ công giấy","Sản xuất số lượng lớn cho doanh nghiệp",
  "Đăng ký workshop","Tham quan không gian"]
 
@@ -356,18 +356,21 @@ contact_body = crumb([("Home","{P}index.html"),("Contact",None)]) + phero(
 
 <section class="sec sec-t0"><div class="wrap">
   <div class="sechead rv"><h2 class="d2">Kể cho chúng tôi thứ bạn <span class="accent">muốn làm</span>.</h2></div>
-  <form class="form rv" id="contactForm" style="max-width:760px">
+  <form class="form rv" name="lien-he" method="POST" action="{P}cam-on"
+        data-netlify="true" netlify-honeypot="bot-field" style="max-width:760px">
+    <input type="hidden" name="form-name" value="lien-he">
+    <p style="display:none"><label>Bỏ trống ô này <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
     <div class="f2">
       <div class="field"><label for="ten">Họ và tên</label><input id="ten" name="ten" required></div>
       <div class="field"><label for="sdt">Số điện thoại</label><input id="sdt" name="sdt" type="tel" required></div>
     </div>
+    <div class="field"><label for="email">Email <span style="color:var(--ink-40);font-weight:400">— không bắt buộc</span></label>
+      <input id="email" name="email" type="email" autocomplete="email"></div>
     <div class="field"><label for="qt">Bạn quan tâm đến</label>
       <select id="qt" name="qt">%s</select></div>
     <div class="field"><label for="mota">Mô tả dự án</label>
       <textarea id="mota" name="mota" placeholder="Bạn muốn làm gì? Kích thước, số lượng, thời hạn mong muốn…"></textarea></div>
     <div><button class="btn" type="submit">Gửi yêu cầu <span class="arrow">→</span></button></div>
-    <p class="okmsg" id="formOk">Đã nhận yêu cầu — Infinite sẽ liên hệ lại trong vòng 24 giờ. Cảm ơn bạn!</p>
-    <p class="formnote">Form demo — khi deploy hãy nối vào Netlify Forms, Formspree hoặc backend của bạn.</p>
   </form>
 </div></section>
 """ % "".join("<option>%s</option>" % o for o in OPTS) + cta(
@@ -378,6 +381,19 @@ contact_body = crumb([("Home","{P}index.html"),("Contact",None)]) + phero(
 write("contact.html","Contact — Infinite Studio Makerspace",
  "Liên hệ Infinite Studio Makerspace qua Zalo, email hoặc form. Đăng ký thành viên, đặt gia công, đăng ký workshop.",
  contact_body, "contact.html")
+
+# =============================================================== CẢM ƠN
+camon_body = phero(
+ "Đã nhận", "Cảm ơn bạn đã <span class='accent'>nhắn cho Infinite</span>.",
+ "Yêu cầu của bạn đã được gửi đi. Team sẽ liên hệ lại trong vòng 24 giờ làm việc — thường là qua Zalo hoặc số điện thoại bạn để lại.",
+ btn("Nhắn Zalo ngay","https://zalo.me/{{ZALO}}") + btn("Về trang chủ","{P}index.html","btn-line")
+) + cta("Trong lúc chờ, <span class='accent'>ngó qua</span> chút?",
+ "Xem những thứ team đã làm, hoặc đọc bảng giá thành viên để chuẩn bị sẵn câu hỏi.",
+ btn("Xem sản phẩm","{P}index.html#made") + btn("Xem bảng giá","{P}services.html#pricing","btn-line"))
+
+write("cam-on.html","Cảm ơn bạn — Infinite Studio Makerspace",
+ "Yêu cầu của bạn đã được gửi tới Infinite Studio Makerspace.",
+ camon_body, "", head='<meta name="robots" content="noindex,follow">\n')
 
 # =============================================================== NEWS
 news_cards = "".join("""<a class="card rv" href="{P}news/article.html" data-cat="%s">
