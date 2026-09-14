@@ -18,9 +18,9 @@ HOUSE = """<div class="house">
     <path d="M261 126v46M238 149h46" stroke="#2A2340" stroke-width="4"/>
   </svg>
   <div class="hbody">
-    <a class="hroom" href="{P}makerspace/3d-printing.html"><div class="hpic"><img src="{P}assets/room-3d-print.jpg" alt="Máy in 3D Bambu Lab tại xưởng" loading="eager" width="640" height="480"></div><b>3D Print</b></a>
-    <a class="hroom" href="{P}makerspace/paper-craft.html"><div class="hpic"><img src="{P}assets/room-paper-crafts.jpg" alt="Máy cắt Cricut và bộ thảm cắt" loading="eager" width="640" height="480"></div><b>Paper Craft</b></a>
-    <a class="hroom" href="{P}makerspace/laser-cutting.html"><div class="hpic"><img src="{P}assets/room-laser-cut.jpg" alt="Máy cắt laser khổ lớn" loading="eager" width="640" height="480"></div><b>Laser Cut</b></a>
+    <a class="hroom" href="{P}makerspace/3d-printing.html"><div class="hpic"><img src="{P}assets/room-3d-print-v2.jpg" alt="Máy in 3D Bambu Lab tại xưởng" loading="eager" width="640" height="480"></div><b>3D Print</b></a>
+    <a class="hroom" href="{P}makerspace/paper-craft.html"><div class="hpic"><img src="{P}assets/room-paper-crafts-v2.jpg" alt="Máy cắt Cricut và bộ thảm cắt" loading="eager" width="640" height="480"></div><b>Paper Craft</b></a>
+    <a class="hroom" href="{P}makerspace/laser-cutting.html"><div class="hpic"><img src="{P}assets/room-laser-cut-v2.jpg" alt="Máy cắt laser khổ lớn" loading="eager" width="640" height="480"></div><b>Laser Cut</b></a>
     <a class="hroom" href="{P}services.html#workshops"><div class="hpic"><img src="{P}assets/room-workshop.jpg" alt="Một buổi workshop tại Infinite Studio Makerspace" loading="eager" width="640" height="480"></div><b>Workshop</b></a>
   </div>
   <div class="hstep"></div>
@@ -30,15 +30,15 @@ ZONES = [
     ("3d-printing", "3D Print", ["Bambu Lab A1", "Bambu Lab A2L"],
      "8 máy in FDM luôn sẵn sàng cho prototype, miniature, chi tiết sản phẩm và sản xuất lô nhỏ.",
      "Xem máy &amp; sản phẩm in 3D →", "Ảnh: máy in 3D đang chạy, cận cảnh lớp nhựa đang hình thành",
-     "assets/zone-3d-printing.jpg", 50),
+     "assets/zone-3d-printing-v2.jpg", 50),
     ("laser-cutting", "Laser Cut", ["Máy cắt laser khổ lớn"],
      "Một máy cắt laser khổ lớn, cắt và khắc gỗ, mica và nhiều vật liệu tấm khác.",
      "Xem máy &amp; sản phẩm cắt laser →", "Ảnh: tia laser đang cắt tấm gỗ, khói mỏng bay lên",
-     "assets/zone-laser-cutting.jpg", 50),
+     "assets/zone-laser-cutting-v2.jpg", 50),
     ("paper-craft", "Paper Craft", ["Máy in màu", "Máy cắt Cricut"],
      "Khu thủ công giấy: một máy in màu, một máy cắt Cricut và đầy đủ dụng cụ làm tay.",
      "Xem khu thủ công giấy →", "Ảnh: bàn tay đang bóc sticker vừa cắt bằng Cricut",
-     "assets/zone-paper-craft.jpg", 50),
+     "assets/zone-paper-craft-v2.jpg", 50),
 ]
 
 def _zonecard(z, i):
