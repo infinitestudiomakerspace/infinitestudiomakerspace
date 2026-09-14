@@ -32,7 +32,7 @@ def ph(cap, i=0, extra="", img=None, alt="", w=1600, h=1200, pos=50):
 
 
 LOGO = """<a class="logo" href="{P}index.html">
-      <img class="mark" src="{P}assets/logo.png" alt="Infinite Builds" width="256" height="256">
+      <img class="mark" src="{P}assets/logo-v2.png" alt="Infinite Builds" width="256" height="256">
       <span class="ltxt"><b>Infinite Studio Makerspace</b></span>
     </a>"""
 
@@ -125,6 +125,8 @@ FOOTER = """<footer>
      aria-label="Chat Zalo"><span class="cico">%(zalo)s</span><span class="ctxt">Zalo</span></a>
 </div>""" % dict(ICONS, logo=LOGO)
 
+BASE = "https://infinitestudiomakerspace.netlify.app"
+
 SHELL = """<!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -132,12 +134,26 @@ SHELL = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>%(title)s</title>
 <meta name="description" content="%(desc)s">
-<link rel="icon" href="{P}assets/favicon.png" type="image/png">
+<link rel="icon" href="{P}assets/favicon-v2.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="{P}assets/ib.v3.css">
-</head>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Infinite Studio Makerspace">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="%(title)s">
+<meta property="og:description" content="%(desc)s">
+<meta property="og:url" content="%(canon)s">
+<meta property="og:image" content="%(ogimg)s">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Xưởng Infinite Studio Makerspace tại TP. Hồ Chí Minh">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="%(title)s">
+<meta name="twitter:description" content="%(desc)s">
+<meta name="twitter:image" content="%(ogimg)s">
+%(head)s</head>
 <body>
 %(header)s
 %(body)s
@@ -150,8 +166,12 @@ SHELL = """<!DOCTYPE html>
 PAGES = []
 
 
-def write(path, title, desc, body, active=""):
-    doc = SHELL % dict(title=title, desc=desc, header=header(active), body=body, footer=FOOTER)
+def write(path, title, desc, body, active="", head=""):
+    # og:url = URL that cua trang, dang khong duoi .html giong link trong site
+    canon = BASE + "/" + ("" if path == "index.html" else path[:-5] if path.endswith(".html") else path)
+    doc = SHELL % dict(title=title, desc=desc, header=header(active), body=body,
+                       footer=FOOTER, head=head, canon=canon,
+                       ogimg=BASE + "/assets/og.jpg")
     # Cách dẫn link copy y hệt website mẫu: URL gốc tuyệt đối, không đuôi .html
     doc = doc.replace("{P}", "/")
     doc = re.sub(r'href="/index\.html', 'href="/', doc)

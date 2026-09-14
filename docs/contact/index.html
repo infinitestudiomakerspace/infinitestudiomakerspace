@@ -5,17 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact — Infinite Studio Makerspace</title>
 <meta name="description" content="Liên hệ Infinite Studio Makerspace qua Zalo, email hoặc form. Đăng ký thành viên, đặt gia công, đăng ký workshop.">
-<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="icon" href="../assets/favicon-v2.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="../assets/ib.v3.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Infinite Studio Makerspace">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Contact — Infinite Studio Makerspace">
+<meta property="og:description" content="Liên hệ Infinite Studio Makerspace qua Zalo, email hoặc form. Đăng ký thành viên, đặt gia công, đăng ký workshop.">
+<meta property="og:url" content="https://infinitestudiomakerspace.netlify.app/contact">
+<meta property="og:image" content="https://infinitestudiomakerspace.netlify.app/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Xưởng Infinite Studio Makerspace tại TP. Hồ Chí Minh">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — Infinite Studio Makerspace">
+<meta name="twitter:description" content="Liên hệ Infinite Studio Makerspace qua Zalo, email hoặc form. Đăng ký thành viên, đặt gia công, đăng ký workshop.">
+<meta name="twitter:image" content="https://infinitestudiomakerspace.netlify.app/assets/og.jpg">
 </head>
 <body>
 <header>
   <div class="wrap hd">
     <a class="logo" href="../">
-      <img class="mark" src="../assets/logo.png" alt="Infinite Builds" width="256" height="256">
+      <img class="mark" src="../assets/logo-v2.png" alt="Infinite Builds" width="256" height="256">
       <span class="ltxt"><b>Infinite Studio Makerspace</b></span>
     </a>
     <nav class="mainnav"><a href="../">Home</a><a href="../services/">Services</a><a href="../about/">About</a><a href="../location/">Location</a><a href="../news/">News</a><a class="on" href="../contact/">Contact</a></nav>
@@ -46,18 +60,21 @@
 
 <section class="sec sec-t0"><div class="wrap">
   <div class="sechead rv"><h2 class="d2">Kể cho chúng tôi thứ bạn <span class="accent">muốn làm</span>.</h2></div>
-  <form class="form rv" id="contactForm" style="max-width:760px">
+  <form class="form rv" name="lien-he" method="POST" action="/cam-on"
+        data-netlify="true" netlify-honeypot="bot-field" style="max-width:760px">
+    <input type="hidden" name="form-name" value="lien-he">
+    <p style="display:none"><label>Bỏ trống ô này <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
     <div class="f2">
       <div class="field"><label for="ten">Họ và tên</label><input id="ten" name="ten" required></div>
       <div class="field"><label for="sdt">Số điện thoại</label><input id="sdt" name="sdt" type="tel" required></div>
     </div>
+    <div class="field"><label for="email">Email <span style="color:var(--ink-40);font-weight:400">— không bắt buộc</span></label>
+      <input id="email" name="email" type="email" autocomplete="email"></div>
     <div class="field"><label for="qt">Bạn quan tâm đến</label>
-      <select id="qt" name="qt"><option>Gói cơ bản — 450K/tháng</option><option>Gói Premium — 750K/tháng</option><option>Gói 3 tháng</option><option>Dự án in 3D</option><option>Dự án cắt laser</option><option>Dự án thủ công giấy</option><option>Sản xuất số lượng lớn cho doanh nghiệp</option><option>Đăng ký workshop</option><option>Tham quan không gian</option></select></div>
+      <select id="qt" name="qt"><option>Gói Basic — 500K/tháng</option><option>Gói Premium — 800K/tháng</option><option>Gói 3 tháng</option><option>Dự án in 3D</option><option>Dự án cắt laser</option><option>Dự án thủ công giấy</option><option>Sản xuất số lượng lớn cho doanh nghiệp</option><option>Đăng ký workshop</option><option>Tham quan không gian</option></select></div>
     <div class="field"><label for="mota">Mô tả dự án</label>
       <textarea id="mota" name="mota" placeholder="Bạn muốn làm gì? Kích thước, số lượng, thời hạn mong muốn…"></textarea></div>
     <div><button class="btn" type="submit">Gửi yêu cầu <span class="arrow">→</span></button></div>
-    <p class="okmsg" id="formOk">Đã nhận yêu cầu — Infinite sẽ liên hệ lại trong vòng 24 giờ. Cảm ơn bạn!</p>
-    <p class="formnote">Form demo — khi deploy hãy nối vào Netlify Forms, Formspree hoặc backend của bạn.</p>
   </form>
 </div></section>
 <section class="cta">
@@ -71,7 +88,7 @@
     <div class="fgrid">
       <div class="fbrand">
         <a class="logo" href="../">
-      <img class="mark" src="../assets/logo.png" alt="Infinite Builds" width="256" height="256">
+      <img class="mark" src="../assets/logo-v2.png" alt="Infinite Builds" width="256" height="256">
       <span class="ltxt"><b>Infinite Studio Makerspace</b></span>
     </a>
         <p>Không gian sáng tạo dành cho maker và creators.</p>
@@ -119,7 +136,7 @@
   <a class="btn btn-sm" href="../contact/">Join Infinite</a>
 </div>
 <div class="chatdock">
-  <a class="cbtn cbtn-mess" href="https://m.me/61590361168112" target="_blank" rel="noopener"
+  <a class="cbtn cbtn-mess" href="https://www.facebook.com/profile.php?id=61591628252586" target="_blank" rel="noopener"
      aria-label="Chat Messenger"><span class="cico"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.3 2 2 6.2 2 11.8c0 3 1.3 5.7 3.5 7.5v3.2l3.2-1.8c1 .3 2.1.4 3.3.4 5.7 0 10-4.2 10-9.8S17.7 2 12 2Zm1 12.4-2.6-2.7-4.9 2.7 5.4-5.7 2.6 2.7 4.8-2.7-5.3 5.7Z"/></svg></span><span class="ctxt">Messenger</span></a>
   <a class="cbtn cbtn-zalo" href="https://zalo.me/0816193459" target="_blank" rel="noopener"
      aria-label="Chat Zalo"><span class="cico"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3.4c-5 0-8.8 3.3-8.8 7.4 0 2.3 1.2 4.4 3.2 5.7-.2 1-.6 2-1.3 2.8 1.5-.2 3-.9 4-1.6.9.3 1.9.4 2.9.4 5 0 8.8-3.3 8.8-7.3S17 3.4 12 3.4Z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M9.3 8.2h5.4l-5.4 5h5.4"/></svg></span><span class="ctxt">Zalo</span></a>
