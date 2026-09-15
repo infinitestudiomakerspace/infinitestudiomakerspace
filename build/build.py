@@ -38,6 +38,7 @@ LOGO = """<a class="logo" href="{P}index.html">
 
 NAVITEMS = [("index.html", "Home"), ("services.html", "Services"),
             ("services.html#workshops", "Workshop"), ("about.html", "About"),
+            ("news.html", "News"), ("policies.html#thanh-vien", "Policy"),
             ("contact.html", "Contact")]
 
 

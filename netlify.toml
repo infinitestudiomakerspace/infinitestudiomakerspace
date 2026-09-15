@@ -72,3 +72,9 @@
   from = "/location"
   to = "/contact#location"
   status = 301
+
+# Trang bài viết mẫu cũ đã thay bằng 9 bài thật (2026-09-15)
+[[redirects]]
+  from = "/news/article"
+  to = "/news"
+  status = 301

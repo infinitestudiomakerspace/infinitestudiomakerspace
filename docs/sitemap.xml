@@ -38,10 +38,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://infinitestudiomakerspace.netlify.app/news/article.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://infinitestudiomakerspace.netlify.app/projects/miniatures.html</loc>
     <priority>0.7</priority>
   </url>
@@ -99,4 +95,14 @@
   </url>
 
   <url><loc>https://infinitestudiomakerspace.netlify.app/policies.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+
+  <url><loc>https://infinitestudiomakerspace.netlify.app/news/makerspace-la-gi.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://infinitestudiomakerspace.netlify.app/news/vi-sao-sinh-vien-nen-co-makerspace.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://infinitestudiomakerspace.netlify.app/news/huong-dan-in-3d-cho-nguoi-moi.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://infinitestudiomakerspace.netlify.app/news/nhap-mon-cat-laser.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://infinitestudiomakerspace.netlify.app/news/workshop-tai-infinite-makerspace.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://infinitestudiomakerspace.netlify.app/news/nhin-lai-buoi-circuit-dau-tien.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://infinitestudiomakerspace.netlify.app/news/lam-dollhouse-miniature-nhu-the-nao.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://infinitestudiomakerspace.netlify.app/news/tu-phac-thao-den-artisan-keycap.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://infinitestudiomakerspace.netlify.app/news/tu-prototype-den-san-xuat-quoc-te.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>

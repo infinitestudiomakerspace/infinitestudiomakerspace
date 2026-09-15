@@ -350,26 +350,7 @@ contact_body = crumb([("Home","{P}index.html"),("Contact",None)]) + phero(
   </div>
 </div></section>
 
-<section class="sec sec-t0"><div class="wrap">
-  <div class="sechead rv"><h2 class="d2">Kể cho chúng tôi thứ bạn <span class="accent">muốn làm</span>.</h2></div>
-  <form class="form rv" name="lien-he" method="POST" action="{P}cam-on"
-        data-netlify="true" netlify-honeypot="bot-field" style="max-width:760px">
-    <input type="hidden" name="form-name" value="lien-he">
-    <p style="display:none"><label>Bỏ trống ô này <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-    <div class="f2">
-      <div class="field"><label for="ten">Họ và tên</label><input id="ten" name="ten" required></div>
-      <div class="field"><label for="sdt">Số điện thoại</label><input id="sdt" name="sdt" type="tel" required></div>
-    </div>
-    <div class="field"><label for="email">Email <span style="color:var(--ink-40);font-weight:400">— không bắt buộc</span></label>
-      <input id="email" name="email" type="email" autocomplete="email"></div>
-    <div class="field"><label for="qt">Bạn quan tâm đến</label>
-      <select id="qt" name="qt">%s</select></div>
-    <div class="field"><label for="mota">Mô tả dự án</label>
-      <textarea id="mota" name="mota" placeholder="Bạn muốn làm gì? Kích thước, số lượng, thời hạn mong muốn…"></textarea></div>
-    <div><button class="btn" type="submit">Gửi yêu cầu <span class="arrow">→</span></button></div>
-  </form>
-</div></section>
-""" % "".join("<option>%s</option>" % o for o in OPTS) + LOC_SECTION + cta(
+""" + LOC_SECTION + cta(
  "Chưa biết bắt đầu <span class='accent'>từ đâu</span>?",
  "Nhắn một dòng mô tả ý tưởng. Team sẽ nói cho bạn biết nên dùng công nghệ nào, mất bao lâu và tốn khoảng bao nhiêu.",
  btn("Nhắn Zalo","https://zalo.me/{{ZALO}}") + btn("Xem bảng giá","{P}services.html#pricing","btn-line"))
@@ -392,10 +373,23 @@ write("cam-on.html","Cảm ơn bạn — Infinite Makerspace",
  camon_body, "", head='<meta name="robots" content="noindex,follow">\n')
 
 # =============================================================== NEWS
-news_cards = "".join("""<a class="card rv" href="{P}news/article.html" data-cat="%s">
-  <div class="ph ph-%s layerlines"><span class="ctag">%s</span><em>Ảnh minh hoạ bài viết</em></div>
-  <div class="cbody"><h3>%s</h3><p>%s</p><span class="cgo">Bài mẫu · 5 phút đọc</span></div></a>""" % (
-   cat, PAL[i % 6], catname, title, ex) for i, (title, cat, catname, ex) in enumerate(NEWS))
+def _newsmedia(n, i):
+    tag = '<span class="ctag">%s</span>' % n["catname"]
+    if n.get("img"):
+        return ('<div class="ph ph-%s">%s<img src="{P}%s" alt="%s" loading="lazy" width="1600" height="1200"'
+                ' style="position:absolute;inset:0;width:100%%;height:100%%;border-radius:inherit;'
+                'object-fit:cover"></div>' % (PAL[i % 6], tag, n["img"], html.escape(n["title"], quote=True)))
+    return ('<div class="ph ph-%s layerlines">%s<em>Ảnh minh hoạ bài viết</em></div>' % (PAL[i % 6], tag))
+
+
+def _newscard(n, i):
+    return """<a class="card rv" href="{P}news/%s.html" data-cat="%s">
+  %s
+  <div class="cbody"><h3>%s</h3><p>%s</p><span class="cgo">%s</span></div></a>""" % (
+        n["slug"], n["cat"], _newsmedia(n, i), n["title"], n["ex"], n["read"])
+
+
+news_cards = "".join(_newscard(n, i) for i, n in enumerate(NEWS))
 
 news_body = crumb([("Home","{P}index.html"),("News",None)]) + phero(
  "News","Blog &amp; <span class='accent'>câu chuyện</span>",
@@ -415,57 +409,55 @@ news_body = crumb([("Home","{P}index.html"),("News",None)]) + phero(
 write("news.html","Blog & câu chuyện — Infinite Makerspace",
  "Kiến thức maker, nhật ký workshop và câu chuyện sản phẩm từ Infinite Makerspace.", news_body, "news.html")
 
-# =============================================================== NEWS ARTICLE
-art_body = crumb([("Home","{P}index.html"),("News","{P}news.html"),("Bài viết mẫu",None)]) + """
+# ---- 9 bài viết ----
+def _artbody(blocks):
+    out = ""
+    for kind, val in blocks:
+        if kind == "h2":
+            out += "<h2>%s</h2>" % val
+        elif kind == "p":
+            out += "<p>%s</p>" % val
+        elif kind == "punch":
+            out += '<p class="punch">%s</p>' % val
+        elif kind == "quote":
+            out += '<div class="quote">%s</div>' % val
+        elif kind == "ul":
+            out += "<ul>%s</ul>" % "".join("<li>%s</li>" % x for x in val)
+    return out
+
+
+for idx, n in enumerate(NEWS):
+    others = [o for o in NEWS if o["slug"] != n["slug"]][:3]
+    hero = (('<div class="wide rv" style="border-radius:var(--r-xl);overflow:hidden;'
+             'box-shadow:var(--shadow-lift);aspect-ratio:21/9">'
+             '<img src="{P}%s" alt="%s" width="1900" height="814" loading="eager"'
+             ' style="width:100%%;height:100%%;object-fit:cover;display:block"></div>')
+            % (n["img"], html.escape(n["title"], quote=True))) if n.get("img") else \
+           ph("Ảnh hero bài viết — chưa có ảnh thật", 2, "wide rv")
+    art = crumb([("Home","{P}index.html"),("News","{P}news.html"),(n["catname"],None)]) + """
 <section class="phero"><div class="blob b1"></div><div class="blob b2"></div>
   <div class="wrap"><div class="phero__in">
-    <span class="lab">Makerspace Stories</span>
-    <h1 class="d1">What is a <span class="accent">makerspace</span>?</h1>
-    <p class="lead">Makerspace là gì, vì sao mô hình này lan rộng, và một không gian như vậy thay đổi cách người trẻ học kỹ năng ra sao.</p>
-    <p class="formnote" style="margin-top:18px">Infinite Makerspace · 5 phút đọc</p>
+    <span class="lab">%s</span>
+    <h1 class="d1">%s</h1>
+    <p class="lead">%s</p>
+    <p class="formnote" style="margin-top:18px">Infinite Makerspace · %s</p>
   </div></div>
 </section>
 <section class="sec sec-t0"><div class="wrap">%s</div></section>
 <section class="sec sec-t0"><div class="wrap">
-  <div class="prose rv">
-    <div class="callout">Đây là bố cục mẫu cho một bài viết. Thay toàn bộ phần chữ bên dưới bằng nội dung thật của bạn,
-    giữ nguyên các thẻ để định dạng không bị vỡ.</div>
-    <p>Đoạn mở đầu nên trả lời thẳng câu hỏi trong tiêu đề trong vòng ba câu. Người đọc trên điện thoại thường
-    quyết định đọc tiếp hay không trong mười giây đầu.</p>
-    <h2>Makerspace khác gì một xưởng thông thường</h2>
-    <div class="quote">“Một xưởng có máy. Một makerspace có máy, có người biết dùng máy, và có những người khác
-    cũng đang làm dở một thứ gì đó ở bàn bên cạnh.”</div>
-    <p>Viết tiếp phần thân bài ở đây. Chia thành các đoạn ngắn, mỗi đoạn một ý.</p>
-    %s
-    <h2>Bắt đầu từ đâu nếu bạn chưa biết gì</h2>
-    <p>Đoạn này phù hợp để liệt kê các bước cụ thể:</p>
-    <ul><li>Ghé xem không gian một buổi, không cần đăng ký trước</li>
-    <li>Tham gia một workshop nhập môn để làm quen máy</li>
-    <li>Bắt đầu dự án nhỏ đầu tiên, chấp nhận nó sẽ chưa đẹp</li>
-    <li>Hỏi người ngồi cạnh — đó là phần giá trị nhất của makerspace</li></ul>
-    <h2>Kết</h2>
-    <p>Đoạn kết nên dẫn người đọc sang hành động tiếp theo: ghé xem không gian, đăng ký workshop, hoặc nhắn tin hỏi thêm.</p>
-  </div>
+  <div class="prose rv">%s</div>
 </div></section>
 <section class="sec sec-t0"><div class="wrap">
-  <div class="sechead rv"><span class="lab">Related articles</span><h2 class="d2 mb-s">Đọc <span class="accent">tiếp</span>.</h2></div>
+  <div class="sechead rv"><span class="lab">Đọc tiếp</span>
+    <h2 class="d2 mb-s">Bài <span class="accent">khác</span>.</h2></div>
   <div class="grid g3">%s</div>
 </div></section>
-""" % (ph("Ảnh hero bài viết: toàn cảnh xưởng có người đang làm việc", 2, "wide rv"),
- ph("Ảnh minh hoạ trong bài: cận cảnh một công đoạn cụ thể", 5, "rv").replace('class="ph','style="aspect-ratio:16/9;border-radius:var(--r-lg);margin:26px 0" class="ph'),
- "".join("""<a class="card rv" href="{P}news/article.html">
-  <div class="ph ph-%s layerlines"><span class="ctag">%s</span><em>Ảnh minh hoạ bài viết</em></div>
-  <div class="cbody"><h3>%s</h3><p>%s</p><span class="cgo">Bài mẫu · 5 phút đọc</span></div></a>""" % r
-  for r in [("mint","Makerspace Stories","Beginner’s Guide to 3D Printing","Mọi thứ người mới cần biết trước lần in đầu tiên."),
-            ("bubble","Made at Infinite Makerspace","How We Made a Miniature Dollhouse","Từ bản vẽ đến bộ nội thất tí hon hoàn chỉnh."),
-            ("butter","Workshops","Lịch workshop tháng này","Các buổi học sắp mở và cách đăng ký.")])
-) + cta("Visit <span class='accent'>Infinite Makerspace</span>.",
+""" % (n["catname"], n["title"], n["lead"], n["read"], hero, _artbody(n["body"]),
+       "".join(_newscard(o, j) for j, o in enumerate(others))) + cta(
+ "Ghé <span class='accent'>Infinite Makerspace</span>.",
  "Đọc xong rồi thì ghé xem tận nơi. Cửa mở cả tuần, không cần hẹn trước.",
  btn("Xem địa điểm","{P}contact.html#location","btn-line") + btn("Tham gia Infinite Makerspace","{P}contact.html"))
-
-write("news/article.html","What is a makerspace? — Infinite Makerspace",
- "Makerspace là gì, vì sao mô hình này lan rộng, và nó thay đổi cách người trẻ học kỹ năng ra sao.",
- art_body, "news.html")
+    write("news/%s.html" % n["slug"], "%s — Infinite Makerspace" % n["seo"], n["ex"][:155], art, "news.html")
 
 # =============================================================== MAKERSPACE
 MK = [
