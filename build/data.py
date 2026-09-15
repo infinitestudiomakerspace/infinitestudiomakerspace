@@ -8,7 +8,7 @@ PROJECTS = [
  dict(slug="miniatures", nav="Dollhouse & 3D Printed Miniatures",
    h1="Dollhouse Miniature in 3D", tag="In 3D", cat="3d",
    blurb="Từ ý tưởng nhỏ đến thế giới thu nhỏ hoàn chỉnh — được thiết kế, in 3D và hoàn thiện ngay tại studio.",
-   sub="Infinite Studio phát triển miniature từ ý tưởng đến sản phẩm hoàn chỉnh — nội thất tí hon, mô hình trưng bày và phụ kiện sưu tầm.",
+   sub="Infinite Makerspace phát triển miniature từ ý tưởng đến sản phẩm hoàn chỉnh — nội thất tí hon, mô hình trưng bày và phụ kiện sưu tầm.",
    hero="Ảnh: bộ nội thất dollhouse in 3D, chụp cận trên nền sáng",
    img="assets/project-miniatures.jpg",
    flow="Small rooms. Real details.",
@@ -78,7 +78,7 @@ PROJECTS = [
  dict(slug="spider-enclosures", nav="Jumping Spider Houses",
    h1="Nhà cho nhện nhảy", tag="Mica · In 3D", cat="3d laser",
    blurb="Kết hợp mica cắt laser và in 3D để tạo nên những không gian sống nhỏ gọn, thú vị và đầy cá tính dành cho nhện nhảy.",
-   sub="Một ví dụ sản phẩm kết hợp nhiều công nghệ tại Infinite: thiết kế 3D, in 3D, acrylic và cắt laser trong cùng một sản phẩm.",
+   sub="Một ví dụ sản phẩm kết hợp nhiều công nghệ tại Infinite Makerspace: thiết kế 3D, in 3D, acrylic và cắt laser trong cùng một sản phẩm.",
    hero="Ảnh chuồng nuôi nhện mica đã lắp, nhìn nghiêng",
    img="assets/project-spider.jpg",
    flow="Nhiều công nghệ, một sản phẩm.",
@@ -193,7 +193,7 @@ UPDATED = ("Cập nhật lần cuối: tháng 8/2026 · Nội dung mẫu, hãy r
 POLICIES = [
  dict(slug="an-toan", nav="Nội quy an toàn", h1="Nội quy an toàn xưởng",
    lead="Xưởng có máy cắt laser, máy in nhiệt độ cao và dao cắt. Đọc kỹ phần này trước buổi đầu tiên — nó ngắn hơn bạn nghĩ.",
-   callout="Mọi thành viên đều phải qua buổi training an toàn trước khi tự vận hành bất kỳ máy nào. Buổi training miễn phí và mất khoảng 30 phút.",
+   callout="Mọi thành viên đều phải qua buổi training an toàn trước khi tự vận hành bất kỳ máy nào. Buổi training miễn phí và mất khoảng 1 tiếng.",
    secs=[
     ("Quy tắc chung", [("ul", [
       "Buộc tóc gọn, không mặc áo tay rộng lòng thòng khi đứng máy",
@@ -217,7 +217,7 @@ POLICIES = [
       "Cắt trên thảm cắt, không cắt trực tiếp lên mặt bàn",
       "Keo và dung môi dùng nơi thoáng khí"])]),
     ("Khi có sự cố", [("p", "Dừng máy bằng nút khẩn cấp, rời khỏi khu vực và báo nhân viên ngay. Đừng cố tự xử lý. Hộp sơ cứu đặt ở quầy tiếp đón.")]),
-    ("Vi phạm", [("p", "Vi phạm quy tắc an toàn có thể dẫn tới tạm dừng quyền sử dụng máy. Với lỗi nghiêm trọng gây nguy hiểm cho người khác, Infinite có quyền chấm dứt tư cách thành viên mà không hoàn phí.")]),
+    ("Vi phạm", [("p", "Vi phạm quy tắc an toàn có thể dẫn tới tạm dừng quyền sử dụng máy. Với lỗi nghiêm trọng gây nguy hiểm cho người khác, Infinite Makerspace có quyền chấm dứt tư cách thành viên mà không hoàn phí.")]),
    ]),
 
  dict(slug="thanh-vien", nav="Chính sách thành viên", h1="Chính sách thành viên",
@@ -243,7 +243,7 @@ POLICIES = [
       "Gói 3 tháng có thể tạm dừng tối đa 30 ngày, cần báo trước 7 ngày",
       "Nếu xưởng phải đóng cửa ngoài kế hoạch từ 3 ngày trở lên, thời gian đó được cộng bù vào gói của bạn"])]),
     ("Chuyển nhượng", [("p", "Tư cách thành viên gắn với cá nhân, không chuyển nhượng cho người khác. Bạn có thể dẫn khách tới tham quan, nhưng khách không tự vận hành máy.")]),
-    ("Đồ để tại xưởng", [("p", "Thành viên Premium có kho để đồ riêng. Đồ để quá 30 ngày sau khi hết hạn thành viên mà không liên hệ, Infinite có quyền thanh lý.")]),
+    ("Đồ để tại xưởng", [("p", "Thành viên Premium có kho để đồ riêng. Đồ để quá 30 ngày sau khi hết hạn thành viên mà không liên hệ, Infinite Makerspace có quyền thanh lý.")]),
    ]),
 
  dict(slug="doi-tra", nav="Đổi trả & bảo hành", h1="Đổi trả &amp; bảo hành",
@@ -293,15 +293,15 @@ POLICIES = [
    ]),
 
  dict(slug="dieu-khoan", nav="Điều khoản sử dụng", h1="Điều khoản sử dụng",
-   lead="Những điều khoản áp dụng khi bạn dùng website, dịch vụ gia công và không gian của Infinite.",
+   lead="Những điều khoản áp dụng khi bạn dùng website, dịch vụ gia công và không gian của Infinite Makerspace.",
    callout=None,
    secs=[
-    ("Phạm vi áp dụng", [("p", "Các điều khoản này áp dụng cho mọi người truy cập website, khách sử dụng dịch vụ gia công và thành viên của Infinite Studio Makerspace.")]),
-    ("Nội dung website", [("p", "Hình ảnh, văn bản và thiết kế trên website thuộc về Infinite Studio. Bạn được chia sẻ và trích dẫn kèm ghi nguồn, nhưng không sao chép toàn bộ cho mục đích thương mại khi chưa có sự đồng ý.")]),
+    ("Phạm vi áp dụng", [("p", "Các điều khoản này áp dụng cho mọi người truy cập website, khách sử dụng dịch vụ gia công và thành viên của Infinite Makerspace.")]),
+    ("Nội dung website", [("p", "Hình ảnh, văn bản và thiết kế trên website thuộc về Infinite Makerspace. Bạn được chia sẻ và trích dẫn kèm ghi nguồn, nhưng không sao chép toàn bộ cho mục đích thương mại khi chưa có sự đồng ý.")]),
     ("Quyền sở hữu thiết kế", [("ul", [
       "Thiết kế bạn mang tới vẫn thuộc về bạn",
-      "Thiết kế do team Infinite tạo ra theo yêu cầu của bạn sẽ thuộc về bạn sau khi thanh toán đủ",
-      "Các mẫu sản phẩm riêng của Infinite Studio thuộc về Infinite Studio"])]),
+      "Thiết kế do team Infinite Makerspace tạo ra theo yêu cầu của bạn sẽ thuộc về bạn sau khi thanh toán đủ",
+      "Các mẫu sản phẩm riêng của Infinite Makerspace thuộc về Infinite Makerspace"])]),
     ("Nội dung chúng tôi từ chối gia công", [("ul", [
       "Vũ khí, bộ phận vũ khí hoặc vật dụng gây sát thương",
       "Sản phẩm vi phạm bản quyền hoặc nhãn hiệu của bên khác",
@@ -309,7 +309,7 @@ POLICIES = [
       "Chi tiết dùng cho mục đích y tế cấy ghép hoặc chịu lực an toàn tính mạng"])]),
     ("Thanh toán và bàn giao", [("p", "Đơn gia công cần đặt cọc 50% trước khi bắt đầu, thanh toán phần còn lại khi bàn giao. Với đơn số lượng lớn, điều kiện thanh toán được thoả thuận riêng bằng văn bản.")]),
     ("Thời gian và sai số", [("p", "Thời gian giao được ước tính khi báo giá và có thể thay đổi do tình trạng máy hoặc độ phức tạp thực tế. Sản phẩm in 3D và cắt laser có sai số kích thước tự nhiên; chúng tôi sẽ nêu rõ dung sai dự kiến khi báo giá.")]),
-    ("Giới hạn trách nhiệm", [("p", "Infinite chịu trách nhiệm làm lại hoặc hoàn phí phần gia công bị lỗi do chúng tôi. Chúng tôi không chịu trách nhiệm cho thiệt hại gián tiếp phát sinh từ việc sử dụng sản phẩm sai mục đích thiết kế.")]),
+    ("Giới hạn trách nhiệm", [("p", "Infinite Makerspace chịu trách nhiệm làm lại hoặc hoàn phí phần gia công bị lỗi do chúng tôi. Chúng tôi không chịu trách nhiệm cho thiệt hại gián tiếp phát sinh từ việc sử dụng sản phẩm sai mục đích thiết kế.")]),
     ("Thay đổi điều khoản", [("p", "Điều khoản có thể được cập nhật. Bản mới nhất luôn hiển thị trên trang này kèm ngày cập nhật.")]),
    ]),
 ]
@@ -318,7 +318,7 @@ FAQ = [
  ("Tôi chưa biết gì cả, đến được không?",
   "Được, và đó là phần lớn người mới. Buổi đầu tiên bạn sẽ được hướng dẫn an toàn và làm quen máy. Nếu muốn học bài bản hơn, các workshop nhập môn được thiết kế đúng cho người chưa từng chạm vào máy."),
  ("Tôi có cần đặt lịch trước khi ghé không?",
-  "Không bắt buộc, nhưng nhắn Zalo trước thì chúng tôi sẽ sắp xếp người dẫn bạn đi xem và giải thích từng khu."),
+  "Có, để chúng mình chuẩn bị kỹ càng hơn. Nhắn Zalo trước thì sẽ có người dẫn bạn đi xem và giải thích từng khu."),
  ("Vật liệu có tính trong phí thành viên không?",
   "Không. Phí thành viên là phí sử dụng máy và không gian. Vật liệu tính riêng theo mức dùng thực tế, hoặc bạn mang vật liệu của mình tới — chỉ cần kiểm tra với nhân viên là loại đó cắt/in được."),
  ("Tôi không phải thành viên, gia công lẻ được không?",
@@ -330,11 +330,11 @@ FAQ = [
  ("Chi phí một dự án khoảng bao nhiêu?",
   "Phụ thuộc vật liệu và thời gian máy. Cách nhanh nhất là nhắn mô tả kèm kích thước mong muốn — chúng tôi ước lượng ngay trong ngày."),
  ("Có nhận đơn số lượng lớn không?",
-  "Có. Infinite Studio đang sản xuất và xuất khẩu sản phẩm sang Mỹ và châu Âu, nên quy trình làm lô nhỏ đã chạy ổn định. Xem mục Sản xuất số lượng lớn trong trang Services."),
+  "Có. Infinite Makerspace đang sản xuất và xuất khẩu sản phẩm sang Mỹ và châu Âu, nên quy trình làm lô nhỏ đã chạy ổn định. Xem mục Sản xuất số lượng lớn trong trang Services."),
  ("Trẻ em có tham gia được không?",
   "Các workshop thủ công giấy phù hợp từ 10 tuổi trở lên. Khu laser và in 3D yêu cầu từ 16 tuổi, hoặc có người lớn đi kèm và giám sát trực tiếp."),
  ("Có chỗ để xe không?",
-  "Có chỗ để xe máy trước cửa. Đi ô tô thì gửi ở bãi gần đó rồi đi bộ sang."),
+  "Có chỗ để xe máy trước cửa, sức chứa khoảng 6–7 xe máy. Đi ô tô thì gửi ở bãi gần đó rồi đi bộ sang."),
 ]
 
 NEWS = [
@@ -365,16 +365,16 @@ TEAM = [("Trần Thị Y Bình","Operations Manager"),("Nhật Duy","Project Man
 
 VALUES = [
  ("Learn by making","Học bằng cách tự tay làm.","Không ai học được cách in 3D bằng cách đọc về nó. Bắt đầu làm, hỏng, sửa, làm lại — đó là con đường ngắn nhất và cũng là con đường vui nhất."),
- ("Create openly","Chia sẻ để cùng giỏi lên.","File thiết kế, thông số máy, mẹo xử lý lỗi — mọi thứ ở Infinite đều được chia sẻ. Người đi trước chỉ người đi sau, và ai cũng từng là người mới."),
+ ("Create openly","Chia sẻ để cùng giỏi lên.","File thiết kế, thông số máy, mẹo xử lý lỗi — mọi thứ ở Infinite Makerspace đều được chia sẻ. Người đi trước chỉ người đi sau, và ai cũng từng là người mới."),
  ("Every idea deserves a start","Mọi ý tưởng đều xứng đáng được bắt đầu.","Bạn không cần là kỹ sư hay designer chuyên nghiệp mới được làm ra một sản phẩm. Chúng tôi tồn tại để rút ngắn khoảng cách giữa “tôi có một ý tưởng” và “tôi đã làm ra nó”."),
  ("Build with purpose","Làm ra thứ có giá trị thật.","Từ một món quà tặng bạn thân đến lô hàng xuất đi Mỹ — mỗi sản phẩm rời khỏi xưởng đều nên giải quyết một vấn đề nào đó, dù nhỏ."),
- ("Grow together","Cùng học, cùng làm, cùng lớn.","Nhiều dự án hay nhất ở Infinite bắt đầu từ hai người ngồi cạnh nhau ở bàn làm việc. Chúng tôi xây không gian này để những cuộc gặp đó xảy ra thường xuyên hơn."),
+ ("Grow together","Cùng học, cùng làm, cùng lớn.","Nhiều dự án hay nhất ở Infinite Makerspace bắt đầu từ hai người ngồi cạnh nhau ở bàn làm việc. Chúng tôi xây không gian này để những cuộc gặp đó xảy ra thường xuyên hơn."),
 ]
 
 GUIDES = [
- "Có ý tưởng, có chỗ để bắt đầu.",
- "Tự do là tự tay làm điều mình thích.",
- "Học bằng cách tự tay làm.",
- "Công cụ mở đường, bạn mới là người tạo ra.",
- "Cứ bắt đầu, rồi mọi thứ sẽ thành hình.",
+ ("Cứ bắt đầu", "Bạn không cần biết hết mọi thứ trước khi bắt tay vào làm."),
+ ("Tự tay làm", "Tự do làm nên những điều mình thích."),
+ ("Học bằng cách làm", "Thử, sai, sửa và làm lại. Mỗi lần làm là một lần học."),
+ ("Cùng nhau giải quyết", "Bạn không cần phải biết mọi thứ — hãy chia sẻ và cùng tìm ra giải pháp."),
+ ("Để ý tưởng thành hình", "Đừng chỉ nghĩ về nó. Bắt tay vào làm và xem nó sẽ đi đến đâu."),
 ]

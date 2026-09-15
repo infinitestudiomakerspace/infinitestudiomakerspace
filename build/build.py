@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Sinh toàn bộ 31 trang tĩnh của Infinite Studio Makerspace (bản Pastel Filament)."""
+"""Sinh toàn bộ 31 trang tĩnh của Infinite Makerspace (bản Pastel Filament)."""
 import os, re, html
 from data import *
 
@@ -26,18 +26,19 @@ def ph(cap, i=0, extra="", img=None, alt="", w=1600, h=1200, pos=50):
         # inset:22px = đúng padding của .ph; absolute để object-fit:cover ăn theo khung
         # (height:100% không ăn khi .ph lấy chiều cao từ aspect-ratio)
         return ('<div class="ph ph-%s %s"><img src="{P}%s" alt="%s" loading="lazy" width="%d" height="%d"'
-                ' style="position:absolute;top:22px;left:22px;width:calc(100%% - 44px);height:calc(100%% - 44px);object-position:50%% %d%%"></div>'
+                ' style="position:absolute;inset:0;width:100%%;height:100%%;border-radius:inherit;object-position:50%% %d%%"></div>'
                 % (PAL[i % 6], extra, img, html.escape(alt or cap, quote=True), w, h, pos))
     return ('<div class="ph ph-%s layerlines %s"><em>%s</em></div>' % (PAL[i % 6], extra, cap))
 
 
 LOGO = """<a class="logo" href="{P}index.html">
-      <img class="mark" src="{P}assets/logo-v2.png" alt="Infinite Builds" width="256" height="256">
-      <span class="ltxt"><b>Infinite Studio Makerspace</b></span>
+      <img class="mark" src="{P}assets/logo-v2.png" alt="Infinite Makerspace" width="256" height="256">
+      <span class="ltxt"><b>Infinite Makerspace</b></span>
     </a>"""
 
-NAVITEMS = [("index.html", "Home"), ("services.html", "Services"), ("about.html", "About"),
-            ("location.html", "Location"), ("news.html", "News"), ("contact.html", "Contact")]
+NAVITEMS = [("index.html", "Home"), ("services.html", "Services"),
+            ("services.html#workshops", "Workshop"), ("about.html", "About"),
+            ("contact.html", "Contact")]
 
 
 def header(active):
@@ -89,12 +90,12 @@ FOOTER = """<footer>
       </div>
       <div>
         <h4>Chính sách</h4>
-        <ul><li><a href="{P}policies/an-toan.html">Nội quy an toàn</a></li>
-        <li><a href="{P}policies/thanh-vien.html">Chính sách thành viên</a></li>
-        <li><a href="{P}policies/doi-tra.html">Đổi trả &amp; bảo hành</a></li>
-        <li><a href="{P}policies/bao-mat.html">Chính sách bảo mật</a></li>
-        <li><a href="{P}policies/dieu-khoan.html">Điều khoản sử dụng</a></li>
-        <li><a href="{P}policies/faq.html">Câu hỏi thường gặp</a></li></ul>
+        <ul><li><a href="{P}policies.html#thanh-vien">Chính sách thành viên</a></li>
+        <li><a href="{P}policies.html#an-toan">Nội quy an toàn</a></li>
+        <li><a href="{P}policies.html#doi-tra">Đổi trả &amp; bảo hành</a></li>
+        <li><a href="{P}policies.html#dieu-khoan">Điều khoản sử dụng</a></li>
+        <li><a href="{P}policies.html#faq">Câu hỏi thường gặp</a></li>
+        <li><a href="{P}policies.html#bao-mat">Chính sách bảo mật</a></li></ul>
       </div>
       <div>
         <h4>Contact</h4>
@@ -107,16 +108,16 @@ FOOTER = """<footer>
         </div>
       </div>
     </div>
-    <div class="fmark">Infinite Studio Makerspace</div>
+    <div class="fmark">Infinite Makerspace</div>
     <div class="fbot">
-      <span>© <span class="js-year">2026</span> Infinite Studio Makerspace</span>
+      <span>© <span class="js-year">2026</span> Infinite Makerspace</span>
       <span>Không gian sáng tạo dành cho maker và creators</span>
     </div>
   </div>
 </footer>
 <div class="mbar">
   <a class="btn btn-soft btn-sm" href="https://zalo.me/{{ZALO}}">Chat Zalo</a>
-  <a class="btn btn-sm" href="{P}contact.html">Join Infinite</a>
+  <a class="btn btn-sm" href="{P}contact.html">Join Infinite Makerspace</a>
 </div>
 <div class="chatdock">
   <a class="cbtn cbtn-mess" href="{{MESSENGER}}" target="_blank" rel="noopener"
@@ -140,7 +141,7 @@ SHELL = """<!DOCTYPE html>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="{P}assets/ib.v3.css">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Infinite Studio Makerspace">
+<meta property="og:site_name" content="Infinite Makerspace">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:title" content="%(title)s">
 <meta property="og:description" content="%(desc)s">
@@ -148,7 +149,7 @@ SHELL = """<!DOCTYPE html>
 <meta property="og:image" content="%(ogimg)s">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Xưởng Infinite Studio Makerspace tại TP. Hồ Chí Minh">
+<meta property="og:image:alt" content="Xưởng Infinite Makerspace tại TP. Hồ Chí Minh">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="%(title)s">
 <meta name="twitter:description" content="%(desc)s">

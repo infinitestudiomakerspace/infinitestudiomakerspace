@@ -34,3 +34,41 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# ---- Chuyển hướng các trang đã gộp (2026-09-15) ----
+# 6 trang chính sách + FAQ giờ nằm trong /policies, trang Location nằm dưới /contact.
+# Giữ redirect để link cũ đã share hoặc đã được Google index không bị 404.
+[[redirects]]
+  from = "/policies/faq"
+  to = "/policies#faq"
+  status = 301
+
+[[redirects]]
+  from = "/policies/thanh-vien"
+  to = "/policies#thanh-vien"
+  status = 301
+
+[[redirects]]
+  from = "/policies/an-toan"
+  to = "/policies#an-toan"
+  status = 301
+
+[[redirects]]
+  from = "/policies/doi-tra"
+  to = "/policies#doi-tra"
+  status = 301
+
+[[redirects]]
+  from = "/policies/dieu-khoan"
+  to = "/policies#dieu-khoan"
+  status = 301
+
+[[redirects]]
+  from = "/policies/bao-mat"
+  to = "/policies#bao-mat"
+  status = 301
+
+[[redirects]]
+  from = "/location"
+  to = "/contact#location"
+  status = 301

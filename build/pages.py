@@ -4,7 +4,7 @@ from build import *
 
 # =============================================================== TRANG CHỦ
 HOUSE = """<div class="house">
-  <svg class="roof" viewBox="0 0 520 232" role="img" aria-label="Mái xưởng Infinite Studio Makerspace">
+  <svg class="roof" viewBox="0 0 520 232" role="img" aria-label="Mái xưởng Infinite Makerspace">
     <defs>
       <linearGradient id="roof" x1="0" y1="0" x2="1" y2="1">
         <stop offset="0" stop-color="#FFC7DD"/><stop offset="1" stop-color="#D5C9F7"/></linearGradient>
@@ -21,7 +21,7 @@ HOUSE = """<div class="house">
     <a class="hroom" href="{P}makerspace/3d-printing.html"><div class="hpic"><img src="{P}assets/room-3d-print-v2.jpg" alt="Máy in 3D Bambu Lab tại xưởng" loading="eager" width="640" height="480"></div><b>3D Print</b></a>
     <a class="hroom" href="{P}makerspace/paper-craft.html"><div class="hpic"><img src="{P}assets/room-paper-crafts-v2.jpg" alt="Máy cắt Cricut và bộ thảm cắt" loading="eager" width="640" height="480"></div><b>Paper Craft</b></a>
     <a class="hroom" href="{P}makerspace/laser-cutting.html"><div class="hpic"><img src="{P}assets/room-laser-cut-v2.jpg" alt="Máy cắt laser khổ lớn" loading="eager" width="640" height="480"></div><b>Laser Cut</b></a>
-    <a class="hroom" href="{P}services.html#workshops"><div class="hpic"><img src="{P}assets/room-workshop.jpg" alt="Một buổi workshop tại Infinite Studio Makerspace" loading="eager" width="640" height="480"></div><b>Workshop</b></a>
+    <a class="hroom" href="{P}services.html#workshops"><div class="hpic"><img src="{P}assets/room-workshop.jpg" alt="Một buổi workshop tại Infinite Makerspace" loading="eager" width="640" height="480"></div><b>Workshop</b></a>
   </div>
   <div class="hstep"></div>
 </div>"""
@@ -66,7 +66,7 @@ home = """<section class="hero">
     <div>
       <span class="tagpill">✿ Đang mở đăng ký thành viên</span>
       <h1 class="d1">Where ideas<br>become <span class="accent">reality</span>.</h1>
-      <p class="lead">Infinite Studio Makerspace là không gian dành cho những người trẻ yêu thích sáng tạo, in 3D,
+      <p class="lead">Infinite Makerspace là không gian dành cho những người trẻ yêu thích sáng tạo, in 3D,
       thiết kế 3D, cắt laser và DIY — với máy móc, hướng dẫn và cộng đồng sẵn sàng giúp bạn biến ý tưởng
       thành sản phẩm thật.</p>
       <div class="hero__actions">%s%s</div>
@@ -106,7 +106,7 @@ home = """<section class="hero">
 <div class="tint layerlines">
   <div class="wrap tint__in">
     <div class="rv"><h2 class="d2 mb-s">Workshops</h2>
-      <p class="lead">Tham khảo những buổi Workshops thú vị của các Maker tại Infinite Studio Makerspace</p></div>
+      <p class="lead">Tham khảo những buổi Workshops thú vị của các Maker tại Infinite Makerspace</p></div>
     <div class="rv">%s</div>
   </div>
 </div>
@@ -116,13 +116,13 @@ home = """<section class="hero">
     marquee(["Maker", "Creator", "3D Print", "3D Design", "Laser Cut", "Paper Craft", "DIY", "Prototype", "Community"], "butter"),
     zones_html, PLANS,
     "".join(pcard(p, i) for i, p in enumerate(PROJECTS)),
-    marquee(GUIDES[:3], "mint"),
+    marquee([g[0] for g in GUIDES[:3]], "mint"),
     btn("Xem tất cả workshop", "{P}services.html#workshops", "btn-line"),
     cta("Make Your Ideas <span class='accent'>Real</span>.",
-        "Dù bạn đang dựng bản prototype đầu tiên, học một kỹ năng mới hay muốn biến ý tưởng thành sản phẩm bán được — Infinite là nơi để bắt đầu.",
-        btn("Tham gia Infinite", "{P}contact.html") + btn("Xem dịch vụ", "{P}services.html", "btn-line")))
+        "Dù bạn đang dựng bản prototype đầu tiên, học một kỹ năng mới hay muốn biến ý tưởng thành sản phẩm bán được — Infinite Makerspace là nơi để bắt đầu.",
+        btn("Tham gia Infinite Makerspace", "{P}contact.html") + btn("Xem dịch vụ", "{P}services.html", "btn-line")))
 
-write("index.html", "Infinite Studio Makerspace — Where Ideas Become Reality",
+write("index.html", "Infinite Makerspace — Where Ideas Become Reality",
       "Không gian sáng tạo dành cho maker và creators. In 3D, thiết kế 3D, cắt laser, thủ công giấy và workshop tại TP. Hồ Chí Minh.",
       home, "index.html")
 
@@ -151,7 +151,7 @@ NOTES = [("Vật liệu","Chưa bao gồm trong phí thành viên. Bạn có th�
 
 services_body = crumb([("Home","{P}index.html"),("Services",None)]) + phero(
  "Services","Từ ý tưởng đến <span class='accent'>sản phẩm</span>.",
- "Dù bạn đang làm bản prototype đầu tiên hay cần sản xuất hàng trăm sản phẩm, Infinite có máy móc và người hỗ trợ để bạn dựng được nó.",
+ "Dù bạn đang làm bản prototype đầu tiên hay cần sản xuất hàng trăm sản phẩm, Infinite Makerspace có máy móc và người hỗ trợ để bạn dựng được nó.",
  "".join('<span class="tagpill">%s</span>' % t for t in ["In 3D","Cắt laser","Thủ công giấy","Sản xuất lô lớn","Workshop"])
 ) + """
 <section class="sec sec-t0"><div class="wrap"><div class="grid g3">%s</div></div></section>
@@ -159,7 +159,7 @@ services_body = crumb([("Home","{P}index.html"),("Services",None)]) + phero(
 <section class="sec sec-t0" id="business"><div class="wrap">
   <div class="sechead rv"><span class="lab">Dịch vụ 04</span>
     <h2 class="d2 mb-s">Nhận in 3D và cắt laser <span class="accent">số lượng lớn</span>.</h2>
-    <p class="lead">Infinite nhận sản xuất cho doanh nghiệp, thương hiệu, startup, agency, cửa hàng bán lẻ và ban tổ chức
+    <p class="lead">Infinite Makerspace nhận sản xuất cho doanh nghiệp, thương hiệu, startup, agency, cửa hàng bán lẻ và ban tổ chức
     sự kiện. Bạn gửi ý tưởng hoặc file thiết kế, chúng tôi lo phần còn lại — kể cả đóng gói.</p></div>
   <div class="grid g2">
     <div class="tile t-sky rv"><div class="tile__orb"></div><h3>Chúng tôi phục vụ</h3>
@@ -177,8 +177,8 @@ services_body = crumb([("Home","{P}index.html"),("Services",None)]) + phero(
   %s
   <div class="sechead rv" style="margin-top:60px;margin-bottom:24px"><span class="lab">Trước khi đăng ký, bạn nên biết</span></div>
   <div class="grid g3">%s</div>
-  <p class="wnote rv">Xem đầy đủ tại <a href="{P}policies/thanh-vien.html"><b>Chính sách thành viên</b></a>
-  và <a href="{P}policies/an-toan.html"><b>Nội quy an toàn xưởng</b></a>.</p>
+  <p class="wnote rv">Xem đầy đủ tại <a href="{P}policies.html#thanh-vien"><b>Chính sách thành viên</b></a>
+  và <a href="{P}policies.html#an-toan"><b>Nội quy an toàn xưởng</b></a>.</p>
 </div></section>
 
 <section class="sec sec-t0" id="workshops"><div class="wrap">
@@ -197,11 +197,11 @@ services_body = crumb([("Home","{P}index.html"),("Services",None)]) + phero(
  "".join('<div class="card rv" style="padding:26px"><h3 style="font-size:1rem;font-family:var(--font-b)">%s</h3><p style="font-size:.93rem;color:var(--ink-60);margin-top:7px">%s</p></div>' % n for n in NOTES),
  "".join(wcard(w) for w in WORKSHOPS)
 ) + cta("Chưa biết nên dùng <span class='accent'>công nghệ nào</span>?",
- "Nhắn cho Infinite một dòng mô tả thứ bạn muốn làm. Team sẽ tư vấn cách làm phù hợp và chi phí dự kiến trong vòng 24 giờ.",
+ "Nhắn cho Infinite Makerspace một dòng mô tả thứ bạn muốn làm. Team sẽ tư vấn cách làm phù hợp và chi phí dự kiến trong vòng 24 giờ.",
  btn("Nhắn Zalo","https://zalo.me/{{ZALO}}") + btn("Gửi brief qua email","mailto:{{EMAIL}}","btn-line"))
 
-write("services.html","Services, Workshop & Bảng giá — Infinite Studio Makerspace",
- "In 3D, cắt laser, thủ công giấy, sản xuất số lượng lớn, bảng giá thành viên và 8 workshop thực hành tại Infinite Studio Makerspace.",
+write("services.html","Services, Workshop & Bảng giá — Infinite Makerspace",
+ "In 3D, cắt laser, thủ công giấy, sản xuất số lượng lớn, bảng giá thành viên và 8 workshop thực hành tại Infinite Makerspace.",
  services_body, "services.html")
 
 # =============================================================== ABOUT
@@ -211,8 +211,10 @@ vals = "".join("""<article class="tile t-%s rv"><div class="tile__orb"></div>
   for i, (en, vi, txt) in enumerate(VALUES))
 
 guides = "".join("""<div class="tile t-%s rv"><div class="tile__orb"></div>
-  <div class="tnum">%02d</div><h3 style="margin-top:8px;font-size:1.06rem">%s</h3></div>""" % (PAL[i % 6], i + 1, g)
-  for i, g in enumerate(GUIDES))
+  <div class="tnum">%02d</div>
+  <h3 style="margin-top:8px;font-size:1.06rem;text-transform:uppercase;letter-spacing:.02em">%s</h3>
+  <p style="margin-top:6px">%s</p></div>""" % (PAL[i % 6], i + 1, ttl, txt)
+  for i, (ttl, txt) in enumerate(GUIDES))
 
 team = "".join("""<div class="card rv" style="padding:22px;text-align:center;align-items:center">
   <div style="width:56px;height:56px;border-radius:50%%;margin:0 auto 12px;display:grid;place-items:center;
@@ -222,7 +224,7 @@ team = "".join("""<div class="card rv" style="padding:22px;text-align:center;ali
 
 about_body = crumb([("Home","{P}index.html"),("About",None)]) + phero(
  "About","Không gian sáng tạo dành cho <span class='accent'>maker và creators</span>.",
- "Infinite Studio Makerspace không chỉ là một xưởng máy, mà là cộng đồng kết nối những cá nhân đam mê sáng tạo, tự tay chế tạo (DIY) và đổi mới công nghệ."
+ "Infinite Makerspace không chỉ là một xưởng máy, mà là cộng đồng kết nối những cá nhân đam mê sáng tạo, tự tay chế tạo (DIY) và đổi mới công nghệ."
 ) + """
 <section class="sec sec-t0"><div class="wrap">
   %s
@@ -241,7 +243,7 @@ about_body = crumb([("Home","{P}index.html"),("About",None)]) + phero(
 
 <section class="sec sec-t0"><div class="wrap">
   <div class="sechead rv"><span class="lab">Những điều chúng tôi nói với chính mình</span>
-    <h2 class="d2 mb-s">Năm câu <span class="accent">dẫn đường</span>.</h2></div>
+    <h2 class="d2 mb-s">5 Điều tạo nên <span class="accent">Infinite Makerspace</span>.</h2></div>
   <div class="grid g3">%s</div>
 </div></section>
 
@@ -250,7 +252,7 @@ about_body = crumb([("Home","{P}index.html"),("About",None)]) + phero(
     <div class="rv">%s</div>
     <div class="rv"><span class="lab">Founder</span>
       <h2 class="d3" style="margin-top:14px">Hoàng Nhật Minh</h2>
-      <p style="color:var(--ink-40);font-size:.9rem;letter-spacing:.06em">Founder · Infinite Studio</p>
+      <p style="color:var(--ink-40);font-size:.9rem;letter-spacing:.06em">Founder · Infinite Makerspace</p>
       <div class="quote">“Tôi luôn muốn tạo một không gian để các bạn trẻ có tài năng được đến học hỏi và toả sáng —
       nơi mở ra cho họ cơ hội phát triển lớn mạnh hơn.”</div>
       <p class="lead" style="margin-top:0">“Give young makers the space to learn, create and shine.”</p>
@@ -266,22 +268,22 @@ about_body = crumb([("Home","{P}index.html"),("About",None)]) + phero(
 
 <section class="sec sec-t0"><div class="wrap">
   <div class="sechead rv"><span class="lab">Core team</span>
-    <h2 class="d2 mb-s">Những người đứng sau <span class="accent">Infinite</span>.</h2></div>
+    <h2 class="d2 mb-s">Những người đứng sau <span class="accent">Infinite Makerspace</span>.</h2></div>
   <div class="grid g4">%s</div>
 </div></section>
 """ % (ph("Ảnh toàn cảnh xưởng: nhiều người đang làm việc ở các khu vực khác nhau", 0, "wide rv",
-          img="assets/about-space.jpg", alt="Toàn cảnh xưởng Infinite Studio Makerspace"),
+          img="assets/about-space.jpg", alt="Toàn cảnh xưởng Infinite Makerspace"),
        guides,
        ph("Ảnh chân dung founder Hoàng Nhật Minh", 3, "rv",
-          img="assets/founder.jpg", alt="Hoàng Nhật Minh — Founder Infinite Studio",
+          img="assets/founder.jpg", alt="Hoàng Nhật Minh — Founder Infinite Makerspace",
           w=1000, h=1512, pos=0) .replace('class="ph', 'style="aspect-ratio:4/5;border-radius:var(--r-xl);box-shadow:var(--shadow-lift)" class="ph'),
        vals, team
 ) + cta("Đến làm <span class='accent'>cùng chúng tôi</span>.",
  "Ghé xưởng một buổi, xem máy chạy, nói chuyện với team. Không cần đặt lịch trước, nhưng nhắn Zalo thì chúng tôi sẽ chuẩn bị sẵn sàng hơn.",
- btn("Xem địa điểm","{P}location.html","btn-line") + btn("Tham gia Infinite","{P}contact.html"))
+ btn("Xem địa điểm","{P}contact.html#location","btn-line") + btn("Tham gia Infinite Makerspace","{P}contact.html"))
 
-write("about.html","About — Infinite Studio Makerspace",
- "Infinite Studio Makerspace là cộng đồng maker tại TP. Hồ Chí Minh: sứ mệnh, giá trị, founder và core team.",
+write("about.html","About — Infinite Makerspace",
+ "Infinite Makerspace là cộng đồng maker tại TP. Hồ Chí Minh: sứ mệnh, giá trị, founder và core team.",
  about_body, "about.html")
 
 # =============================================================== LOCATION
@@ -295,43 +297,37 @@ INFO = [("Địa chỉ","{{DIACHI}}"),("Giờ mở cửa","{{GIOMOCUA}}"),
  ("Email",'<a href="mailto:{{EMAIL}}"><b>{{EMAIL}}</b></a>'),
  ("Đi lại","Có chỗ để xe máy trước cửa. Nếu đi ô tô, gửi xe ở bãi gần đó rồi đi bộ sang.")]
 
-MAPQ = ("https://www.google.com/maps?q=Infinite+Studio%2C+25%2F11+%C4%90%C6%B0%E1%BB%9Dng+s%E1%BB%91+6"
+MAPQ = ("https://www.google.com/maps?q=Infinite+Makerspace%2C+25%2F11+%C4%90%C6%B0%E1%BB%9Dng+s%E1%BB%91+6"
         "%2C+Khu+ph%E1%BB%91+6%2C+Hi%E1%BB%87p+B%C3%ACnh%2C+H%E1%BB%93+Ch%C3%AD+Minh&hl=vi&z=17&output=embed")
 MAPFRAME = ('<div style="aspect-ratio:4/3;border-radius:var(--r-xl);box-shadow:var(--shadow-lift);overflow:hidden">'
             '<iframe src="' + MAPQ.replace("&", "&amp;") + '" width="100%" height="100%" loading="lazy"'
             ' style="border:0;display:block" allowfullscreen referrerpolicy="no-referrer-when-downgrade"'
-            ' title="Bản đồ Infinite Studio Makerspace"></iframe></div>')
+            ' title="Bản đồ Infinite Makerspace"></iframe></div>')
 
-loc_body = crumb([("Home","{P}index.html"),("Location",None)]) + phero(
- "Location","Infinite Studio Makerspace <span class='accent'>TP. Hồ Chí Minh</span>", ""
-) + """
-<section class="sec sec-t0"><div class="wrap">%s</div></section>
+# Trang Location đã gộp vào cuối trang Contact (mục #location) theo yêu cầu.
+LOC_SECTION = """
+<section class="sec sec-t0" id="location"><div class="wrap">
+  <div class="sechead rv"><span class="lab">Location</span>
+    <h2 class="d2 mb-s">Ghé <span class="accent">xưởng</span>.</h2></div>
+  <div class="grid g2" style="align-items:start">
+    <div class="rv">
+      <div class="info" style="margin-top:4px">%s</div>
+      <div class="actions" style="margin-top:24px">%s</div></div>
+    <div class="rv">%s</div>
+  </div>
+</div></section>
+
 <section class="sec sec-t0"><div class="wrap">
   <div class="sechead rv"><span class="lab">Bên trong xưởng</span>
     <h2 class="d2 mb-s">Tám góc, một <span class="accent">xưởng</span>.</h2></div>
   <div class="gal">%s</div>
 </div></section>
-<section class="sec sec-t0"><div class="wrap">
-  <div class="grid g2" style="align-items:start">
-    <div class="rv"><span class="lab">Ghé thăm</span>
-      <div class="info" style="margin-top:20px">%s</div>
-      <div class="actions" style="margin-top:24px">%s</div></div>
-    <div class="rv">%s</div>
-  </div>
-</div></section>
-""" % (ph("Ảnh bản đồ Google Maps của Infinite Studio", 1, "wide rv",
-        img="assets/location-map.jpg", alt="Vị trí Infinite Studio trên Google Maps",
-        w=1900, h=644),
- "".join(ph(c, i, "rv") for i, c in enumerate(SPOTS)),
+""" % (
  "".join('<div><span class="k">%s</span><span class="v">%s</span></div>' % kv for kv in INFO),
  btn("Chỉ đường","{{MAPS}}"),
- MAPFRAME
-) + cta("Đến làm <span class='accent'>thứ gì đó</span>.",
- "Ghé xem không gian, thử một máy, hỏi bất cứ điều gì. Cửa mở cả tuần.",
- btn("Mở Google Maps","{{MAPS}}") + btn("Tham gia Makerspace","{P}contact.html","btn-line"))
-
-write("location.html","Location — Infinite Studio Makerspace TP. Hồ Chí Minh",
- "Địa chỉ, giờ mở cửa, chỗ để xe và cách đi tới Infinite Studio Makerspace.", loc_body, "location.html")
+ MAPFRAME,
+ "".join(ph(c, i, "rv") for i, c in enumerate(SPOTS)),
+)
 
 # =============================================================== CONTACT
 OPTS = ["Gói Basic — 500K/tháng","Gói Premium — 800K/tháng","Gói 3 tháng","Dự án in 3D",
@@ -340,7 +336,7 @@ OPTS = ["Gói Basic — 500K/tháng","Gói Premium — 800K/tháng","Gói 3 thá
 
 contact_body = crumb([("Home","{P}index.html"),("Contact",None)]) + phero(
  "Contact","Cùng làm <span class='accent'>thứ gì đó</span>.",
- "Có một ý tưởng, một dự án, hay chỉ muốn ghé xem không gian? Nhắn cho Infinite."
+ "Có một ý tưởng, một dự án, hay chỉ muốn ghé xem không gian? Nhắn cho Infinite Makerspace."
 ) + """
 <section class="sec sec-t0"><div class="wrap">
   <div class="grid g2">
@@ -373,26 +369,26 @@ contact_body = crumb([("Home","{P}index.html"),("Contact",None)]) + phero(
     <div><button class="btn" type="submit">Gửi yêu cầu <span class="arrow">→</span></button></div>
   </form>
 </div></section>
-""" % "".join("<option>%s</option>" % o for o in OPTS) + cta(
+""" % "".join("<option>%s</option>" % o for o in OPTS) + LOC_SECTION + cta(
  "Chưa biết bắt đầu <span class='accent'>từ đâu</span>?",
  "Nhắn một dòng mô tả ý tưởng. Team sẽ nói cho bạn biết nên dùng công nghệ nào, mất bao lâu và tốn khoảng bao nhiêu.",
  btn("Nhắn Zalo","https://zalo.me/{{ZALO}}") + btn("Xem bảng giá","{P}services.html#pricing","btn-line"))
 
-write("contact.html","Contact — Infinite Studio Makerspace",
- "Liên hệ Infinite Studio Makerspace qua Zalo, email hoặc form. Đăng ký thành viên, đặt gia công, đăng ký workshop.",
+write("contact.html","Contact — Infinite Makerspace",
+ "Liên hệ Infinite Makerspace qua Zalo, email hoặc form — kèm địa chỉ, giờ mở cửa và bản đồ đường đi.",
  contact_body, "contact.html")
 
 # =============================================================== CẢM ƠN
 camon_body = phero(
- "Đã nhận", "Cảm ơn bạn đã <span class='accent'>nhắn cho Infinite</span>.",
+ "Đã nhận", "Cảm ơn bạn đã <span class='accent'>nhắn cho Infinite Makerspace</span>.",
  "Yêu cầu của bạn đã được gửi đi. Team sẽ liên hệ lại trong vòng 24 giờ làm việc — thường là qua Zalo hoặc số điện thoại bạn để lại.",
  btn("Nhắn Zalo ngay","https://zalo.me/{{ZALO}}") + btn("Về trang chủ","{P}index.html","btn-line")
 ) + cta("Trong lúc chờ, <span class='accent'>ngó qua</span> chút?",
  "Xem những thứ team đã làm, hoặc đọc bảng giá thành viên để chuẩn bị sẵn câu hỏi.",
  btn("Xem sản phẩm","{P}index.html#made") + btn("Xem bảng giá","{P}services.html#pricing","btn-line"))
 
-write("cam-on.html","Cảm ơn bạn — Infinite Studio Makerspace",
- "Yêu cầu của bạn đã được gửi tới Infinite Studio Makerspace.",
+write("cam-on.html","Cảm ơn bạn — Infinite Makerspace",
+ "Yêu cầu của bạn đã được gửi tới Infinite Makerspace.",
  camon_body, "", head='<meta name="robots" content="noindex,follow">\n')
 
 # =============================================================== NEWS
@@ -403,7 +399,7 @@ news_cards = "".join("""<a class="card rv" href="{P}news/article.html" data-cat=
 
 news_body = crumb([("Home","{P}index.html"),("News",None)]) + phero(
  "News","Blog &amp; <span class='accent'>câu chuyện</span>",
- "Kiến thức maker, nhật ký workshop và câu chuyện đằng sau những sản phẩm được làm tại Infinite."
+ "Kiến thức maker, nhật ký workshop và câu chuyện đằng sau những sản phẩm được làm tại Infinite Makerspace."
 ) + """
 <section class="sec sec-t0"><div class="wrap">
   <div class="filters rv" data-filterset="newsGrid">
@@ -414,10 +410,10 @@ news_body = crumb([("Home","{P}index.html"),("News",None)]) + phero(
 </div></section>
 """ % news_cards + cta("Muốn ghé xem <span class='accent'>tận nơi</span>?",
  "Đọc thì hay, nhưng nghe tiếng máy chạy và cầm sản phẩm trên tay vẫn khác.",
- btn("Xem địa điểm","{P}location.html","btn-line") + btn("Bắt đầu dự án của bạn","{P}contact.html"))
+ btn("Xem địa điểm","{P}contact.html#location","btn-line") + btn("Bắt đầu dự án của bạn","{P}contact.html"))
 
-write("news.html","Blog & câu chuyện — Infinite Studio Makerspace",
- "Kiến thức maker, nhật ký workshop và câu chuyện sản phẩm từ Infinite Studio Makerspace.", news_body, "news.html")
+write("news.html","Blog & câu chuyện — Infinite Makerspace",
+ "Kiến thức maker, nhật ký workshop và câu chuyện sản phẩm từ Infinite Makerspace.", news_body, "news.html")
 
 # =============================================================== NEWS ARTICLE
 art_body = crumb([("Home","{P}index.html"),("News","{P}news.html"),("Bài viết mẫu",None)]) + """
@@ -426,7 +422,7 @@ art_body = crumb([("Home","{P}index.html"),("News","{P}news.html"),("Bài viết
     <span class="lab">Makerspace Stories</span>
     <h1 class="d1">What is a <span class="accent">makerspace</span>?</h1>
     <p class="lead">Makerspace là gì, vì sao mô hình này lan rộng, và một không gian như vậy thay đổi cách người trẻ học kỹ năng ra sao.</p>
-    <p class="formnote" style="margin-top:18px">Infinite Studio · 5 phút đọc</p>
+    <p class="formnote" style="margin-top:18px">Infinite Makerspace · 5 phút đọc</p>
   </div></div>
 </section>
 <section class="sec sec-t0"><div class="wrap">%s</div></section>
@@ -461,13 +457,13 @@ art_body = crumb([("Home","{P}index.html"),("News","{P}news.html"),("Bài viết
   <div class="ph ph-%s layerlines"><span class="ctag">%s</span><em>Ảnh minh hoạ bài viết</em></div>
   <div class="cbody"><h3>%s</h3><p>%s</p><span class="cgo">Bài mẫu · 5 phút đọc</span></div></a>""" % r
   for r in [("mint","Makerspace Stories","Beginner’s Guide to 3D Printing","Mọi thứ người mới cần biết trước lần in đầu tiên."),
-            ("bubble","Made at Infinite","How We Made a Miniature Dollhouse","Từ bản vẽ đến bộ nội thất tí hon hoàn chỉnh."),
+            ("bubble","Made at Infinite Makerspace","How We Made a Miniature Dollhouse","Từ bản vẽ đến bộ nội thất tí hon hoàn chỉnh."),
             ("butter","Workshops","Lịch workshop tháng này","Các buổi học sắp mở và cách đăng ký.")])
-) + cta("Visit <span class='accent'>Infinite Studio Makerspace</span>.",
+) + cta("Visit <span class='accent'>Infinite Makerspace</span>.",
  "Đọc xong rồi thì ghé xem tận nơi. Cửa mở cả tuần, không cần hẹn trước.",
- btn("Xem địa điểm","{P}location.html","btn-line") + btn("Tham gia Infinite","{P}contact.html"))
+ btn("Xem địa điểm","{P}contact.html#location","btn-line") + btn("Tham gia Infinite Makerspace","{P}contact.html"))
 
-write("news/article.html","What is a makerspace? — Infinite Studio Makerspace",
+write("news/article.html","What is a makerspace? — Infinite Makerspace",
  "Makerspace là gì, vì sao mô hình này lan rộng, và nó thay đổi cách người trẻ học kỹ năng ra sao.",
  art_body, "news.html")
 
@@ -540,7 +536,7 @@ for mi, m in enumerate(MK):
     made = ""
     if m["projs"]:
         made = """<section class="sec sec-t0"><div class="wrap">
-  <div class="sechead rv"><span class="lab">Made at Infinite</span>
+  <div class="sechead rv"><span class="lab">Made at Infinite Makerspace</span>
     <h2 class="d2 mb-s">Đã làm ra bằng <span class="accent">chính khu này</span>.</h2></div>
   <div class="grid g4">%s</div></div></section>""" % "".join(
             pcard(BYSLUG[s], j) for j, s in enumerate(m["projs"]))
@@ -564,14 +560,14 @@ for mi, m in enumerate(MK):
          m["flowh"], flow(m["steps"]), made
     ) + cta(m["ctah"], m["ctal"],
             btn(m["ctab"], "{P}contact.html") + btn("Xem bảng giá", "{P}services.html#pricing", "btn-line"))
-    write("makerspace/%s.html" % m["slug"], "%s — Infinite Studio Makerspace" % m["nav"], m["sub"][:155],
+    write("makerspace/%s.html" % m["slug"], "%s — Infinite Makerspace" % m["nav"], m["sub"][:155],
           body, "")
 
 # =============================================================== PROJECTS
 for pi, p in enumerate(PROJECTS):
     others = [q for q in PROJECTS if q["slug"] != p["slug"]][:3]
-    body = crumb([("Home","{P}index.html"),("Made at Infinite","{P}index.html#made"),(p["nav"],None)]) + phero(
-        "Made at Infinite", p["h1"], p["sub"],
+    body = crumb([("Home","{P}index.html"),("Made at Infinite Makerspace","{P}index.html#made"),(p["nav"],None)]) + phero(
+        "Made at Infinite Makerspace", p["h1"], p["sub"],
         '<span class="tagpill">%s</span>' % p["tag"]
     ) + """
 <section class="sec sec-t0"><div class="wrap">%s</div></section>
@@ -599,7 +595,7 @@ for pi, p in enumerate(PROJECTS):
     ) + cta("Ý tưởng của bạn có thể là <span class='accent'>cái tiếp theo</span>.",
             "Mọi dự án ở trên đều bắt đầu từ một câu hỏi kiểu “làm cái này được không?”. Câu trả lời thường là được.",
             btn("Bắt đầu dự án của bạn","{P}contact.html") + btn("Xem dịch vụ","{P}services.html","btn-line"))
-    write("projects/%s.html" % p["slug"], "%s — Made at Infinite" % p["nav"], p["blurb"][:155],
+    write("projects/%s.html" % p["slug"], "%s — Made at Infinite Makerspace" % p["nav"], p["blurb"][:155],
           body, "")
 
 # =============================================================== WORKSHOPS
@@ -650,64 +646,57 @@ for wi, w in enumerate(WORKSHOPS):
        "".join(wcard(x) for x in others),
        btn("Xem tất cả workshop","{P}services.html#workshops","btn-line")
     ) + cta("Muốn mở lớp riêng <span class='accent'>cho nhóm</span>?",
-            "Infinite nhận tổ chức workshop riêng cho lớp học, công ty hoặc nhóm bạn từ 6 người trở lên — nội dung điều chỉnh theo nhu cầu.",
+            "Infinite Makerspace nhận tổ chức workshop riêng cho lớp học, công ty hoặc nhóm bạn từ 6 người trở lên — nội dung điều chỉnh theo nhu cầu.",
             btn("Nhắn Zalo","https://zalo.me/{{ZALO}}") + btn("Gửi email","mailto:{{EMAIL}}","btn-line"))
-    write("services/workshops/%s.html" % w["slug"], "%s — Workshop tại Infinite Studio Makerspace" % w["title"],
+    write("services/workshops/%s.html" % w["slug"], "%s — Workshop tại Infinite Makerspace" % w["title"],
           w["desc"][:155], body, "services.html")
 
-# =============================================================== POLICIES
-POLNAV = [(p["slug"], p["nav"]) for p in POLICIES] + [("faq", "Câu hỏi thường gặp")]
+# =============================================================== POLICIES (gộp 1 trang)
+# Thứ tự theo yêu cầu: thành viên, an toàn, đổi trả, điều khoản, FAQ, bảo mật
+POLORDER = ["thanh-vien", "an-toan", "doi-tra", "dieu-khoan", "__faq__", "bao-mat"]
+PBY = {p["slug"]: p for p in POLICIES}
 
-def polnav(cur):
-    return '<div class="chips rv">%s</div>' % "".join(
-        '<a class="tagpill" href="{P}policies/%s.html">%s →</a>' % (s, n)
-        for s, n in POLNAV if s != cur)
-
-POLCTA = cta("Còn thắc mắc <span class='accent'>gì khác</span>?",
-    "Nhắn Zalo là nhanh nhất — thường có người trả lời trong vài phút vào giờ hành chính.",
-    btn("Nhắn Zalo","https://zalo.me/{{ZALO}}") + btn("Gửi email","mailto:{{EMAIL}}","btn-line"))
-
-for pol in POLICIES:
-    secs = ""
-    for h2, blocks in pol["secs"]:
-        secs += "<h2>%s</h2>" % h2
+def _polbody(pol):
+    out = ""
+    if pol.get("callout"):
+        out += '<div class="callout">%s</div>' % pol["callout"]
+    for h3, blocks in pol["secs"]:
+        out += "<h3>%s</h3>" % h3
         for kind, val in blocks:
             if kind == "p":
-                secs += "<p>%s</p>" % val
+                out += "<p>%s</p>" % val
             else:
-                secs += "<ul>%s</ul>" % "".join("<li>%s</li>" % x for x in val)
-    body = crumb([("Home","{P}index.html"),("Chính sách",None),(pol["nav"],None)]) + phero(
-        "Chính sách", pol["h1"], pol["lead"]
-    ) + """
-<section class="sec sec-t0"><div class="wrap">
-  <div class="prose rv">
-    <div class="updated">%s</div>
-    %s
-    %s
-  </div>
-  <div style="margin-top:56px"><span class="lab">Các trang khác</span><div style="margin-top:14px">%s</div></div>
-</div></section>
-""" % (UPDATED, '<div class="callout">%s</div>' % pol["callout"] if pol["callout"] else "",
-       secs, polnav(pol["slug"])) + POLCTA
-    write("policies/%s.html" % pol["slug"], "%s — Infinite Studio Makerspace" % pol["nav"],
-          pol["lead"][:155], body, "")
+                out += "<ul>%s</ul>" % "".join("<li>%s</li>" % x for x in val)
+    return out
 
-# ---- FAQ ----
-faq_body = crumb([("Home","{P}index.html"),("Chính sách",None),("Câu hỏi thường gặp",None)]) + phero(
- "Chính sách","Câu hỏi <span class='accent'>thường gặp</span>",
- "Những câu được hỏi nhiều nhất qua Zalo, gom lại một chỗ cho bạn đỡ phải nhắn."
+_faqbody = "".join('<div class="qa"><b>%s</b><p>%s</p></div>' % qa for qa in FAQ)
+
+accitems = ""
+for slug in POLORDER:
+    if slug == "__faq__":
+        accitems += ('<details id="faq"><summary>Câu hỏi thường gặp</summary>'
+                     '<div class="accb">%s</div></details>' % _faqbody)
+    else:
+        pol = PBY[slug]
+        accitems += ('<details id="%s"><summary>%s</summary><div class="accb">%s</div></details>'
+                     % (slug, pol["nav"], _polbody(pol)))
+
+pol_body = crumb([("Home", "{P}index.html"), ("Chính sách", None)]) + phero(
+    "Chính sách", "Chính sách &amp; <span class='accent'>câu hỏi</span>",
+    "Toàn bộ chính sách, nội quy và câu hỏi thường gặp gom về một trang. Bấm vào từng mục để mở nội dung."
 ) + """
 <section class="sec sec-t0"><div class="wrap">
   <div class="updated rv">%s</div>
-  <div class="prose rv" style="max-width:820px">%s</div>
-  <div style="margin-top:56px"><span class="lab">Các trang khác</span><div style="margin-top:14px">%s</div></div>
+  <div class="acc rv" style="margin-top:14px">%s</div>
 </div></section>
-""" % (UPDATED,
- "".join('<h2>%s</h2><p>%s</p>' % qa for qa in FAQ),
- polnav("faq")) + POLCTA
-write("policies/faq.html","Câu hỏi thường gặp — Infinite Studio Makerspace",
- "Những câu hỏi được hỏi nhiều nhất về Infinite Studio Makerspace: thành viên, vật liệu, gia công, workshop.",
- faq_body, "")
+""" % (UPDATED, accitems) + cta("Còn thắc mắc <span class='accent'>gì khác</span>?",
+    "Nhắn Zalo là nhanh nhất — thường có người trả lời trong vài phút vào giờ hành chính.",
+    btn("Nhắn Zalo", "https://zalo.me/{{ZALO}}") + btn("Gửi email", "mailto:{{EMAIL}}", "btn-line"))
+
+write("policies.html", "Chính sách &amp; câu hỏi thường gặp — Infinite Makerspace",
+      "Chính sách thành viên, nội quy an toàn, đổi trả, điều khoản sử dụng, câu hỏi thường gặp "
+      "và chính sách bảo mật của Infinite Makerspace — gom trong một trang.",
+      pol_body, "policies.html")
 
 # =============================================================== 404
 nf = """<section class="phero"><div class="blob b1"></div><div class="blob b2"></div>
@@ -718,7 +707,7 @@ nf = """<section class="phero"><div class="blob b1"></div><div class="blob b2"><
     <div class="actions">%s%s</div>
   </div></div>
 </section>""" % (btn("Về trang chủ","{P}index.html"), btn("Xem dịch vụ","{P}services.html","btn-line"))
-write("404.html","404 — Infinite Studio Makerspace","Không tìm thấy trang.", nf, "")
+write("404.html","404 — Infinite Makerspace","Không tìm thấy trang.", nf, "")
 
 print("Đã sinh %d trang:" % len(PAGES))
 for p in sorted(PAGES):

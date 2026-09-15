@@ -18,10 +18,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://infinitestudiomakerspace.netlify.app/location.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://infinitestudiomakerspace.netlify.app/news.html</loc>
     <priority>0.7</priority>
   </url>
@@ -101,28 +97,6 @@
     <loc>https://infinitestudiomakerspace.netlify.app/services/workshops/mo-hinh-giay.html</loc>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://infinitestudiomakerspace.netlify.app/policies/an-toan.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://infinitestudiomakerspace.netlify.app/policies/thanh-vien.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://infinitestudiomakerspace.netlify.app/policies/bao-mat.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://infinitestudiomakerspace.netlify.app/policies/dieu-khoan.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://infinitestudiomakerspace.netlify.app/policies/doi-tra.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://infinitestudiomakerspace.netlify.app/policies/faq.html</loc>
-    <priority>0.7</priority>
-  </url>
+
+  <url><loc>https://infinitestudiomakerspace.netlify.app/policies.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
 </urlset>

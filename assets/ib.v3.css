@@ -77,7 +77,8 @@ h3{font-size:clamp(1.12rem,1.9vw,1.4rem);letter-spacing:-.02em}
 .actions{display:flex;flex-wrap:wrap;gap:13px}
 
 /* ---------- ảnh placeholder (site mẫu không dùng file ảnh) ---------- */
-.ph{display:grid;place-items:center;padding:22px;text-align:center;position:relative;overflow:hidden}
+.ph{display:grid;place-items:center;padding:0;text-align:center;position:relative;overflow:hidden}
+.ph>em{padding:22px}
 .ph em{font-style:normal;font-size:.8rem;color:rgba(42,35,64,.5);max-width:26ch;line-height:1.5}
 .ph img{width:100%;height:100%;object-fit:cover;position:relative}
 .ph-mint{background:linear-gradient(140deg,var(--mint),#E4F7EF)}
@@ -149,7 +150,7 @@ header.stuck{background:rgba(255,251,244,.84);backdrop-filter:blur(14px);box-sha
 .hroom{display:block;border-radius:14px;overflow:hidden;background:#fff;
   border:2px solid rgba(42,35,64,.14);transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s}
 .hroom:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft);border-color:var(--ink)}
-.hpic{aspect-ratio:4/3;display:grid;place-items:center;padding:10px;text-align:center;
+.hpic{aspect-ratio:4/3;display:grid;place-items:center;padding:0;text-align:center;border-radius:14px;
   position:relative;overflow:hidden}
 .hpic em{font-style:normal;font-size:.66rem;line-height:1.4;color:rgba(42,35,64,.5);max-width:18ch}
 .hpic img{width:100%;height:100%;object-fit:cover}
@@ -518,3 +519,29 @@ footer{padding:76px 0 130px;border-top:1px solid var(--line);margin-top:76px}
 @media (prefers-reduced-motion:reduce){
   .cbtn,.cbtn .ctxt,.fsocial a{transition:none!important}
 }
+
+/* ---- Accordion trang Chính sách (gộp 6 trang) ---- */
+.acc{display:grid;gap:12px;max-width:900px}
+.acc details{background:#fff;border-radius:var(--r-md);box-shadow:var(--shadow-soft);overflow:hidden}
+.acc summary{cursor:pointer;list-style:none;padding:20px 24px;display:flex;align-items:center;
+  justify-content:space-between;gap:18px;font-family:var(--font-d);font-weight:700;
+  font-size:clamp(1rem,1.5vw,1.16rem);letter-spacing:-.02em}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"";flex:none;width:10px;height:10px;margin-right:5px;
+  border-right:2.2px solid var(--ink);border-bottom:2.2px solid var(--ink);
+  transform:rotate(45deg);transition:transform .25s ease}
+.acc details[open] summary::after{transform:rotate(-135deg)}
+.acc summary:hover{background:var(--cream-2)}
+.acc .accb{padding:2px 24px 26px}
+.acc .accb h3{font-family:var(--font-d);font-size:1rem;margin:22px 0 8px}
+.acc .accb h3:first-child{margin-top:4px}
+.acc .accb p{color:var(--ink-60);margin:0 0 10px}
+.acc .accb ul{margin:0 0 12px;padding-left:22px;color:var(--ink-60);list-style:disc}
+.acc .accb li{margin-bottom:6px}
+.acc .accb .callout{background:var(--cream-2);border-radius:var(--r-sm);padding:14px 16px;
+  margin:4px 0 16px;font-size:.95rem}
+.acc .qa{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
+.acc .qa:first-of-type{border-top:0;padding-top:0;margin-top:4px}
+.acc .qa b{display:block;font-size:.98rem;margin-bottom:5px}
+.acc .qa p{margin:0}
+@media (max-width:680px){.acc summary{padding:16px 18px}.acc .accb{padding:2px 18px 20px}}
