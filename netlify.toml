@@ -78,3 +78,10 @@
   from = "/news/article"
   to = "/news"
   status = 301
+
+# 8 workshop cũ đã gỡ (2026-10-13) — đưa về mục Workshops
+[[redirects]]
+  from = "/services/workshops/*"
+  to = "/services#workshops"
+  status = 301
+  force = true
